@@ -10,6 +10,33 @@
 - **Placeholder data**: The seed script (`pnpm run db:seed`) loads a small set of example vendors and drinks defined in `src/scripts/seed.ts`. Use this for local development.
 - **Production**: For a real festival year, replace the placeholder arrays in `seed.ts` with data from the official site (manual copy, CSV, or a one-off scrape), or add a JSON/CSV file and update the seed to read from it.
 
+## Scrape and import from hotchocolatefest.com
+
+There is a scraper script at `src/scripts/scrape-hotchocolatefest.ts` that:
+
+- Pulls vendors from the festival WordPress API.
+- Pulls drinks from the "List of Flavours" page.
+- Fetches vendor pages to collect addresses and official websites when available.
+
+By default the script runs in dry-run mode and does not write to the database.
+
+### Dry run (no database writes)
+
+```
+pnpm run db:scrape
+```
+
+### Apply to the database
+
+```
+DATABASE_URL="postgres://..." pnpm run db:scrape -- --apply
+```
+
+Optional flags (only work with `--apply`):
+
+- `--replace` clears existing vendors and drinks before import.
+- `--prune` removes drinks that are no longer in the scrape result.
+
 ## Re-seeding for a new festival year
 
 1. **Option A – Replace seed data**
