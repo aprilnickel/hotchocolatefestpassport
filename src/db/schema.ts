@@ -9,7 +9,7 @@ import {
 
 export * from "./auth-schema";
 
-// User data comes from Better Auth (user table). We reference user.id as text in wishlist/tasted.
+// User data comes from Better Auth (user table). We reference user.id as text in wishlist/sipped.
 
 export const vendors = pgTable("vendors", {
   id: text("id").primaryKey(),
@@ -50,18 +50,18 @@ export const wishlistItems = pgTable(
   ]
 );
 
-export const tastedItems = pgTable(
-  "tasted_items",
+export const sippedItems = pgTable(
+  "sipped_items",
   {
     id: text("id").primaryKey(),
     userId: text("user_id").notNull(),
     drinkId: text("drink_id")
       .notNull()
       .references(() => drinks.id, { onDelete: "cascade" }),
-    tastedAt: timestamp("tasted_at").defaultNow().notNull(),
+    sippedAt: timestamp("sipped_at").defaultNow().notNull(),
     createdAt: timestamp("created_at").defaultNow().notNull(),
   },
   (table) => [
-    uniqueIndex("tasted_user_drink").on(table.userId, table.drinkId),
+    uniqueIndex("sipped_user_drink").on(table.userId, table.drinkId),
   ]
 );

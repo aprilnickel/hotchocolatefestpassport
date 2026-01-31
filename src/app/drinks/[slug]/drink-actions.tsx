@@ -2,16 +2,16 @@
 
 import { useTransition } from "react";
 import { addToWishlist, removeFromWishlist } from "@/app/actions/wishlist";
-import { markTasted, unmarkTasted } from "@/app/actions/tasted";
+import { markSipped, unmarkSipped } from "@/app/actions/sipped";
 
 export function DrinkActions({
   drinkId,
   inWishlist,
-  isTasted,
+  isSipped,
 }: {
   drinkId: string;
   inWishlist: boolean;
-  isTasted: boolean;
+  isSipped: boolean;
 }) {
   const [pending, startTransition] = useTransition();
 
@@ -38,16 +38,16 @@ export function DrinkActions({
         disabled={pending}
         onClick={() => {
           startTransition(async () => {
-            if (isTasted) {
-              await unmarkTasted(drinkId);
+            if (isSipped) {
+              await unmarkSipped(drinkId);
             } else {
-              await markTasted(drinkId);
+              await markSipped(drinkId);
             }
           });
         }}
         className="min-h-[44px] min-w-[44px] rounded-lg border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-50 disabled:opacity-50"
       >
-        {isTasted ? "Unmark tasted" : "Mark as tasted"}
+        {isSipped ? "Unmark sipped" : "Mark as sipped"}
       </button>
     </div>
   );

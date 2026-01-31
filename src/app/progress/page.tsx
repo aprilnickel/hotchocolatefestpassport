@@ -3,9 +3,9 @@ import Link from "next/link";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import { db } from "@/db";
-import { tastedItems, drinks, vendors } from "@/db/schema";
+import { sippedItems, drinks, vendors } from "@/db/schema";
 import { eq, desc } from "drizzle-orm";
-import { UnmarkTastedButton } from "./unmark-button";
+import { UnmarkSippedButton } from "./unmark-button";
 
 export default async function ProgressPage() {
   const session = await auth.api.getSession({ headers: await headers() });
@@ -13,7 +13,7 @@ export default async function ProgressPage() {
 
   const rows = await db
     .select({
-      id: tastedItems.id,
+      id: sippedItems.id,
       drinkId: drinks.id,
       drinkName: drinks.name,
       drinkSlug: drinks.slug,
@@ -21,23 +21,23 @@ export default async function ProgressPage() {
       vendorName: vendors.name,
       vendorSlug: vendors.slug,
       neighbourhood: vendors.neighbourhood,
-      tastedAt: tastedItems.tastedAt,
+      sippedAt: sippedItems.sippedAt,
     })
-    .from(tastedItems)
-    .innerJoin(drinks, eq(tastedItems.drinkId, drinks.id))
+    .from(sippedItems)
+    .innerJoin(drinks, eq(sippedItems.drinkId, drinks.id))
     .innerJoin(vendors, eq(drinks.vendorId, vendors.id))
-    .where(eq(tastedItems.userId, session.user.id))
-    .orderBy(desc(tastedItems.tastedAt));
+    .where(eq(sippedItems.userId, session.user.id))
+    .orderBy(desc(sippedItems.sippedAt));
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-6">
       <h1 className="mb-6 text-2xl font-bold">My progress</h1>
       <p className="mb-4 text-neutral-600">
-        Drinks you&apos;ve marked as tasted.
+        Drinks you&apos;ve marked as sipped.
       </p>
       {rows.length === 0 ? (
         <p className="text-neutral-600">
-          You haven&apos;t marked any drinks as tasted yet. Try one from your{" "}
+          You haven&apos;t marked any drinks as sipped yet. Try one from your{" "}
           <Link href="/wishlist" className="font-medium text-neutral-900 underline">
             wishlist
           </Link>{" "}
@@ -67,10 +67,10 @@ export default async function ProgressPage() {
                   <div className="text-sm text-neutral-500">{r.flavourNotes}</div>
                 )}
                 <div className="mt-1 text-xs text-neutral-400">
-                  Tasted {r.tastedAt ? new Date(r.tastedAt).toLocaleDateString() : ""}
+                  Sipped {r.sippedAt ? new Date(r.sippedAt).toLocaleDateString() : ""}
                 </div>
               </Link>
-              <UnmarkTastedButton drinkId={r.drinkId} />
+              <UnmarkSippedButton drinkId={r.drinkId} />
             </li>
           ))}
         </ul>

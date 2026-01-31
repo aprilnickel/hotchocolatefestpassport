@@ -4,21 +4,21 @@ import { revalidatePath } from "next/cache";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import { db } from "@/db";
-import { tastedItems, drinks } from "@/db/schema";
+import { sippedItems, drinks } from "@/db/schema";
 import { eq, and } from "drizzle-orm";
 import { z } from "zod";
 import { randomUUID } from "crypto";
 
 const drinkIdSchema = z.string().min(1);
 
-export async function markTasted(drinkId: string) {
+export async function markSipped(drinkId: string) {
   const parsed = drinkIdSchema.safeParse(drinkId);
   if (!parsed.success) {
     return { success: false, error: "Invalid drink" };
   }
   const session = await auth.api.getSession({ headers: await headers() });
   if (!session?.user?.id) {
-    return { success: false, error: "Sign in to mark drinks as tasted" };
+    return { success: false, error: "Sign in to mark drinks as sipped" };
   }
 
   const [existing] = await db
@@ -31,13 +31,13 @@ export async function markTasted(drinkId: string) {
   }
 
   await db
-    .insert(tastedItems)
+    .insert(sippedItems)
     .values({
       id: randomUUID(),
       userId: session.user.id,
       drinkId: parsed.data,
     })
-    .onConflictDoNothing({ target: [tastedItems.userId, tastedItems.drinkId] });
+    .onConflictDoNothing({ target: [sippedItems.userId, sippedItems.drinkId] });
 
   revalidatePath("/drinks");
   revalidatePath("/drinks/[slug]", "page");
@@ -45,7 +45,7 @@ export async function markTasted(drinkId: string) {
   return { success: true };
 }
 
-export async function unmarkTasted(drinkId: string) {
+export async function unmarkSipped(drinkId: string) {
   const parsed = drinkIdSchema.safeParse(drinkId);
   if (!parsed.success) {
     return { success: false, error: "Invalid drink" };
@@ -56,11 +56,11 @@ export async function unmarkTasted(drinkId: string) {
   }
 
   await db
-    .delete(tastedItems)
+    .delete(sippedItems)
     .where(
       and(
-        eq(tastedItems.userId, session.user.id),
-        eq(tastedItems.drinkId, parsed.data)
+        eq(sippedItems.userId, session.user.id),
+        eq(sippedItems.drinkId, parsed.data)
       )
     );
 
