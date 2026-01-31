@@ -37,7 +37,15 @@ export function Header() {
               </Link>
               <button
                 type="button"
-                onClick={() => authClient.signOut({ fetchOptions: { onSuccess: () => window.location.href = "/" } })}
+                onClick={() =>
+                authClient.signOut({
+                  fetchOptions: {
+                    onSuccess: () => {
+                      window.location.href = "/";
+                    },
+                  },
+                })
+              }
                 className="text-sm font-medium text-neutral-600 hover:text-neutral-900"
               >
                 Sign out

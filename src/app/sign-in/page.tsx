@@ -1,7 +1,7 @@
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
-import { SignInForm } from "./sign-in-form";
+import { SignInForm } from "@/app/sign-in/sign-in-form";
 
 export default async function SignInPage({
   searchParams,
@@ -21,12 +21,12 @@ export default async function SignInPage({
         </h1>
         {error && (
           <p className="rounded-lg bg-red-50 p-3 text-center text-sm text-red-700">
-            Sign-in link expired or invalid. Request a new one below.
+            Sign-in failed. Please try again.
           </p>
         )}
         <SignInForm />
         <p className="text-center text-sm text-neutral-500">
-          We&apos;ll send you a magic link to sign in—no password needed.
+          Sign in with your Google account to save your wishlist and progress.
         </p>
       </div>
     </main>
