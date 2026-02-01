@@ -1,8 +1,20 @@
-import Link from "next/link";
-import { getDrinksWithVendors } from "@/lib/queries";
+import {
+  getDrinksWithVendors,
+  getWishlistDrinkIds,
+  type DrinkWithVendor,
+} from "@/lib/queries";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
+import { DrinkCard } from "./drink-card";
 
 export default async function DrinksPage() {
-  const drinks = await getDrinksWithVendors();
+  const [drinks, session] = await Promise.all([
+    getDrinksWithVendors(),
+    auth.api.getSession({ headers: await headers() }),
+  ]);
+  const wishlistIds = session?.user?.id
+    ? await getWishlistDrinkIds(session.user.id)
+    : null;
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-6">
@@ -14,24 +26,13 @@ export default async function DrinksPage() {
         </p>
       ) : (
         <ul className="space-y-3">
-          {drinks.map((d) => (
-            <li key={d.id}>
-              <Link
-                href={`/drinks/${d.slug}`}
-                className="block rounded-lg border border-neutral-200 bg-white p-4 transition hover:border-neutral-300 hover:shadow-sm"
-              >
-                <div className="font-medium text-neutral-900">{d.name}</div>
-                <div className="mt-1 text-sm text-neutral-600">
-                  {d.vendorName}
-                  {d.neighbourhood ? ` · ${d.neighbourhood}` : ""}
-                </div>
-                {d.flavourNotes && (
-                  <div className="mt-1 text-sm text-neutral-500">
-                    {d.flavourNotes}
-                  </div>
-                )}
-              </Link>
-            </li>
+          {drinks.map((d: DrinkWithVendor) => (
+            <DrinkCard
+              key={d.id}
+              drink={d}
+              inWishlist={wishlistIds?.has(d.id) ?? false}
+              showWishlistButton={!!session?.user}
+            />
           ))}
         </ul>
       )}

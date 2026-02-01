@@ -1,6 +1,6 @@
 import { eq, asc } from "drizzle-orm";
 import { db } from "@/db";
-import { drinks, vendors } from "@/db/schema";
+import { drinks, vendors, wishlistItems } from "@/db/schema";
 
 export type DrinkWithVendor = {
   id: string;
@@ -77,4 +77,13 @@ export async function getDrinksByVendorId(vendorId: string) {
     .from(drinks)
     .where(eq(drinks.vendorId, vendorId))
     .orderBy(asc(drinks.sortOrder), asc(drinks.name));
+}
+
+/** Returns set of drink IDs that the user has in their wishlist. */
+export async function getWishlistDrinkIds(userId: string): Promise<Set<string>> {
+  const rows = await db
+    .select({ drinkId: wishlistItems.drinkId })
+    .from(wishlistItems)
+    .where(eq(wishlistItems.userId, userId));
+  return new Set(rows.map((r) => r.drinkId));
 }

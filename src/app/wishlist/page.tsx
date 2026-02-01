@@ -5,7 +5,7 @@ import { headers } from "next/headers";
 import { db } from "@/db";
 import { wishlistItems, drinks, vendors } from "@/db/schema";
 import { eq, asc } from "drizzle-orm";
-import { RemoveFromWishlistButton } from "./remove-button";
+import { AddToWishlistButton } from "@/components/drink-actions/add-to-wishlist-button";
 
 export default async function WishlistPage() {
   const session = await auth.api.getSession({ headers: await headers() });
@@ -59,7 +59,7 @@ export default async function WishlistPage() {
                   <div className="text-sm text-neutral-500">{r.flavourNotes}</div>
                 )}
               </Link>
-              <RemoveFromWishlistButton drinkId={r.drinkId} />
+              <AddToWishlistButton drinkId={r.drinkId} inWishlist={true} verbose />
             </li>
           ))}
         </ul>

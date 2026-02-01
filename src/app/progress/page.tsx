@@ -5,7 +5,7 @@ import { headers } from "next/headers";
 import { db } from "@/db";
 import { sippedItems, drinks, vendors } from "@/db/schema";
 import { eq, desc } from "drizzle-orm";
-import { UnmarkSippedButton } from "./unmark-button";
+import { AddToSipListButton } from "@/components/drink-actions/add-to-siplist-button";
 
 export default async function ProgressPage() {
   const session = await auth.api.getSession({ headers: await headers() });
@@ -70,7 +70,7 @@ export default async function ProgressPage() {
                   Sipped {r.sippedAt ? new Date(r.sippedAt).toLocaleDateString() : ""}
                 </div>
               </Link>
-              <UnmarkSippedButton drinkId={r.drinkId} />
+              <AddToSipListButton drinkId={r.drinkId} isSipped={true} verbose />
             </li>
           ))}
         </ul>
