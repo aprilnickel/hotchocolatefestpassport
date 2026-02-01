@@ -7,7 +7,7 @@ import { sippedItems, drinks, vendors } from "@/db/schema";
 import { eq, desc } from "drizzle-orm";
 import { AddToSipListButton } from "@/components/drink-actions/add-to-siplist-button";
 
-export default async function ProgressPage() {
+export default async function SipListPage() {
   const session = await auth.api.getSession({ headers: await headers() });
   if (!session?.user?.id) redirect("/sign-in");
 
@@ -31,7 +31,7 @@ export default async function ProgressPage() {
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-6">
-      <h1 className="mb-6 text-2xl font-bold">My progress</h1>
+      <h1 className="mb-6 text-2xl font-bold">My sips</h1>
       <p className="mb-4 text-neutral-600">
         Drinks you&apos;ve marked as sipped.
       </p>

@@ -18,7 +18,7 @@ export async function addToWishlist(drinkId: string) {
   }
   const session = await auth.api.getSession({ headers: await headers() });
   if (!session?.user?.id) {
-    return { success: false, error: "Sign in to add to wishlist" };
+    return { success: false, error: "Sign in to add drink to wishlist" };
   }
 
   const [existing] = await db
@@ -42,6 +42,7 @@ export async function addToWishlist(drinkId: string) {
   revalidatePath("/drinks");
   revalidatePath("/drinks/[slug]", "page");
   revalidatePath("/wishlist");
+  revalidatePath("/sips");
   return { success: true };
 }
 
@@ -52,7 +53,16 @@ export async function removeFromWishlist(drinkId: string) {
   }
   const session = await auth.api.getSession({ headers: await headers() });
   if (!session?.user?.id) {
-    return { success: false, error: "Sign in to update wishlist" };
+    return { success: false, error: "Sign in to remove drink from wishlist" };
+  }
+
+  const [existing] = await db
+    .select()
+    .from(drinks)
+    .where(eq(drinks.id, parsed.data))
+    .limit(1);
+  if (!existing) {
+    return { success: false, error: "Drink not found" };
   }
 
   await db
@@ -67,5 +77,6 @@ export async function removeFromWishlist(drinkId: string) {
   revalidatePath("/drinks");
   revalidatePath("/drinks/[slug]", "page");
   revalidatePath("/wishlist");
+  revalidatePath("/sips");
   return { success: true };
 }

@@ -26,7 +26,7 @@ export default async function SignInPage({
         )}
         <SignInForm />
         <p className="text-center text-sm text-neutral-500">
-          Sign in with your Google account to save your wishlist and progress.
+          Sign in with your Google account to save your wishlist and sips.
         </p>
       </div>
     </main>

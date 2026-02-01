@@ -30,10 +30,10 @@ export function Header() {
                 My wishlist
               </Link>
               <Link
-                href="/progress"
+                href="/sips"
                 className="text-sm font-medium text-neutral-600 hover:text-neutral-900"
               >
-                My progress
+                My sips
               </Link>
               <button
                 type="button"

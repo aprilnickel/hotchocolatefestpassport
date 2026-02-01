@@ -41,7 +41,8 @@ export async function markSipped(drinkId: string) {
 
   revalidatePath("/drinks");
   revalidatePath("/drinks/[slug]", "page");
-  revalidatePath("/progress");
+  revalidatePath("/wishlist");
+  revalidatePath("/sips");
   return { success: true };
 }
 
@@ -52,7 +53,16 @@ export async function unmarkSipped(drinkId: string) {
   }
   const session = await auth.api.getSession({ headers: await headers() });
   if (!session?.user?.id) {
-    return { success: false, error: "Sign in to update progress" };
+    return { success: false, error: "Sign in to remove drinks from your sip list" };
+  }
+
+  const [existing] = await db
+    .select()
+    .from(drinks)
+    .where(eq(drinks.id, parsed.data))
+    .limit(1);
+  if (!existing) {
+    return { success: false, error: "Drink not found" };
   }
 
   await db
@@ -66,6 +76,7 @@ export async function unmarkSipped(drinkId: string) {
 
   revalidatePath("/drinks");
   revalidatePath("/drinks/[slug]", "page");
-  revalidatePath("/progress");
+  revalidatePath("/wishlist");
+  revalidatePath("/sips");
   return { success: true };
 }
