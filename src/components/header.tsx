@@ -13,18 +13,18 @@ export function Header() {
           Hot Chocolate Passport
         </Link>
         <nav className="flex items-center gap-1 sm:gap-4">
+          <Link
+            href="/drinks"
+            className="flex min-h-[44px] min-w-[44px] items-center rounded px-2 text-sm font-medium text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900"
+          >
+            Drinks
+          </Link>
           {isPending ? (
             <span className="flex min-h-[44px] items-center text-sm text-neutral-500">
               Loading…
             </span>
           ) : session ? (
             <>
-              <Link
-                href="/drinks"
-                className="flex min-h-[44px] min-w-[44px] items-center rounded px-2 text-sm font-medium text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900"
-              >
-                Drinks
-              </Link>
               <Link
                 href="/wishlist"
                 className="flex min-h-[44px] min-w-[44px] items-center rounded px-2 text-sm font-medium text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900"
