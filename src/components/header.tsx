@@ -6,6 +6,7 @@ import Link from "next/link";
 
 const navLinkClass =
   "flex min-h-[44px] min-w-[44px] items-center rounded px-2 text-sm font-medium text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900";
+const mobileNavLinkClass = `${navLinkClass} w-full justify-start`;
 
 export function Header() {
   const { data: session, isPending } = authClient.useSession();
@@ -96,7 +97,7 @@ export function Header() {
           >
             <ul className="flex flex-col gap-1 px-4 py-4">
               <li>
-                <Link href="/drinks" className={navLinkClass} onClick={closeMobileNav}>
+                <Link href="/drinks" className={mobileNavLinkClass} onClick={closeMobileNav}>
                   Drinks
                 </Link>
               </li>
@@ -109,12 +110,12 @@ export function Header() {
               ) : session ? (
                 <>
                   <li>
-                    <Link href="/wishlist" className={navLinkClass} onClick={closeMobileNav}>
+                    <Link href="/wishlist" className={mobileNavLinkClass} onClick={closeMobileNav}>
                       My Wishlist
                     </Link>
                   </li>
                   <li>
-                    <Link href="/sips" className={navLinkClass} onClick={closeMobileNav}>
+                    <Link href="/sips" className={mobileNavLinkClass} onClick={closeMobileNav}>
                       My Sips
                     </Link>
                   </li>
@@ -131,7 +132,7 @@ export function Header() {
                           },
                         });
                       }}
-                      className={navLinkClass}
+                      className={mobileNavLinkClass}
                     >
                       Sign Out
                     </button>
@@ -139,7 +140,7 @@ export function Header() {
                 </>
               ) : (
                 <li>
-                  <Link href="/sign-in" className={navLinkClass} onClick={closeMobileNav}>
+                  <Link href="/sign-in" className={mobileNavLinkClass} onClick={closeMobileNav}>
                     Sign In
                   </Link>
                 </li>
