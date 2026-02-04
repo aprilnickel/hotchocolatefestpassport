@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Toaster } from "sonner";
 import { Header } from "@/components/header";
 import "./globals.css";
 
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className="antialiased">
         <Header />
         {children}
+        <Toaster richColors closeButton position="bottom-right" />
       </body>
     </html>
   );

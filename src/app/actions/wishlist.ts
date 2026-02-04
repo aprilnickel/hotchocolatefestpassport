@@ -9,12 +9,13 @@ import { eq, and } from "drizzle-orm";
 import { z } from "zod";
 import { randomUUID } from "crypto";
 
-const drinkIdSchema = z.string().min(1);
+const drinkIdSchema = z.string().min(1, "Drink ID is required").max(100);
 
 export async function addToWishlist(drinkId: string) {
   const parsed = drinkIdSchema.safeParse(drinkId);
   if (!parsed.success) {
-    return { success: false, error: "Invalid drink" };
+    const msg = parsed.error.errors[0]?.message ?? "Invalid drink";
+    return { success: false, error: msg };
   }
   const session = await auth.api.getSession({ headers: await headers() });
   if (!session?.user?.id) {
@@ -49,7 +50,8 @@ export async function addToWishlist(drinkId: string) {
 export async function removeFromWishlist(drinkId: string) {
   const parsed = drinkIdSchema.safeParse(drinkId);
   if (!parsed.success) {
-    return { success: false, error: "Invalid drink" };
+    const msg = parsed.error.errors[0]?.message ?? "Invalid drink";
+    return { success: false, error: msg };
   }
   const session = await auth.api.getSession({ headers: await headers() });
   if (!session?.user?.id) {

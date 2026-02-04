@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { toast } from "sonner";
 import { markSipped, unmarkSipped } from "@/app/actions/sipped";
 
 export function AddToSipListButton({ drinkId, isSipped: initialIsSipped, verbose = false }: { drinkId: string, isSipped: boolean, verbose?: boolean }) {
@@ -8,14 +9,17 @@ export function AddToSipListButton({ drinkId, isSipped: initialIsSipped, verbose
   const [isSipped, setIsSipped] = useState(initialIsSipped);
 
   const toggleSipped = () => {
-    const next = !isSipped;
-    setIsSipped(next);
+    const newIsSipped = !isSipped;
+    setIsSipped(newIsSipped);
     startTransition(async () => {
-      const result = next
+      const result = newIsSipped
         ? await markSipped(drinkId)
         : await unmarkSipped(drinkId);
       if (!result.success) {
-        setIsSipped(!next);
+        setIsSipped(!newIsSipped);
+        toast.error(result.error ?? "Something went wrong");
+      } else {
+        toast.success(newIsSipped ? "Added to sip list" : "Removed from sip list");
       }
     });
   };

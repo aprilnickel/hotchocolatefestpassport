@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { toast } from "sonner";
 import { addToWishlist, removeFromWishlist } from "@/app/actions/wishlist";
 
 export function AddToWishlistButton({ drinkId, inWishlist: initialInWishlist, verbose = false }: { drinkId: string, inWishlist: boolean, verbose?: boolean }) {
@@ -8,14 +9,17 @@ export function AddToWishlistButton({ drinkId, inWishlist: initialInWishlist, ve
   const [inWishlist, setInWishlist] = useState(initialInWishlist);
 
   const toggleWishlist = () => {
-    const next = !inWishlist;
-    setInWishlist(next);
+    const newInWishlist = !inWishlist;
+    setInWishlist(newInWishlist);
     startTransition(async () => {
-      const result = next
+      const result = newInWishlist
         ? await addToWishlist(drinkId)
         : await removeFromWishlist(drinkId);
       if (!result.success) {
-        setInWishlist(!next);
+        setInWishlist(!newInWishlist);
+        toast.error(result.error ?? "Something went wrong");
+      } else {
+        toast.success(newInWishlist ? "Added to wishlist" : "Removed from wishlist");
       }
     });
   };
