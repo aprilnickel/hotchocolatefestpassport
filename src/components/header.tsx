@@ -12,51 +12,53 @@ export function Header() {
         <Link href="/" className="font-semibold text-neutral-900">
           Hot Chocolate Passport
         </Link>
-        <nav className="flex items-center gap-4">
+        <nav className="flex items-center gap-1 sm:gap-4">
           {isPending ? (
-            <span className="text-sm text-neutral-500">Loading…</span>
+            <span className="flex min-h-[44px] items-center text-sm text-neutral-500">
+              Loading…
+            </span>
           ) : session ? (
             <>
               <Link
                 href="/drinks"
-                className="text-sm font-medium text-neutral-600 hover:text-neutral-900"
+                className="flex min-h-[44px] min-w-[44px] items-center rounded px-2 text-sm font-medium text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900"
               >
                 Drinks
               </Link>
               <Link
                 href="/wishlist"
-                className="text-sm font-medium text-neutral-600 hover:text-neutral-900"
+                className="flex min-h-[44px] min-w-[44px] items-center rounded px-2 text-sm font-medium text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900"
               >
-                My wishlist
+                My Wishlist
               </Link>
               <Link
                 href="/sips"
-                className="text-sm font-medium text-neutral-600 hover:text-neutral-900"
+                className="flex min-h-[44px] min-w-[44px] items-center rounded px-2 text-sm font-medium text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900"
               >
-                My sips
+                My Sips
               </Link>
               <button
                 type="button"
-                onClick={() =>
-                authClient.signOut({
-                  fetchOptions: {
-                    onSuccess: () => {
-                      window.location.href = "/";
+                onClick={() => {
+                  authClient.signOut({
+                    fetchOptions: {
+                      onSuccess: () => {
+                        window.location.href = "/";
+                      },
                     },
-                  },
-                })
-              }
-                className="text-sm font-medium text-neutral-600 hover:text-neutral-900"
+                  });
+                }}
+                className="flex min-h-[44px] min-w-[44px] items-center rounded px-2 text-sm font-medium text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900"
               >
-                Sign out
+                Sign Out
               </button>
             </>
           ) : (
             <Link
               href="/sign-in"
-              className="text-sm font-medium text-neutral-600 hover:text-neutral-900"
+              className="flex min-h-[44px] min-w-[44px] items-center rounded px-2 text-sm font-medium text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900"
             >
-              Sign in
+              Sign In
             </Link>
           )}
         </nav>
