@@ -18,6 +18,7 @@ COPY package.json pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile
 COPY . .
 RUN mkdir -p public
+ENV BUILD_STANDALONE=true
 RUN pnpm run build
 
 # Stage 3 – runtime

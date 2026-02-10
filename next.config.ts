@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
+const isStandalone = process.env.BUILD_STANDALONE === "true";
+
 const nextConfig: NextConfig = {
-  output: "standalone",
+  ...(isStandalone ? { output: "standalone" as const } : {}),
   experimental: {
     serverActions: {
       bodySizeLimit: "2mb",
