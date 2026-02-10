@@ -1,0 +1,31 @@
+# dependencies
+node_modules
+.pnp
+.pnp.js
+
+# build output
+.next
+out
+build
+
+# git
+.git
+.gitignore
+
+# env (secrets; set at runtime)
+.env
+.env*.local
+
+# docker
+Dockerfile
+.dockerignore
+
+# misc
+.DS_Store
+*.md
+*.tsbuildinfo
+next-env.d.ts
+.vercel
+coverage
+docs
+drizzle

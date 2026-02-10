@@ -1,0 +1,6 @@
+services:
+  app:
+    image: ${DOCKER_IMAGE}
+    env_file: .env
+    restart: unless-stopped
+    # No host ports; expose only on internal network for a reverse proxy
