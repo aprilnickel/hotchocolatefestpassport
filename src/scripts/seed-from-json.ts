@@ -9,6 +9,7 @@ import { drinks, vendors } from "@/db/schema";
 import { randomUUID } from "crypto";
 import { readFile } from "fs/promises";
 import { join } from "path";
+import { slugify } from "@/lib/utils";
 
 interface FestivalDataVendor {
   name: string;
@@ -112,8 +113,8 @@ async function seedFromJSON() {
       throw new Error(`Vendor not found: ${d.vendorName}`);
     }
 
-    // Generate slug from drink name if not provided
-    const slug = d.id.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+    // Generate slug from drink name for better readability
+    const slug = `${d.id.toLowerCase()}-${slugify(d.name)}`;
 
     return {
       id: d.id,

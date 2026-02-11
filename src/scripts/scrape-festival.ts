@@ -13,6 +13,7 @@
  */
 import { writeFile } from 'fs/promises';
 import { join } from 'path';
+import { slugify } from '@/lib/utils';
 
 interface Location {
   address: string | null;
@@ -93,18 +94,6 @@ async function scrapeFestivalData(): Promise<FestivalData> {
     console.error('Error scraping festival data:', error);
     throw error;
   }
-}
-
-/**
- * Helper function to create a URL-friendly slug from a name
- * This will be used when parsing vendor/drink names from the HTML
- */
-function slugify(text: string): string {
-  return text
-    .toLowerCase()
-    .replace(/[^\w\s-]/g, '')
-    .replace(/[\s_]+/g, '-')
-    .replace(/^-+|-+$/g, '');
 }
 
 /**
