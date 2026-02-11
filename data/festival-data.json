@@ -1,0 +1,168 @@
+{
+  "vendors": [
+    {
+      "name": "Bel Café",
+      "slug": "bel-cafe",
+      "dietaryOptions": {
+        "vegan": false,
+        "glutenFree": false,
+        "dairyFree": false
+      },
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": {
+        "website": "https://belcafe.com",
+        "instagram": null,
+        "facebook": null
+      },
+      "locations": [
+        {
+          "address": "801 West Georgia Street, Vancouver, BC",
+          "neighbourhood": "Downtown Vancouver",
+          "hours": "Mon-Fri: 7am-5pm, Sat-Sun: 8am-4pm",
+          "tel": null,
+          "email": null,
+          "googleMapsLink": null
+        }
+      ]
+    },
+    {
+      "name": "Thierry Chocolates",
+      "slug": "thierry-chocolates",
+      "dietaryOptions": {
+        "vegan": false,
+        "glutenFree": true,
+        "dairyFree": false
+      },
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": {
+        "website": "https://thierrychocolates.com",
+        "instagram": null,
+        "facebook": null
+      },
+      "locations": [
+        {
+          "address": "1059 Alberni Street, Vancouver, BC",
+          "neighbourhood": "Downtown Vancouver",
+          "hours": "Mon-Sun: 10am-6pm",
+          "tel": null,
+          "email": null,
+          "googleMapsLink": null
+        }
+      ]
+    },
+    {
+      "name": "Boketto Dessert Cafe",
+      "slug": "boketto-dessert-cafe",
+      "dietaryOptions": {
+        "vegan": true,
+        "glutenFree": false,
+        "dairyFree": true
+      },
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": {
+        "website": "https://bokettoteabar.com",
+        "instagram": null,
+        "facebook": null
+      },
+      "locations": [
+        {
+          "address": "3471 West Sawmill Crescent, Vancouver, BC",
+          "neighbourhood": "Mount Pleasant / East Vancouver",
+          "hours": "Mon-Thu: 11am-10pm, Fri-Sat: 11am-11pm, Sun: 11am-9pm",
+          "tel": null,
+          "email": null,
+          "googleMapsLink": null
+        }
+      ]
+    }
+  ],
+  "drinks": [
+    {
+      "id": "018",
+      "name": "Berry Sweet 16",
+      "availableDateStart": "2026-01-15",
+      "availableDateEnd": "2026-02-15",
+      "description": "Milk hot chocolate with almond praline and raspberry whipped cream. Served with a raspberry macaron.",
+      "flavourNotes": "milk chocolate, almond, raspberry",
+      "dietaryOptions": {
+        "vegan": false,
+        "glutenFree": false,
+        "dairyFree": false
+      },
+      "vendorName": "Bel Café"
+    },
+    {
+      "id": "019",
+      "name": "Cherry on Top",
+      "availableDateStart": "2026-01-15",
+      "availableDateEnd": "2026-02-15",
+      "description": "Dark hot chocolate with cherry syrup and rose whipped cream. Served with a cherry truffle.",
+      "flavourNotes": "dark chocolate, cherry, rose",
+      "dietaryOptions": {
+        "vegan": false,
+        "glutenFree": false,
+        "dairyFree": false
+      },
+      "vendorName": "Bel Café"
+    },
+    {
+      "id": "204",
+      "name": "Tonka Bean Temptation",
+      "availableDateStart": "2026-01-15",
+      "availableDateEnd": "2026-02-15",
+      "description": "A 45% milk hot chocolate with tonka bean, topped with whipped cream. Served with tonka almond nougatine and coffee eclair.",
+      "flavourNotes": "milk chocolate, tonka bean",
+      "dietaryOptions": {
+        "vegan": false,
+        "glutenFree": true,
+        "dairyFree": false
+      },
+      "vendorName": "Thierry Chocolates"
+    },
+    {
+      "id": "205",
+      "name": "Li Chu Legacy",
+      "availableDateStart": "2026-01-15",
+      "availableDateEnd": "2026-02-15",
+      "description": "A 64% Li Chu hot chocolate from Vietnam, topped with Chantilly cream and Wayanadan black pepper. On the side, we have an in-house option and a takeaway option. In-house, we're pairing this hot chocolate with Ugandan vanilla bean crème brulée. For takeout, a Ugandan vanilla bean milk chocolate bar.",
+      "flavourNotes": "dark chocolate, wayanadan black pepper",
+      "dietaryOptions": {
+        "vegan": false,
+        "glutenFree": true,
+        "dairyFree": false
+      },
+      "vendorName": "Thierry Chocolates"
+    },
+    {
+      "id": "029",
+      "name": "Postcards from Japan",
+      "availableDateStart": "2026-01-15",
+      "availableDateEnd": "2026-02-15",
+      "description": "A twist on our first year's submission, back by popular demand. Salted white Belgian hot chocolate with a bit of salted kinako powder (roasted soybean powder). Topped with toasted house-made marshmallow cream. Served with a liege mini mochi waffle stuffed with mochi, drizzled with white chocolate, and kinako powder.",
+      "flavourNotes": "white chocolate, kinako, salted",
+      "dietaryOptions": {
+        "vegan": true,
+        "glutenFree": false,
+        "dairyFree": true
+      },
+      "vendorName": "Boketto Dessert Cafe"
+    },
+    {
+      "id": "030",
+      "name": "Postcards from Belgium",
+      "availableDateStart": "2026-01-15",
+      "availableDateEnd": "2026-02-15",
+      "description": "A hot chocolate made with milk and semi-sweet Callebaut chocolate. Topped with our house-made toasted marshmallow cream. Topped with cookie butter and Biscoff cookie crumble. Paired with a warm mini liege waffle stuffed with mochi, topped with Biscoff cookie crumble and caramel.",
+      "flavourNotes": "semi-sweet chocolate, cookie butter, caramel",
+      "dietaryOptions": {
+        "vegan": false,
+        "glutenFree": false,
+        "dairyFree": false
+      },
+      "vendorName": "Boketto Dessert Cafe"
+    }
+  ]
+}
