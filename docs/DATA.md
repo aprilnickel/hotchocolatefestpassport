@@ -5,10 +5,16 @@
 - **Official festival site**: [hotchocolatefest.com](https://hotchocolatefest.com) lists participating vendors, locations, and their special hot chocolate drinks each year.
 - **This app** does not sync live with that site. Drink and vendor data is loaded via a **seed script** (or manual import) so the app works offline and you control when to refresh.
 
+## Scraped festival data (JSON)
+
+- **`festival-data.json`** at the project root contains scraped vendor and drink data from hotchocolatefest.com, suitable for importing into the database.
+- **Structure**: `vendors` (name, dietaryOptions, openLate, takeoutOnly, socialLinks, locations with address/neighbourhood/hours/tel/email/googleMapsLink) and `drinks` (id, name, availableDateStart, availableDateEnd, description, dietaryOptions, vendorName).
+- **To regenerate**: Run `pnpm exec tsx src/scripts/scrape-festival-data.ts` (requires network). The script fetches the vendor directory, each vendor page for locations and social links, and the list of flavours. Drink descriptions may be empty depending on the site’s HTML structure; you can fill them from the [List of Flavours](https://hotchocolatefest.com/list-of-flavours/) if needed.
+
 ## Current seed
 
 - **Placeholder data**: The seed script (`pnpm run db:seed`) loads a small set of example vendors and drinks defined in `src/scripts/seed.ts`. Use this for local development.
-- **Production**: For a real festival year, replace the placeholder arrays in `seed.ts` with data from the official site (manual copy, CSV, or a one-off scrape), or add a JSON/CSV file and update the seed to read from it.
+- **Production**: For a real festival year, use the scraped `festival-data.json` (see above) or replace the placeholder arrays in `seed.ts` with data from the official site. Update the seed to read from the JSON file if you use it.
 
 ## Re-seeding for a new festival year
 

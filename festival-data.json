@@ -1,0 +1,3815 @@
+{
+  "vendors": [
+    {
+      "name": "49th Parallel Café & Lucky’s Doughnuts",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/49th/",
+        "https://www.facebook.com/49thParallelRoasters/",
+        "https://www.instagram.com/luckysdoughnuts"
+      ],
+      "locations": [
+        {
+          "address": "2902 Main St., Vancouver",
+          "neighbourhood": "2902 Main St.",
+          "hours": "",
+          "tel": "604-872-4901",
+          "email": "main@49thparallelroasters.com",
+          "googleMapsLink": "https://goo.gl/maps/g1g6rbMtVfnrmmdM7"
+        },
+        {
+          "address": "",
+          "neighbourhood": "4th Ave",
+          "hours": "8 a.m. – 5 p.m., Daily",
+          "tel": "604-420-4901",
+          "email": "kits@49thparallelroasters.com",
+          "googleMapsLink": "https://goo.gl/maps/kZPZ9W7q2zgADG7W9"
+        },
+        {
+          "address": "",
+          "neighbourhood": "—",
+          "hours": "",
+          "tel": "604-620-4905",
+          "email": "thurlow@49thparallelroasters.com",
+          "googleMapsLink": "https://goo.gl/maps/fLTHQP7yHXWYgDJWA"
+        },
+        {
+          "address": "",
+          "neighbourhood": "Lonsdale",
+          "hours": "8 a.m. – 4 p.m., daily",
+          "tel": "236-477-5509",
+          "email": "northvan@49thparallelroasters.com",
+          "googleMapsLink": "https://goo.gl/maps/omZG6FTF5cHzNZrH9"
+        }
+      ]
+    },
+    {
+      "name": "À La Mode Pie Café",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/alamode_pie_cafe/",
+        "https://www.facebook.com/alamodepie",
+        "https://x.com/alamodepiecafe"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Aiyaohno Cafe",
+      "dietaryOptions": [
+        "vegan",
+        "gluten-free",
+        "dairy-free"
+      ],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/aiyaohno.cafe/"
+      ],
+      "locations": [
+        {
+          "address": "030 – 425 Carrall St, Vancouver",
+          "neighbourhood": "030 – 425 Carrall St",
+          "hours": "",
+          "tel": "604-652-7555",
+          "email": "info@aiyaohno.com",
+          "googleMapsLink": "https://goo.gl/maps/RfUStiMs2xuJZ26n6"
+        }
+      ]
+    },
+    {
+      "name": "Analog Coffee",
+      "dietaryOptions": [
+        "vegan",
+        "dairy-free"
+      ],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/analogcoffee.ca"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Artigiano",
+      "dietaryOptions": [],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/caffeartigiano/",
+        "https://www.facebook.com/caffeartigianoca/",
+        "https://www.instagram.com/artigianograndcafe/"
+      ],
+      "locations": [
+        {
+          "address": "",
+          "neighbourhood": "Artigiano Burnaby&nbsp;",
+          "hours": "",
+          "tel": "604-473-2180",
+          "email": "burnaby.artigiano@gmail.com",
+          "googleMapsLink": "https://goo.gl/maps/Hvc2RFgwpYUx8vDm9"
+        },
+        {
+          "address": "2378 Cambie St., Vancouver",
+          "neighbourhood": "Artigiano Cambie Village",
+          "hours": "",
+          "tel": "778-682-7969",
+          "email": "cambie.artigiano@gmail.com",
+          "googleMapsLink": "https://goo.gl/maps/SoewCFfmWMBS2Mq67"
+        },
+        {
+          "address": "2154 West 41st Ave., Vancouver",
+          "neighbourhood": "Artigiano in Departure Bay Ferry Terminal",
+          "hours": "",
+          "tel": "778-441-5404",
+          "email": "db.artigiano@gmail.com",
+          "googleMapsLink": "https://goo.gl/maps/6Y197g9fUraDjLnBA"
+        },
+        {
+          "address": "20020 84 Ave Unit A100, Langley Twp",
+          "neighbourhood": "Artigiano Langley",
+          "hours": "",
+          "tel": "672-968-4588",
+          "email": "langley.artigiano@gmail.com",
+          "googleMapsLink": "https://goo.gl/maps/eoQ6E8BqF6KtkN9s6"
+        },
+        {
+          "address": "",
+          "neighbourhood": "Artigiano Whistler",
+          "hours": "",
+          "tel": "778-962-1418",
+          "email": "whistler.artigiano@gmail.com",
+          "googleMapsLink": "https://goo.gl/maps/d4h8u8fEaGH9XQj66"
+        },
+        {
+          "address": "",
+          "neighbourhood": "Artigiano White Rock",
+          "hours": "",
+          "tel": "1-877-306-1624",
+          "email": "miramar.artigiano@gmail.com",
+          "googleMapsLink": "https://goo.gl/maps/U3S3TmZA1r2zSM437"
+        },
+        {
+          "address": "",
+          "neighbourhood": "Artigiano Phibbs Exchange",
+          "hours": "",
+          "tel": "N/A",
+          "email": "phibbs.artigiano@gmail.com",
+          "googleMapsLink": "https://goo.gl/maps/VhnYG19KBp151SfRA"
+        },
+        {
+          "address": "",
+          "neighbourhood": "Artigiano Hornby",
+          "hours": "",
+          "tel": "604-694-7737",
+          "email": "hornby.artigiano@gmail.com",
+          "googleMapsLink": "https://goo.gl/maps/1eWoXZTFWdfZVCvL6"
+        },
+        {
+          "address": "",
+          "neighbourhood": "Artigiano Howe &amp; Hastings",
+          "hours": "",
+          "tel": "778-681-0958",
+          "email": "artigiano.howe@gmail.com",
+          "googleMapsLink": "https://goo.gl/maps/4vMjy8DTykdbxD6X9"
+        },
+        {
+          "address": "1101 West Pender St., Vancouver",
+          "neighbourhood": "Artigiano Pender",
+          "hours": "",
+          "tel": "604-685-5333",
+          "email": "pender.artigiano@gmail.com",
+          "googleMapsLink": "https://goo.gl/maps/hk5bXsVQEo1ZFtSS8"
+        }
+      ]
+    },
+    {
+      "name": "AVIK",
+      "dietaryOptions": [
+        "gluten-free"
+      ],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/avikcafe",
+        "https://www.facebook.com/avikcafe"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Bak’d Cookies",
+      "dietaryOptions": [
+        "dairy-free"
+      ],
+      "openLate": true,
+      "takeoutOnly": true,
+      "socialLinks": [
+        "https://www.instagram.com/bakdcookies/",
+        "https://www.facebook.com/bakdcookies"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Beaucoup Bakery and Café",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/beaucoupbakery/",
+        "https://www.facebook.com/beaucoupbakery"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Bel Café",
+      "dietaryOptions": [
+        "gluten-free"
+      ],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/belcafeyvr/",
+        "https://www.facebook.com/BelCafe",
+        "https://twitter.com/Bel_Cafe"
+      ],
+      "locations": [
+        {
+          "address": "801 West Georgia St., Vancouver",
+          "neighbourhood": "801 West Georgia St.",
+          "hours": "7 a.m. to 5 p.m., Mon – Fri 8 a.m. to 4 p.m., Sat – Sun",
+          "tel": "",
+          "email": "info@belcafe.com",
+          "googleMapsLink": "https://goo.gl/maps/4eo9uysgTNh4sHYL6"
+        }
+      ]
+    },
+    {
+      "name": "Bella Gelateria",
+      "dietaryOptions": [
+        "vegan",
+        "gluten-free",
+        "dairy-free"
+      ],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/BellaGelateria"
+      ],
+      "locations": [
+        {
+          "address": "1752 Davie Street, Vancouver",
+          "neighbourhood": "1752 Davie Street",
+          "hours": "",
+          "tel": "",
+          "email": "",
+          "googleMapsLink": "https://goo.gl/maps/eSjr79cGWtgKQN398"
+        }
+      ]
+    },
+    {
+      "name": "Bellaggio Cafe",
+      "dietaryOptions": [],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/bellaggio.cafe/"
+      ],
+      "locations": [
+        {
+          "address": "",
+          "neighbourhood": "—",
+          "hours": "",
+          "tel": "604-408-1281",
+          "email": "info@bellaggio.cafe",
+          "googleMapsLink": "https://goo.gl/maps/LgLpDzz1sYB7MnVw9"
+        }
+      ]
+    },
+    {
+      "name": "BjornBar Bakery",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": true,
+      "socialLinks": [
+        "https://www.instagram.com/bjornbarbakery/",
+        "https://www.facebook.com/BjornBarBakery"
+      ],
+      "locations": [
+        {
+          "address": "111-581 Clarke Rd, Coquitlam",
+          "neighbourhood": "111-581 Clarke Rd",
+          "hours": "",
+          "tel": "",
+          "email": "",
+          "googleMapsLink": "https://goo.gl/maps/yekDFVJHDMLNiX7p8"
+        }
+      ]
+    },
+    {
+      "name": "Boba Run",
+      "dietaryOptions": [
+        "gluten-free"
+      ],
+      "openLate": true,
+      "takeoutOnly": true,
+      "socialLinks": [
+        "http://instagram.com/bobarunvancouver",
+        "https://www.facebook.com/profile.php?id=100063697583994",
+        "https://x.com/bobarunco"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Boketto Dessert Café",
+      "dietaryOptions": [],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/bokettodessertcafe/",
+        "https://www.facebook.com/BokettoTeaBar"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Bonus Bakery – NEW",
+      "dietaryOptions": [
+        "vegan",
+        "dairy-free"
+      ],
+      "openLate": false,
+      "takeoutOnly": true,
+      "socialLinks": [
+        "https://www.instagram.com/bonus.bakery"
+      ],
+      "locations": []
+    },
+    {
+      "name": "BROYÉ CAFÉ & BAKERY",
+      "dietaryOptions": [
+        "dairy-free"
+      ],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/broyecafe/",
+        "https://www.facebook.com/broyecafe/"
+      ],
+      "locations": [
+        {
+          "address": "6414 Fraser St., Vancouver",
+          "neighbourhood": "6414 Fraser St.",
+          "hours": "",
+          "tel": "",
+          "email": "",
+          "googleMapsLink": "https://goo.gl/maps/Kzsq1BhuHLjB7DgL9"
+        }
+      ]
+    },
+    {
+      "name": "Bunny Cafe (The)",
+      "dietaryOptions": [
+        "vegan",
+        "gluten-free",
+        "dairy-free"
+      ],
+      "openLate": true,
+      "takeoutOnly": true,
+      "socialLinks": [
+        "https://www.instagram.com/bunnycafevancouver",
+        "https://www.facebook.com/bunnycafevancouver",
+        "https://x.com/@bunnycafe_van"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Butter Baked Goods",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/butterbakedgoods/"
+      ],
+      "locations": [
+        {
+          "address": "4907 Mackenzie St., Vancouver",
+          "neighbourhood": "4907 Mackenzie St.",
+          "hours": "",
+          "tel": "604-221-4333",
+          "email": "info@butterbakedgoods.com",
+          "googleMapsLink": "https://goo.gl/maps/WKBRc4SieoW8rLfc6"
+        }
+      ]
+    },
+    {
+      "name": "C Market Coffee",
+      "dietaryOptions": [],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/cmarket_coffee/",
+        "https://www.facebook.com/cmarketcoffee"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Cadeaux Bakery",
+      "dietaryOptions": [
+        "vegan",
+        "dairy-free"
+      ],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/cadeauxbakery/"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Caffe Delish – NEW",
+      "dietaryOptions": [
+        "vegan",
+        "gluten-free",
+        "dairy-free"
+      ],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/caffedelish/",
+        "https://www.facebook.com/delishglutenfreebakery"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Cannoli King",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/cannolikingvancouver/",
+        "https://www.facebook.com/profile.php?id=100063615429238"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Cassandra Cake Co.",
+      "dietaryOptions": [
+        "gluten-free"
+      ],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/cassandracakeco/",
+        "https://www.facebook.com/cassandracakeco"
+      ],
+      "locations": [
+        {
+          "address": "105 – 2331 Marpole Ave, Port Coquitlam",
+          "neighbourhood": "105 – 2331 Marpole Ave",
+          "hours": "",
+          "tel": "778-285-2253",
+          "email": "info@cassandracakeco.com",
+          "googleMapsLink": "https://goo.gl/maps/vxCdYbSR2ZTudVjA8"
+        }
+      ]
+    },
+    {
+      "name": "Catch 122 x Dilemma – NEW",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/catch122/",
+        "https://www.instagram.com/dilemmabycatch"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Catfe – NEW",
+      "dietaryOptions": [
+        "vegan",
+        "dairy-free"
+      ],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/catfe_vancouver/",
+        "https://www.facebook.com/catfe"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Cathy’s Cafe (Grandmama’s Cafe) – NEW",
+      "dietaryOptions": [
+        "gluten-free"
+      ],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/cathys.cafe"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Charisma Social Club House",
+      "dietaryOptions": [
+        "vegan",
+        "dairy-free"
+      ],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/cafecharisma/",
+        "https://www.facebook.com/CafeCharisma"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Chez Christophe Chocolaterie Patisserie",
+      "dietaryOptions": [
+        "gluten-free"
+      ],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/chezchristophe/",
+        "https://www.facebook.com/ChezChristopheChocolaterie"
+      ],
+      "locations": [
+        {
+          "address": "",
+          "neighbourhood": "—",
+          "hours": "",
+          "tel": "604-385-4474",
+          "email": "",
+          "googleMapsLink": "https://goo.gl/maps/jCu71VhAnaxHCFQF6"
+        }
+      ]
+    },
+    {
+      "name": "Chez nous Bakery and Coffee – NEW",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": true,
+      "socialLinks": [
+        "https://www.instagram.com/cheznous.bakery/",
+        "https://www.facebook.com/people/Chez-nous-Bakery-Coffee/61568124280186/"
+      ],
+      "locations": []
+    },
+    {
+      "name": "CHOCOLATS FAVORIS – NEW",
+      "dietaryOptions": [],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/chocolatsfavoris_bc"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Crema Ice Cream – NEW",
+      "dietaryOptions": [
+        "gluten-free"
+      ],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/cremaicecream/",
+        "https://www.facebook.com/cremaicecreamco/"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Crème de la Crumb – NEW",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/cremedelacrumb/",
+        "https://www.facebook.com/cremedelacrumb"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Di Beppe – NEW",
+      "dietaryOptions": [
+        "gluten-free"
+      ],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/dibepperestaurant"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Doughgirls Comfort Kitchen & Bakeshop",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/doughgirlsbakeshop/",
+        "https://www.facebook.com/people/Doughgirls-Comfort-Kitchen-Bakeshop/100041901079619/"
+      ],
+      "locations": [
+        {
+          "address": "",
+          "neighbourhood": "—",
+          "hours": "",
+          "tel": "",
+          "email": "",
+          "googleMapsLink": "https://goo.gl/maps/MwsU8pELoRkzpxaM8"
+        }
+      ]
+    },
+    {
+      "name": "Doughnut Love",
+      "dietaryOptions": [
+        "vegan",
+        "gluten-free",
+        "dairy-free"
+      ],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/doughnutlove.ca/"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Drunken Chocolatier",
+      "dietaryOptions": [
+        "vegan",
+        "gluten-free",
+        "dairy-free"
+      ],
+      "openLate": false,
+      "takeoutOnly": true,
+      "socialLinks": [
+        "https://www.instagram.com/drunkenchocolatier/"
+      ],
+      "locations": [
+        {
+          "address": "108 – 223 W. Broadway, Vancouver",
+          "neighbourhood": "108 – 223 W. Broadway",
+          "hours": "",
+          "tel": "",
+          "email": "info@drunkenchocolatier.com",
+          "googleMapsLink": "https://goo.gl/maps/KUAbSZyKVTSRxUxV6"
+        }
+      ]
+    },
+    {
+      "name": "East Van Roasters",
+      "dietaryOptions": [
+        "vegan",
+        "gluten-free",
+        "dairy-free"
+      ],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/eastvanroasters/",
+        "https://www.facebook.com/EastVanRoasters",
+        "https://x.com/Eastvanroasters"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Eternal Abundance",
+      "dietaryOptions": [
+        "vegan",
+        "gluten-free",
+        "dairy-free"
+      ],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/eternalabundance/",
+        "https://www.facebook.com/EternalAbundanceVancouver"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Faubourg Paris",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/faubourgbakery/"
+      ],
+      "locations": [
+        {
+          "address": "",
+          "neighbourhood": "—",
+          "hours": "",
+          "tel": "604-266-2156",
+          "email": "kerrisdale@faubourg.com",
+          "googleMapsLink": "https://goo.gl/maps/yRGJ6ZCyQsTjLdNV8"
+        },
+        {
+          "address": "",
+          "neighbourhood": "—",
+          "hours": "",
+          "tel": "604-267-0769",
+          "email": "hornby@faubourg.com",
+          "googleMapsLink": "https://goo.gl/maps/KkgQv9qztc2aUvRe9"
+        },
+        {
+          "address": "302 Davie St., Vancouver",
+          "neighbourhood": "302 Davie St.",
+          "hours": "",
+          "tel": "604-423-4611",
+          "email": "yaletown@faubourg.com",
+          "googleMapsLink": "https://goo.gl/maps/z1Hr1iUaRRZyYayYA"
+        }
+      ]
+    },
+    {
+      "name": "Federal Store (The)",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/federalstorevan"
+      ],
+      "locations": [
+        {
+          "address": "2601 Quebec St., Vancouver",
+          "neighbourhood": "2601 Quebec St.",
+          "hours": "",
+          "tel": "778-379-2605",
+          "email": "info@federalstore.ca",
+          "googleMapsLink": "https://goo.gl/maps/YgAEdf4sFFMHqfFD6"
+        }
+      ]
+    },
+    {
+      "name": "Fife Bakery",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/fifebakery/"
+      ],
+      "locations": [
+        {
+          "address": "64 East 3rd Ave., Vancouver",
+          "neighbourhood": "64 East 3rd Ave.",
+          "hours": "",
+          "tel": "604-336-0652",
+          "email": "info@fifebakery.com",
+          "googleMapsLink": "https://goo.gl/maps/zS6KmMP2cwcZ2VXVA"
+        }
+      ]
+    },
+    {
+      "name": "Flying Whale Waterfront Café – NEW",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/flyingwhalecafe"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Fufú Café",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/fufupancakecafe/",
+        "https://www.facebook.com/fufupancakecafe/"
+      ],
+      "locations": [
+        {
+          "address": "1266 West Broadway, Vancouver",
+          "neighbourhood": "1266 West Broadway",
+          "hours": "",
+          "tel": "604-734-2818",
+          "email": "fufusouffle@gmail.com",
+          "googleMapsLink": "https://goo.gl/maps/6ywKJrGj6JUYq5xH7"
+        }
+      ]
+    },
+    {
+      "name": "Gem Chocolates",
+      "dietaryOptions": [
+        "gluten-free"
+      ],
+      "openLate": false,
+      "takeoutOnly": true,
+      "socialLinks": [
+        "https://www.instagram.com/gemchocolates",
+        "https://www.facebook.com/GemChocolates"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Giovane Caffe",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/giovanecaffe/"
+      ],
+      "locations": [
+        {
+          "address": "",
+          "neighbourhood": "—",
+          "hours": "",
+          "tel": "604-687-9887",
+          "email": "cordova@giovanecaffe.com",
+          "googleMapsLink": "https://goo.gl/maps/me6Ag2z1Yy62BH6q9"
+        },
+        {
+          "address": "418 W. Georgia St.",
+          "neighbourhood": "418 W. Georgia St.",
+          "hours": "",
+          "tel": "604-428-8033",
+          "email": "georgia@giovanecaffe.com",
+          "googleMapsLink": "https://goo.gl/maps/vTZeKpm9Z2HNsP8U8"
+        }
+      ]
+    },
+    {
+      "name": "Glenburn Soda Fountain",
+      "dietaryOptions": [
+        "gluten-free"
+      ],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/glenburnsoda/",
+        "https://www.facebook.com/glenburnsoda"
+      ],
+      "locations": []
+    },
+    {
+      "name": "GOOD Chocolatier (The)",
+      "dietaryOptions": [
+        "vegan",
+        "gluten-free",
+        "dairy-free"
+      ],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/thegoodchocolatier/",
+        "https://www.facebook.com/TheGOODChocolatier/"
+      ],
+      "locations": [
+        {
+          "address": "1978 W Broadway, Vancouver",
+          "neighbourhood": "1978 W Broadway",
+          "hours": "",
+          "tel": "604-256-5560",
+          "email": "mara@thegoodchocolatier.com",
+          "googleMapsLink": "https://goo.gl/maps/31iZU7qwLJo67WM2A"
+        }
+      ]
+    },
+    {
+      "name": "Guffo Café",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/guffo.cafe/"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Hanoi Drip Coffee – NEW",
+      "dietaryOptions": [],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/hanoidrip.coffee",
+        "https://www.facebook.com/hanoidrip.coffee"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Honolulu Coffee",
+      "dietaryOptions": [],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/honolulucoffeeyvr",
+        "https://www.facebook.com/honolulucoffeeyvr/"
+      ],
+      "locations": [
+        {
+          "address": "2098 West 41st Ave., Vancouver",
+          "neighbourhood": "2098 West 41st Ave.",
+          "hours": "",
+          "tel": "604-620-2168",
+          "email": "kerrisdale@honolulucoffee.ca",
+          "googleMapsLink": "https://goo.gl/maps/NL6sfG5aRguWYBc8A"
+        },
+        {
+          "address": "888 Nelson St., Vancouver",
+          "neighbourhood": "888 Nelson St.",
+          "hours": "",
+          "tel": "778-379-6607",
+          "email": "nelson@honolulucoffee.ca",
+          "googleMapsLink": "https://goo.gl/maps/Vv4icoQcATgncLkNA"
+        },
+        {
+          "address": "97 West 2nd Ave., Vancouver",
+          "neighbourhood": "97 West 2nd Ave.",
+          "hours": "",
+          "tel": "604-620-1616",
+          "email": "falsecreek@honolulucoffee.ca",
+          "googleMapsLink": "https://goo.gl/maps/r157qQsse4DFpJWi9"
+        }
+      ]
+    },
+    {
+      "name": "Jack’s Spot – NEW",
+      "dietaryOptions": [
+        "gluten-free",
+        "dairy-free"
+      ],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/jacks__spot"
+      ],
+      "locations": []
+    },
+    {
+      "name": "JJ Bakes Company – NEW",
+      "dietaryOptions": [],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/jjbakescompany",
+        "https://www.facebook.com/jjbakescompany"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Kafka’s Coffee, Great Northern Way",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/kafkascoffeetea/"
+      ],
+      "locations": [
+        {
+          "address": "",
+          "neighbourhood": "—",
+          "hours": "",
+          "tel": "604-829-2220",
+          "email": "marcela@kafkascoffee.ca",
+          "googleMapsLink": "https://goo.gl/maps/9o7ZpssV4DNgkUmn6"
+        }
+      ]
+    },
+    {
+      "name": "Kafkas The Park",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/kafkascoffee.thepark"
+      ],
+      "locations": [
+        {
+          "address": "",
+          "neighbourhood": "—",
+          "hours": "",
+          "tel": "604-782-0648",
+          "email": "jen@kafkascoffee.ca",
+          "googleMapsLink": "https://goo.gl/maps/XSKqo9sW462DWRs36"
+        }
+      ]
+    },
+    {
+      "name": "Kasama Chocolate",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": true,
+      "socialLinks": [
+        "https://www.instagram.com/kasamachocolate/",
+        "https://www.facebook.com/kasamachocolate"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Killer Ice Cream",
+      "dietaryOptions": [],
+      "openLate": true,
+      "takeoutOnly": true,
+      "socialLinks": [
+        "https://www.instagram.com/killer.icecream.kitsilano/",
+        "https://www.facebook.com/p/Killer-Ice-Cream-61555655104843/"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Koko Monk Hot Chocolate Lounge",
+      "dietaryOptions": [
+        "vegan",
+        "gluten-free",
+        "dairy-free"
+      ],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/mykokomonk",
+        "https://www.facebook.com/mykokomonk/"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Kranky Cafe – NEW",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": true,
+      "socialLinks": [
+        "https://www.instagram.com/krankycafe"
+      ],
+      "locations": []
+    },
+    {
+      "name": "L’Atelier Patisserie",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/l_atelier_patisserie/"
+      ],
+      "locations": []
+    },
+    {
+      "name": "L’Orangerie Restaurant by L’Hermitage Hotel – NEW",
+      "dietaryOptions": [
+        "vegan",
+        "gluten-free",
+        "dairy-free"
+      ],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/lhermitagehotelvancouver",
+        "https://www.facebook.com/LHermitageHotel"
+      ],
+      "locations": []
+    },
+    {
+      "name": "La Saison De Patisserie",
+      "dietaryOptions": [],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/lasaisondepatisserie/",
+        "https://www.facebook.com/people/La-Saison-de-Patisserie/100046858042233/"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Ladurée",
+      "dietaryOptions": [
+        "gluten-free"
+      ],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/ladureecanada/",
+        "https://www.facebook.com/LadureeCanada/"
+      ],
+      "locations": [
+        {
+          "address": "1141 Robson St., Vancouver",
+          "neighbourhood": "1141 Robson St.",
+          "hours": "",
+          "tel": "604-336-3030",
+          "email": "info@ladureecanada.ca",
+          "googleMapsLink": "https://goo.gl/maps/5P8fvNWaMNd5iYoM9"
+        }
+      ]
+    },
+    {
+      "name": "Little Pisces",
+      "dietaryOptions": [],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/eatlittlepisces/"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Mah Milk Bar",
+      "dietaryOptions": [
+        "vegan",
+        "gluten-free",
+        "dairy-free"
+      ],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/mah.milkbar/"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Melt Confectionary",
+      "dietaryOptions": [
+        "vegan",
+        "gluten-free",
+        "dairy-free"
+      ],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/meltconfectionary/"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Mercato di Luigi",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/mercatodiluigi/"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Mink Chocolates Cafe",
+      "dietaryOptions": [],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/minkchocolates/"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Mister Artisan Ice Cream – NEW",
+      "dietaryOptions": [],
+      "openLate": true,
+      "takeoutOnly": true,
+      "socialLinks": [
+        "https://www.instagram.com/madebymister/",
+        "https://www.facebook.com/madebymister"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Modus Coffee Roasters",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/moduscoffee/",
+        "https://www.facebook.com/ModusCoffee/"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Mon Paris Patisserie",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/monparis.ca/"
+      ],
+      "locations": [
+        {
+          "address": "4396 Beresford St., Burnaby",
+          "neighbourhood": "4396 Beresford St.",
+          "hours": "",
+          "tel": "604-564-5665",
+          "email": "",
+          "googleMapsLink": "https://goo.gl/maps/wxZkJ1bP722U3v797"
+        }
+      ]
+    },
+    {
+      "name": "Motoretta Gelato",
+      "dietaryOptions": [
+        "vegan",
+        "dairy-free"
+      ],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/motorettagelato/"
+      ],
+      "locations": [
+        {
+          "address": "1001 W Cordova St., Vancouver",
+          "neighbourhood": "1001 W Cordova St.",
+          "hours": "",
+          "tel": "604-423-9424",
+          "email": "info@motorettagelato.com",
+          "googleMapsLink": "https://goo.gl/maps/emTkPuJrnoGZmhUF9"
+        }
+      ]
+    },
+    {
+      "name": "Nelson the Seagull Cafe",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/nelsontheseagull/",
+        "https://www.facebook.com/nelsontheseagull/"
+      ],
+      "locations": [
+        {
+          "address": "315 Carrall St., Vancouver",
+          "neighbourhood": "315 Carrall St.",
+          "hours": "",
+          "tel": "604-681-5776",
+          "email": "info@nelsontheseagull.com",
+          "googleMapsLink": "https://goo.gl/maps/87GgD7VWdU7vD41t5"
+        }
+      ]
+    },
+    {
+      "name": "NOMAD Coffee & Bakery – NEW",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/nomad.yvr/",
+        "https://www.facebook.com/profile.php?id=100083015184736"
+      ],
+      "locations": []
+    },
+    {
+      "name": "NUTTEA",
+      "dietaryOptions": [
+        "vegan",
+        "gluten-free",
+        "dairy-free"
+      ],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/nuttea_canada/",
+        "https://www.facebook.com/NUTTEA.CA"
+      ],
+      "locations": []
+    },
+    {
+      "name": "ONDA & Gelato by James – NEW",
+      "dietaryOptions": [],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/ondayvr"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Oohlala Donuts – NEW",
+      "dietaryOptions": [
+        "dairy-free"
+      ],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/oohlaladonuts"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Patina Brewing Co. Brewhouse & BBQ",
+      "dietaryOptions": [
+        "gluten-free"
+      ],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/patinabrewing",
+        "https://www.facebook.com/PatinaBrewing",
+        "https://x.com/@PATINABREWING"
+      ],
+      "locations": []
+    },
+    {
+      "name": "PAUL Bakery, Café and Restaurant",
+      "dietaryOptions": [],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/paulcanada_bc/",
+        "https://www.facebook.com/PAULCANADA.BC"
+      ],
+      "locations": [
+        {
+          "address": "1164 Robson St., Vancouver",
+          "neighbourhood": "1164 Robson St.",
+          "hours": "",
+          "tel": "",
+          "email": "",
+          "googleMapsLink": "https://goo.gl/maps/joNKXtxwqtrQSpFo8"
+        }
+      ]
+    },
+    {
+      "name": "Peaked Pies – Australian Bakery Cafe",
+      "dietaryOptions": [],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/peakedpies/",
+        "https://www.facebook.com/PeakedPies"
+      ],
+      "locations": [
+        {
+          "address": "975 Denman St., Vancouver",
+          "neighbourhood": "975 Denman St.",
+          "hours": "",
+          "tel": "",
+          "email": "",
+          "googleMapsLink": "https://goo.gl/maps/2PEjV87tc77ATeiD6"
+        },
+        {
+          "address": "732 West Broadway, Vancouver",
+          "neighbourhood": "732 West Broadway",
+          "hours": "",
+          "tel": "604-336-0406",
+          "email": "",
+          "googleMapsLink": "https://goo.gl/maps/yygo4SrJWYjg4abS8"
+        }
+      ]
+    },
+    {
+      "name": "Pie Hole (The)",
+      "dietaryOptions": [],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/thepiehole",
+        "https://www.facebook.com/ThePieHoleVan"
+      ],
+      "locations": [
+        {
+          "address": "2959 W. Broadway, Vancouver",
+          "neighbourhood": "2959 W. Broadway",
+          "hours": "",
+          "tel": "604-563-1000",
+          "email": "kits@thepiehole.com",
+          "googleMapsLink": "https://goo.gl/maps/MByarBPC6RsBvHNH8"
+        }
+      ]
+    },
+    {
+      "name": "Provisions Kitsilano – NEW",
+      "dietaryOptions": [],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/provisionskitsilano/",
+        "https://www.facebook.com/p/Provisions-Kitsilano-61576241093556/"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Purebread",
+      "dietaryOptions": [],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/purebread_canada",
+        "https://www.facebook.com/purebread.canada"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Rocanini Coffee Roasters Yaletown – NEW",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/rocanini_yaletown",
+        "https://www.facebook.com/rocaniniYT"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Rocky Mtn Chocolate Canada – NEW",
+      "dietaryOptions": [],
+      "openLate": true,
+      "takeoutOnly": true,
+      "socialLinks": [
+        "https://www.instagram.com/rockychoccanada/",
+        "https://www.facebook.com/RockychocCanada"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Slo Coffee Fraser – NEW",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/slocoffee_",
+        "https://www.facebook.com/slocoffeeyvr"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Super Veloce",
+      "dietaryOptions": [
+        "vegan",
+        "dairy-free"
+      ],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/caffesuperveloce/"
+      ],
+      "locations": [
+        {
+          "address": "",
+          "neighbourhood": "—",
+          "hours": "",
+          "tel": "604-566-1661",
+          "email": "info@caffesuperveloce.com",
+          "googleMapsLink": "https://goo.gl/maps/GRoXaoLjV1heWBoh8"
+        }
+      ]
+    },
+    {
+      "name": "SWEET7 – NEW",
+      "dietaryOptions": [],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/sweet7ca/",
+        "https://www.facebook.com/SweetSevenCanada"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Tartine Bread & Pies",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/tartinebreadnpies/"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Temper Pastry",
+      "dietaryOptions": [
+        "gluten-free"
+      ],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/temperpastry/",
+        "https://www.facebook.com/TemperPastry"
+      ],
+      "locations": [
+        {
+          "address": "2409 Marine Drive, West Vancouver",
+          "neighbourhood": "2409 Marine Drive",
+          "hours": "",
+          "tel": "604-281-1152",
+          "email": "info@temperpastry.com",
+          "googleMapsLink": "https://goo.gl/maps/JF1uNoou7rWh7JhX7"
+        }
+      ]
+    },
+    {
+      "name": "Thierry Chocolates",
+      "dietaryOptions": [],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/thierrychocolat/",
+        "https://www.facebook.com/ThierryChocolat",
+        "https://x.com/thierrychocolat"
+      ],
+      "locations": [
+        {
+          "address": "1059 Alberni St., Vancouver",
+          "neighbourhood": "Thierry Alberni (Downtown)",
+          "hours": "",
+          "tel": "604-608-6870",
+          "email": "",
+          "googleMapsLink": "https://goo.gl/maps/qPWMkGgmXokWNQaGA"
+        }
+      ]
+    },
+    {
+      "name": "Thomas Haas Chocolates",
+      "dietaryOptions": [
+        "gluten-free"
+      ],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/thaaschocolates/",
+        "https://www.facebook.com/thaaschocolates"
+      ],
+      "locations": [
+        {
+          "address": "",
+          "neighbourhood": "—",
+          "hours": "",
+          "tel": "",
+          "email": "",
+          "googleMapsLink": "https://goo.gl/maps/QAxYJfLKV1uREpc36"
+        },
+        {
+          "address": "2539 West Broadway, Vancouver",
+          "neighbourhood": "Kitsilano",
+          "hours": "",
+          "tel": "604-736-1848",
+          "email": "",
+          "googleMapsLink": "https://goo.gl/maps/PuL9EDWP3zpHRiRY6"
+        }
+      ]
+    },
+    {
+      "name": "To Live For Bakery & Cafe",
+      "dietaryOptions": [
+        "vegan",
+        "dairy-free"
+      ],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/tolivefor.bakery/",
+        "https://www.facebook.com/toliveforbakery"
+      ],
+      "locations": []
+    },
+    {
+      "name": "TrafiQ Café & Bakery",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/trafiqmain/"
+      ],
+      "locations": [
+        {
+          "address": "4216 Main St., Vancouver",
+          "neighbourhood": "4216 Main St.",
+          "hours": "",
+          "tel": "604-648-2244",
+          "email": "orders@trafiq.ca",
+          "googleMapsLink": "https://goo.gl/maps/1rTYgMPo7q7LGN3U9"
+        }
+      ]
+    },
+    {
+      "name": "Union Market",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/unionmarketyvr/"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Uno Gelato",
+      "dietaryOptions": [
+        "vegan",
+        "gluten-free",
+        "dairy-free"
+      ],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/unogelatoyvr/",
+        "https://www.facebook.com/unogelato.yvr"
+      ],
+      "locations": [
+        {
+          "address": "2579 West Broadway, Vancouver",
+          "neighbourhood": "2579 West Broadway",
+          "hours": "",
+          "tel": "604-733-5884",
+          "email": "info@unogelato.com",
+          "googleMapsLink": "https://goo.gl/maps/iCaxcojR5UdxUfqk6"
+        }
+      ]
+    },
+    {
+      "name": "Uprising Breads Bakery",
+      "dietaryOptions": [],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/uprisingbreadsbakery/",
+        "https://www.facebook.com/uprisingbreads"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Vancouver Aquarium",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/vanaqua/",
+        "https://www.facebook.com/vanaqua",
+        "https://x.com/vanaqua"
+      ],
+      "locations": [
+        {
+          "address": "845 Avison Way, Vancouver",
+          "neighbourhood": "845 Avison Way",
+          "hours": "",
+          "tel": "604-659-3400",
+          "email": "guestexperience@vanaqua.org",
+          "googleMapsLink": "https://goo.gl/maps/zwBfMSsvVDGGGLFBA"
+        }
+      ]
+    },
+    {
+      "name": "Vancouver International Airport (YVR) – NEW",
+      "dietaryOptions": [],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/fairmontvancouverairport/",
+        "https://www.instagram.com/snbonthefly",
+        "https://www.instagram.com/paperplanescafe",
+        "https://www.instagram.com/paragontearoom",
+        "https://www.instagram.com/yvrairport"
+      ],
+      "locations": []
+    },
+    {
+      "name": "Viva Cafe and Bakery",
+      "dietaryOptions": [
+        "dairy-free"
+      ],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/vivacafebakery/"
+      ],
+      "locations": [
+        {
+          "address": "1555 Yew Street, Vancouver",
+          "neighbourhood": "1555 Yew Street",
+          "hours": "",
+          "tel": "604-738-8482",
+          "email": "kits@vivacafe.ca",
+          "googleMapsLink": "https://goo.gl/maps/PgsAXfCV3H16cSP28"
+        }
+      ]
+    },
+    {
+      "name": "Whisk Matcha x Level V",
+      "dietaryOptions": [
+        "vegan",
+        "gluten-free",
+        "dairy-free"
+      ],
+      "openLate": false,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/whiskmatchayvr/",
+        "https://www.facebook.com/whiskmatcha"
+      ],
+      "locations": []
+    },
+    {
+      "name": "YUM SWEET SHOP – NEW",
+      "dietaryOptions": [
+        "gluten-free",
+        "dairy-free"
+      ],
+      "openLate": true,
+      "takeoutOnly": false,
+      "socialLinks": [
+        "https://www.instagram.com/yumsweetshop",
+        "http://x.com/@yumsweetshop"
+      ],
+      "locations": []
+    }
+  ],
+  "drinks": [
+    {
+      "id": "#001",
+      "name": "#001 – Campfire Cocoa",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-29",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "49th Parallel Café & Lucky’s Doughnuts"
+    },
+    {
+      "id": "#002",
+      "name": "#002 – Raspberry Zing Cocoa",
+      "availableDateStart": "2026-01-30",
+      "availableDateEnd": "2026-02-12",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "49th Parallel Café & Lucky’s Doughnuts"
+    },
+    {
+      "id": "#003",
+      "name": "#003 – Angel on Cloud 9",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-29",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "À La Mode Pie Café"
+    },
+    {
+      "id": "#004",
+      "name": "#004 – Brie My Swiss Valentine",
+      "availableDateStart": "2026-01-30",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "À La Mode Pie Café"
+    },
+    {
+      "id": "#005",
+      "name": "#005 – Chiikawa Mogumogu Matcha",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Aiyaohno Cafe"
+    },
+    {
+      "id": "#006",
+      "name": "#006 – Keeping Warm Under the Kotatsu",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Aiyaohno Cafe"
+    },
+    {
+      "id": "#007",
+      "name": "#007 – Miso Moon",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-31",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Analog Coffee"
+    },
+    {
+      "id": "#008",
+      "name": "#008 – Pom Noir",
+      "availableDateStart": "2026-02-01",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Analog Coffee"
+    },
+    {
+      "id": "#009",
+      "name": "#009 – Butterscotch Budino Hot Chocolate",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Artigiano"
+    },
+    {
+      "id": "#010",
+      "name": "#010 – Love Potion Hot Chocolate",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Artigiano"
+    },
+    {
+      "id": "#011",
+      "name": "#011 – Dark Sesame Choccy",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "AVIK"
+    },
+    {
+      "id": "#012",
+      "name": "#012 – White Mocha Snow",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "AVIK"
+    },
+    {
+      "id": "#013",
+      "name": "#013 – Bak’d Birthday Brownie",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Bak’d Cookies"
+    },
+    {
+      "id": "#014",
+      "name": "#014 – Straw-Berry Sweet 16",
+      "availableDateStart": "2025-01-18",
+      "availableDateEnd": "2025-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Bak’d Cookies"
+    },
+    {
+      "id": "#015",
+      "name": "#015 – Cereal Dream FM",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-27",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Beaucoup Bakery and Café"
+    },
+    {
+      "id": "#016",
+      "name": "#016 – Waffle.exe",
+      "availableDateStart": "2026-01-28",
+      "availableDateEnd": "2026-02-07",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Beaucoup Bakery and Café"
+    },
+    {
+      "id": "#017",
+      "name": "#017 – Snack Pack Pudding Break",
+      "availableDateStart": "2026-02-08",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Beaucoup Bakery and Café"
+    },
+    {
+      "id": "#018",
+      "name": "#018 – Berry Sweet 16",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-30",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Bel Café"
+    },
+    {
+      "id": "#019",
+      "name": "#019 – Cherry on Top",
+      "availableDateStart": "2026-01-31",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Bel Café"
+    },
+    {
+      "id": "#020",
+      "name": "#020 – The IGP Emerald",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Bella Gelateria"
+    },
+    {
+      "id": "#021",
+      "name": "#021 – The Piedmont Promise",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Bella Gelateria"
+    },
+    {
+      "id": "#022",
+      "name": "#022 – 16 Karat Kiss",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Bellaggio Cafe"
+    },
+    {
+      "id": "#023",
+      "name": "#023 – Cherry Blossom Crumble",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Bellaggio Cafe"
+    },
+    {
+      "id": "#024",
+      "name": "#024 – Crush at First Sip",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Bellaggio Cafe"
+    },
+    {
+      "id": "#025",
+      "name": "#025 – The Nordic Malt",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-31",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "BjornBar Bakery"
+    },
+    {
+      "id": "#026",
+      "name": "#026 – Hygge in a Mug",
+      "availableDateStart": "2026-02-01",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "BjornBar Bakery"
+    },
+    {
+      "id": "#027",
+      "name": "#027 – Sweet 16 Party",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-01",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Boba Run"
+    },
+    {
+      "id": "#028",
+      "name": "#028 – Coco Boba Katsu",
+      "availableDateStart": "2026-02-02",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Boba Run"
+    },
+    {
+      "id": "#029",
+      "name": "#029 – Postcards from Japan",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-31",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Boketto Dessert Café"
+    },
+    {
+      "id": "#030",
+      "name": "#030 – Postcards from Belgium",
+      "availableDateStart": "2026-02-01",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Boketto Dessert Café"
+    },
+    {
+      "id": "#031",
+      "name": "#031 – What Dream Are Made Of",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Bonus Bakery"
+    },
+    {
+      "id": "#032",
+      "name": "#032 – Chick’n and Waffle. And Hot Chocolate!",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Bonus Bakery"
+    },
+    {
+      "id": "#033",
+      "name": "#033 – Saigon After Dark – Pho Spice 2.0",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "BROYÉ CAFÉ & BAKERY"
+    },
+    {
+      "id": "#034",
+      "name": "#034 – Echo of Light",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "BROYÉ CAFÉ & BAKERY"
+    },
+    {
+      "id": "#035",
+      "name": "#035 – Roasted Silence",
+      "availableDateStart": "2026-01-31",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "BROYÉ CAFÉ & BAKERY"
+    },
+    {
+      "id": "#036",
+      "name": "#036 – Hopping in a Minter Bunderland",
+      "availableDateStart": "2025-01-17",
+      "availableDateEnd": "2025-01-30",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "The Bunny Cafe"
+    },
+    {
+      "id": "#037",
+      "name": "#037 – Ears of Corn",
+      "availableDateStart": "2026-01-31",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "The Bunny Cafe"
+    },
+    {
+      "id": "#038",
+      "name": "#038 – Kardashamon Season 16",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Butter Baked Goods"
+    },
+    {
+      "id": "#039",
+      "name": "#039 – Hot Girl Butter",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Butter Baked Goods"
+    },
+    {
+      "id": "#040",
+      "name": "#040 – Lil’ Choc",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Butter Baked Goods"
+    },
+    {
+      "id": "#041",
+      "name": "#041 – Umami Socolate",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "C Market Coffee"
+    },
+    {
+      "id": "#042",
+      "name": "#042 – Injeolmi White Chocolate",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "C Market Coffee"
+    },
+    {
+      "id": "#043",
+      "name": "#043 – Fame",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-31",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Cadeaux Bakery"
+    },
+    {
+      "id": "#044",
+      "name": "#044 – Fortune",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-31",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Cadeaux Bakery"
+    },
+    {
+      "id": "#045",
+      "name": "#045 – I Choose You!",
+      "availableDateStart": "2026-02-03",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Cadeaux Bakery"
+    },
+    {
+      "id": "#046",
+      "name": "#046 – For Good",
+      "availableDateStart": "2026-02-03",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Cadeaux Bakery"
+    },
+    {
+      "id": "#047",
+      "name": "#047 – The Fluffernutter Hot Chocolate",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-31",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Caffe Delish"
+    },
+    {
+      "id": "#048",
+      "name": "#048 – Classic Nanaimo Bar Hot Chocolate",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-31",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Caffe Delish"
+    },
+    {
+      "id": "#049",
+      "name": "#049 – Confetti Cake Hot Chocolate",
+      "availableDateStart": "2026-02-01",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Caffe Delish"
+    },
+    {
+      "id": "#050",
+      "name": "#050 – Milk Chocolate Almond Mocha",
+      "availableDateStart": "2026-02-01",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Caffe Delish"
+    },
+    {
+      "id": "#051",
+      "name": "#051 – Dolce Latte",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-31",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Cannoli King"
+    },
+    {
+      "id": "#052",
+      "name": "#052 – Black Forest Delight",
+      "availableDateStart": "2026-02-01",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Cannoli King"
+    },
+    {
+      "id": "#053",
+      "name": "#053 – Strawberry Snuggle Jelly Cat Hot Chocolate",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-01",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Cassandra Cake Co."
+    },
+    {
+      "id": "#054",
+      "name": "#054 – Food Network Fav!",
+      "availableDateStart": "2026-02-03",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Cassandra Cake Co."
+    },
+    {
+      "id": "#055",
+      "name": "#055 – Chicago Cinema Duo",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-30",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Catch 122 x Dilemma"
+    },
+    {
+      "id": "#056",
+      "name": "#056 – Tea Time in Paris",
+      "availableDateStart": "2026-01-31",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Catch 122 x Dilemma"
+    },
+    {
+      "id": "#057",
+      "name": "#057 – Garfield in Paradise",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-30",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Catfe"
+    },
+    {
+      "id": "#058",
+      "name": "#058 – Le Chat Noir",
+      "availableDateStart": "2026-01-31",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Catfe"
+    },
+    {
+      "id": "#059",
+      "name": "#059 – Chrysanthe-YUM",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Cathy’s Cafe"
+    },
+    {
+      "id": "#060",
+      "name": "#060 – The Bergamot Butterfly",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Cathy’s Cafe"
+    },
+    {
+      "id": "#061",
+      "name": "#061 – Midnight Kiss",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Charisma Social Club House"
+    },
+    {
+      "id": "#062",
+      "name": "#062 – Morning Whisper",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Charisma Social Club House"
+    },
+    {
+      "id": "#063",
+      "name": "#063 – Christophe Super Regno",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-30",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Chez Christophe Chocolaterie Patisserie"
+    },
+    {
+      "id": "#064",
+      "name": "#064 – Shark Attack",
+      "availableDateStart": "2026-01-31",
+      "availableDateEnd": "2026-02-12",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Chez Christophe Chocolaterie Patisserie"
+    },
+    {
+      "id": "#065",
+      "name": "#065 – Paris Brest",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-31",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Chez nous Bakery and Coffee"
+    },
+    {
+      "id": "#066",
+      "name": "#066 – Un Crrrrrrrrroissant s’il vous plait !",
+      "availableDateStart": "2026-02-01",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Chez nous Bakery and Coffee"
+    },
+    {
+      "id": "#067",
+      "name": "#067 – Red Velvet Kooky Hot Chocolate",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "CHOCOLATS FAVORIS"
+    },
+    {
+      "id": "#068",
+      "name": "#068 – Maple Butter Kooky Hot Chocolate",
+      "availableDateStart": "2026-02-01",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "CHOCOLATS FAVORIS"
+    },
+    {
+      "id": "#069",
+      "name": "#069 – Midnight Mochi Horchata",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Crema Ice Cream"
+    },
+    {
+      "id": "#070",
+      "name": "#070 – The Chocoflan Dream",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Crema Ice Cream"
+    },
+    {
+      "id": "#071",
+      "name": "#071 – Hot Chocolate Affagato",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Crema Ice Cream"
+    },
+    {
+      "id": "#072",
+      "name": "#072 – Cherry Bomb",
+      "availableDateStart": "2026-01-19",
+      "availableDateEnd": "2026-02-13",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Crème de la Crumb"
+    },
+    {
+      "id": "#073",
+      "name": "#073 – The After-School Special",
+      "availableDateStart": "2026-01-19",
+      "availableDateEnd": "2026-02-13",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Crème de la Crumb"
+    },
+    {
+      "id": "#074",
+      "name": "#074 – Negroni Caldo",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-01",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Di Beppe"
+    },
+    {
+      "id": "#075",
+      "name": "#075 – Spice Road to Rome",
+      "availableDateStart": "2026-02-01",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Di Beppe"
+    },
+    {
+      "id": "#076",
+      "name": "#076 – It’s a Canadian Thing!",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-31",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Doughgirls Comfort Kitchen & Bakeshop"
+    },
+    {
+      "id": "#077",
+      "name": "#077 – It’s an Italian Thing!",
+      "availableDateStart": "2026-02-01",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Doughgirls Comfort Kitchen & Bakeshop"
+    },
+    {
+      "id": "#078",
+      "name": "#078 – Velvet Vibes",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-31",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Doughnut Love"
+    },
+    {
+      "id": "#079",
+      "name": "#079 – Sticky Business – Sticky Toffee Pudding",
+      "availableDateStart": "2025-02-01",
+      "availableDateEnd": "2025-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Doughnut Love"
+    },
+    {
+      "id": "#080",
+      "name": "#080 – This Is Not Matcha (But Better, Toasty, and Still Green)",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-31",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Drunken Chocolatier"
+    },
+    {
+      "id": "#081",
+      "name": "#081 – If Hong Kong Milk Tea Had a Hot Chocolate",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-31",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Drunken Chocolatier"
+    },
+    {
+      "id": "#082",
+      "name": "#082 – I Feel a Chill Coming On",
+      "availableDateStart": "2026-02-01",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Drunken Chocolatier"
+    },
+    {
+      "id": "#083",
+      "name": "#083 – Black Black Heart",
+      "availableDateStart": "2026-02-01",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Drunken Chocolatier"
+    },
+    {
+      "id": "#084",
+      "name": "#084 – Holy Smokes!",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "East Van Roasters"
+    },
+    {
+      "id": "#085",
+      "name": "#085 – Zest Intentions",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "East Van Roasters"
+    },
+    {
+      "id": "#086",
+      "name": "#086 – Exotic Bramble",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-30",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Eternal Abundance"
+    },
+    {
+      "id": "#087",
+      "name": "#087 – Sweet Green Duo",
+      "availableDateStart": "2025-02-01",
+      "availableDateEnd": "2025-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Eternal Abundance"
+    },
+    {
+      "id": "#088",
+      "name": "#088 – Tira-Mess-Su",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Faubourg Paris"
+    },
+    {
+      "id": "#089",
+      "name": "#089 – EggQuisite Cocoa",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Faubourg Paris"
+    },
+    {
+      "id": "#090",
+      "name": "#090 – Smokey Rose",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "The Federal Store"
+    },
+    {
+      "id": "#091",
+      "name": "#091 – Lulu’s Hot Chocolate",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "The Federal Store"
+    },
+    {
+      "id": "#092",
+      "name": "#092 – Willy Tonka",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-29",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "The Federal Store"
+    },
+    {
+      "id": "#093",
+      "name": "#093 – Mother Tree",
+      "availableDateStart": "2026-01-30",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "The Federal Store"
+    },
+    {
+      "id": "#094",
+      "name": "#094 – Hong Kong Classics: Sweet Almond Tea (白朱古力杏仁茶)",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-01",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Fife Bakery"
+    },
+    {
+      "id": "#095",
+      "name": "#095 – Hong Kong Classics: Mango Pudding (芒果布丁奶朱古力)",
+      "availableDateStart": "2026-02-02",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Fife Bakery"
+    },
+    {
+      "id": "#096",
+      "name": "#096 – The Gilded Gaggle",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-30",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Flying Whale Waterfront Café"
+    },
+    {
+      "id": "#097",
+      "name": "#097 – Icelandic Molten Mocha",
+      "availableDateStart": "2026-01-31",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Flying Whale Waterfront Café"
+    },
+    {
+      "id": "#098",
+      "name": "#098 – Choconana",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Fufú Café"
+    },
+    {
+      "id": "#099",
+      "name": "#099 – Yuzu Hoji Forest",
+      "availableDateStart": "2026-01-27",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Fufú Café"
+    },
+    {
+      "id": "#100",
+      "name": "#100 – Pop Rocks Demon Hunter Hot Chocolate",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Gem Chocolates"
+    },
+    {
+      "id": "#101",
+      "name": "#101 – Mexican Diablo Hot Chocolate",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Gem Chocolates"
+    },
+    {
+      "id": "#102",
+      "name": "#102 – Exotic Durian White Hot Chocolate",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Gem Chocolates"
+    },
+    {
+      "id": "#103",
+      "name": "#103 – Sogno Fiorito",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Giovane Caffe"
+    },
+    {
+      "id": "#104",
+      "name": "#104 – Bacio di Zenzero",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Giovane Caffe"
+    },
+    {
+      "id": "#105",
+      "name": "#105 – Big Bang Brownie",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-30",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Glenburn Soda Fountain"
+    },
+    {
+      "id": "#106",
+      "name": "#106 – Snap, Crackle, Cocoa",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-30",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Glenburn Soda Fountain"
+    },
+    {
+      "id": "#107",
+      "name": "#107 – When Figs Fly",
+      "availableDateStart": "2026-01-31",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Glenburn Soda Fountain"
+    },
+    {
+      "id": "#108",
+      "name": "#108 – Ready Teddy",
+      "availableDateStart": "2026-01-31",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Glenburn Soda Fountain"
+    },
+    {
+      "id": "#109",
+      "name": "#109 – The Story of Gianduja – A Taste of Italian Magic",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "The GOOD Chocolatier"
+    },
+    {
+      "id": "#110",
+      "name": "#110 – Prairie to Plate – Saskatoon Berry Juniper",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-01",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "The GOOD Chocolatier"
+    },
+    {
+      "id": "#111",
+      "name": "#111 – A Yuzu Passion Fruit Staycation",
+      "availableDateStart": "2026-02-04",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "The GOOD Chocolatier"
+    },
+    {
+      "id": "#112",
+      "name": "#112 – Saffron Rose Hot Chocolate",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Guffo Café"
+    },
+    {
+      "id": "#113",
+      "name": "#113 – Butterfly Pea White Hot Chocolate",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Guffo Café"
+    },
+    {
+      "id": "#114",
+      "name": "#114 – Ube Everything",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Hanoi Drip Coffee"
+    },
+    {
+      "id": "#115",
+      "name": "#115 – Sesame Please",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Hanoi Drip Coffee"
+    },
+    {
+      "id": "#116",
+      "name": "#116 – Shall We Dip?",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Honolulu Coffee"
+    },
+    {
+      "id": "#117",
+      "name": "#117 – What’s the Plot?",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Honolulu Coffee"
+    },
+    {
+      "id": "#118",
+      "name": "#118 – Jack goes to the Woods",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Jack’s Spot"
+    },
+    {
+      "id": "#119",
+      "name": "#119 – Jack and Doraemon",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Jack’s Spot"
+    },
+    {
+      "id": "#120",
+      "name": "#120 – That Flan-tastic Purple Yam",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "JJ Bakes Company"
+    },
+    {
+      "id": "#121",
+      "name": "#121 – Tiki Torched Brûlée Bliss",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "JJ Bakes Company"
+    },
+    {
+      "id": "#122",
+      "name": "#122 – Pistachio Rose Velvet",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Kafka’s Coffee, Great Northern Way"
+    },
+    {
+      "id": "#123",
+      "name": "#123 – Hot-Choc-Nana",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Kafka’s Coffee, Great Northern Way"
+    },
+    {
+      "id": "#124",
+      "name": "#124 – Wednesday’s Mood",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Kafkas The Park"
+    },
+    {
+      "id": "#125",
+      "name": "#125 – Enid’s Coconut Cloud",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Kafkas The Park"
+    },
+    {
+      "id": "#126",
+      "name": "#126 – Kyoto Cherry Rose",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Kasama Chocolate"
+    },
+    {
+      "id": "#127",
+      "name": "#127 – Champu-Champo",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Kasama Chocolate"
+    },
+    {
+      "id": "#128",
+      "name": "#128 – Velvet Blackberry Ember",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Killer Ice Cream"
+    },
+    {
+      "id": "#129",
+      "name": "#129 – Sapphire Strawberry Fog",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Killer Ice Cream"
+    },
+    {
+      "id": "#130",
+      "name": "#130 – The Mystery Flotilla",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-26",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Koko Monk Hot Chocolate Lounge"
+    },
+    {
+      "id": "#131",
+      "name": "#131 – Midnight Snow",
+      "availableDateStart": "2026-01-27",
+      "availableDateEnd": "2026-02-07",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Koko Monk Hot Chocolate Lounge"
+    },
+    {
+      "id": "#132",
+      "name": "#132 – A Non-conformist’s Plea for an Imaginary Summer",
+      "availableDateStart": "2026-02-07",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Koko Monk Hot Chocolate Lounge"
+    },
+    {
+      "id": "#133",
+      "name": "#133 – The Golden Ticket",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Kranky Cafe"
+    },
+    {
+      "id": "#134",
+      "name": "#134 – Wonka Whirl",
+      "availableDateStart": "2026-01-30",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Kranky Cafe"
+    },
+    {
+      "id": "#135",
+      "name": "#135 – Retired Gingerbread Man",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "L’Atelier Patisserie"
+    },
+    {
+      "id": "#136",
+      "name": "#136 – Her Majesty Choco- Saint-Honoré",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "L’Atelier Patisserie"
+    },
+    {
+      "id": "#137",
+      "name": "#137 – Dark Indulgence",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "L’Orangerie Restaurant by L’Hermitage Hotel"
+    },
+    {
+      "id": "#138",
+      "name": "#138 – White Velvet (Vegan)",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "L’Orangerie Restaurant by L’Hermitage Hotel"
+    },
+    {
+      "id": "#139",
+      "name": "#139 – Lavender Dream",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "L’Orangerie Restaurant by L’Hermitage Hotel"
+    },
+    {
+      "id": "#140",
+      "name": "#140 – Pink Phase",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "La Saison De Patisserie"
+    },
+    {
+      "id": "#141",
+      "name": "#141 – Grounded in Kyoto",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "La Saison De Patisserie"
+    },
+    {
+      "id": "#142",
+      "name": "#142 – Chocolat Épicé",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Ladurée"
+    },
+    {
+      "id": "#143",
+      "name": "#143 – Nuage Rose",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Ladurée"
+    },
+    {
+      "id": "#144",
+      "name": "#144 – L’Amandine & Fleur D’Oranger",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Ladurée"
+    },
+    {
+      "id": "#145",
+      "name": "#145 – Bunny Butt White Rabbit Hot Chocolate",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Little Pisces"
+    },
+    {
+      "id": "#146",
+      "name": "#146 – Get That Banana Bread Hot Chocolate",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Little Pisces"
+    },
+    {
+      "id": "#147",
+      "name": "#147 – Pina Cocoalada Hot Chocolate",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Little Pisces"
+    },
+    {
+      "id": "#148",
+      "name": "#148 – Mary Had A Little Lamington",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-03",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Mah Milk Bar"
+    },
+    {
+      "id": "#149",
+      "name": "#149 – Carrot Got Ya Tongue",
+      "availableDateStart": "2026-01-31",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Mah Milk Bar"
+    },
+    {
+      "id": "#150",
+      "name": "#150 – Jasmine Blossom",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Melt Confectionary"
+    },
+    {
+      "id": "#151",
+      "name": "#151 – Malt, Stout & Bailey",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Melt Confectionary"
+    },
+    {
+      "id": "#152",
+      "name": "#152 – It’s The Vegans’ Turn! (Cookie Butter)",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Melt Confectionary"
+    },
+    {
+      "id": "#153",
+      "name": "#153 – Enzo Gorlomi",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Mercato di Luigi"
+    },
+    {
+      "id": "#154",
+      "name": "#154 – Fragnocci",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Mercato di Luigi"
+    },
+    {
+      "id": "#155",
+      "name": "#155 – Holy Cocoa, Rosemary!",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Mink Chocolates"
+    },
+    {
+      "id": "#156",
+      "name": "#156 – Chai Me Crazy",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Mink Chocolates"
+    },
+    {
+      "id": "#157",
+      "name": "#157 – London Snow",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Mister Artisan Ice Cream"
+    },
+    {
+      "id": "#158",
+      "name": "#158 – Purple Dinosaur",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Mister Artisan Ice Cream"
+    },
+    {
+      "id": "#159",
+      "name": "#159 – Rummy Banoffee Toffee",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-31",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Modus Coffee Roasters"
+    },
+    {
+      "id": "#160",
+      "name": "#160 – Champorado Cocoa Meets Crispy Biko",
+      "availableDateStart": "2026-02-01",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Modus Coffee Roasters"
+    },
+    {
+      "id": "#161",
+      "name": "#161 – Dubai Chocolate our Way",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-13",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Mon Paris Patisserie"
+    },
+    {
+      "id": "#162",
+      "name": "#162 – Proudly Canadian",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-13",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Mon Paris Patisserie"
+    },
+    {
+      "id": "#163",
+      "name": "#163 – An Italian Lost in Mexico",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Motoretta Gelato"
+    },
+    {
+      "id": "#164",
+      "name": "#164 – Fig Me Up!",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Motoretta Gelato"
+    },
+    {
+      "id": "#165",
+      "name": "#165 – “Butter Me Up” Hot Chocolate",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Nelson the Seagull Cafe"
+    },
+    {
+      "id": "#166",
+      "name": "#166 – “Hot Date” Hot Chocolate",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Nelson the Seagull Cafe"
+    },
+    {
+      "id": "#167",
+      "name": "#167 – Strawberry Gochujang Hot Choco",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "NOMAD Coffee & Bakery"
+    },
+    {
+      "id": "#168",
+      "name": "#168 – Shine Muscat Hot Choco",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "NOMAD Coffee & Bakery"
+    },
+    {
+      "id": "#169",
+      "name": "#169 – Oriental Bloom Hot Chocolate (Chrysanthemum Dark Hot Chocolate)",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "NUTTEA"
+    },
+    {
+      "id": "#170",
+      "name": "#170 – Blueberry Cloud Cocoa",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "NUTTEA"
+    },
+    {
+      "id": "#171",
+      "name": "#171 – Hojicha’s Lover",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "ONDA & Gelato by James"
+    },
+    {
+      "id": "#172",
+      "name": "#172 – Grand Flame",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "ONDA & Gelato by James"
+    },
+    {
+      "id": "#173",
+      "name": "#173 – Go Nuts!",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "ONDA & Gelato by James"
+    },
+    {
+      "id": "#174",
+      "name": "#174 – Diablo Biscotti and Chocolate Elixir",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Oohlala Donuts"
+    },
+    {
+      "id": "#175",
+      "name": "#175 – Très Leche White Hot Chocolate with Caramel Foam Whip",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Oohlala Donuts"
+    },
+    {
+      "id": "#176",
+      "name": "#176 – Chai White Hot Chocolate",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-30",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Patina Brewing Co. Brew House & BBQ"
+    },
+    {
+      "id": "#177",
+      "name": "#177 – Chocolate Caliente with Horchata Cerveza",
+      "availableDateStart": "2026-01-31",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Patina Brewing Co. Brew House & BBQ"
+    },
+    {
+      "id": "#178",
+      "name": "#178 – The Show Stopper",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "PAUL Bakery, Café and Restaurant"
+    },
+    {
+      "id": "#179",
+      "name": "#179 – The Tour de Paris",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "PAUL Bakery, Café and Restaurant"
+    },
+    {
+      "id": "#180",
+      "name": "#180 – White Winter Dream",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "PAUL Bakery, Café and Restaurant"
+    },
+    {
+      "id": "#181",
+      "name": "#181 – Tiramisu Affogato Royal",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "PAUL Bakery, Café and Restaurant"
+    },
+    {
+      "id": "#182",
+      "name": "#182 – The Best Birthdays have Fairy Bread",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Peaked Pies – Australian Bakery Cafe"
+    },
+    {
+      "id": "#183",
+      "name": "#183 – A Sticky Situation",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Peaked Pies – Australian Bakery Cafe"
+    },
+    {
+      "id": "#184",
+      "name": "#184 – Koko-Nutty Krabby Klassic",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "The Pie Hole"
+    },
+    {
+      "id": "#185",
+      "name": "#185 – Ruby Reef Starfish Special",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "The Pie Hole"
+    },
+    {
+      "id": "#186",
+      "name": "#186 – Horchata Inferno",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-28",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Provisions Kitsilano"
+    },
+    {
+      "id": "#187",
+      "name": "#187 – Silk Road Sip",
+      "availableDateStart": "2026-01-29",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Provisions Kitsilano"
+    },
+    {
+      "id": "#188",
+      "name": "#188 – Sweet n’ Cinnful",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-30",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Purebread"
+    },
+    {
+      "id": "#189",
+      "name": "#189 – Nuts for You!",
+      "availableDateStart": "2026-01-31",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Purebread"
+    },
+    {
+      "id": "#190",
+      "name": "#190 – RohliCzech",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-30",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Rocanini Coffee Roasters Yaletown"
+    },
+    {
+      "id": "#191",
+      "name": "#191 – Dark Current",
+      "availableDateStart": "2026-01-31",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Rocanini Coffee Roasters Yaletown"
+    },
+    {
+      "id": "#192",
+      "name": "#192 – The Big (Caramel) Apple Cocoa",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-28",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Rocky Mtn Chocolate Canada"
+    },
+    {
+      "id": "#193",
+      "name": "#193 – The Cookie Butter Club",
+      "availableDateStart": "2026-01-29",
+      "availableDateEnd": "2026-02-10",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Rocky Mtn Chocolate Canada"
+    },
+    {
+      "id": "#194",
+      "name": "#194 – Pandan Paradise Duo",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Slo Coffee Fraser"
+    },
+    {
+      "id": "#195",
+      "name": "#195 – Mighty Thai Tea",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Slo Coffee Fraser"
+    },
+    {
+      "id": "#196",
+      "name": "#196 – Fico e Timo",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Super Veloce"
+    },
+    {
+      "id": "#197",
+      "name": "#197 – Frutti di Bosco",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Super Veloce"
+    },
+    {
+      "id": "#198",
+      "name": "#198 – Toasty Caramel Oolong Hot Chocolate",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "SWEET7"
+    },
+    {
+      "id": "#199",
+      "name": "#199 – Cheesy UBE Boba Hot Chocolate",
+      "availableDateStart": "2026-02-01",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "SWEET7"
+    },
+    {
+      "id": "#200",
+      "name": "#200 – Meringue My Day",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Tartine Bread & Pies"
+    },
+    {
+      "id": "#201",
+      "name": "#201 – Berry Good Time",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Tartine Bread & Pies"
+    },
+    {
+      "id": "#202",
+      "name": "#202 – The Royal Mess",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Temper Pastry"
+    },
+    {
+      "id": "#203",
+      "name": "#203 – Prohibition",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Temper Pastry"
+    },
+    {
+      "id": "#204",
+      "name": "#204 – Tonka Bean Temptation",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-31",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Thierry Chocolates"
+    },
+    {
+      "id": "#205",
+      "name": "#205 – Li Chu Legacy",
+      "availableDateStart": "2026-02-01",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Thierry Chocolates"
+    },
+    {
+      "id": "#206",
+      "name": "#206 – Maple Me Crazy!",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-30",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Thomas Haas Chocolates"
+    },
+    {
+      "id": "#207",
+      "name": "#207 – Apple-y Ever After",
+      "availableDateStart": "2025-01-31",
+      "availableDateEnd": "2025-02-12",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Thomas Haas Chocolates"
+    },
+    {
+      "id": "#208",
+      "name": "#208 – Potato Chip Crunch",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-30",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "To Live For Bakery & Cafe"
+    },
+    {
+      "id": "#209",
+      "name": "#209 – Choca-Cherry Cola",
+      "availableDateStart": "2026-01-31",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "To Live For Bakery & Cafe"
+    },
+    {
+      "id": "#210",
+      "name": "#210 – Heavenly Heat",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-25",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "TrafiQ Café & Bakery"
+    },
+    {
+      "id": "#211",
+      "name": "#211 – Kinako Sky",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-25",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "TrafiQ Café & Bakery"
+    },
+    {
+      "id": "#212",
+      "name": "#212 – Cereal Daydream",
+      "availableDateStart": "2026-01-27",
+      "availableDateEnd": "2026-02-01",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "TrafiQ Café & Bakery"
+    },
+    {
+      "id": "#213",
+      "name": "#213 – Strawberry Clouds",
+      "availableDateStart": "2026-01-27",
+      "availableDateEnd": "2026-02-01",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "TrafiQ Café & Bakery"
+    },
+    {
+      "id": "#214",
+      "name": "#214 – Campfire Crush",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-30",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Union Market"
+    },
+    {
+      "id": "#215",
+      "name": "#215 – Fireside Cream",
+      "availableDateStart": "2026-01-31",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Union Market"
+    },
+    {
+      "id": "#216",
+      "name": "#216 – Red Velvet Affair",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Uno Gelato"
+    },
+    {
+      "id": "#217",
+      "name": "#217 – Golden Whispers",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Uno Gelato"
+    },
+    {
+      "id": "#218",
+      "name": "#218 – La Dolce Notte",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Uno Gelato"
+    },
+    {
+      "id": "#219",
+      "name": "#219 – What the Fudge (Cherry Edition)",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-31",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Uprising Breads Bakery"
+    },
+    {
+      "id": "#220",
+      "name": "#220 – The White Key Lime Whisper",
+      "availableDateStart": "2026-02-01",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Uprising Breads Bakery"
+    },
+    {
+      "id": "#221",
+      "name": "#221 – Hot-Ch-Ocotopus",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Vancouver Aquarium"
+    },
+    {
+      "id": "#222",
+      "name": "#222 – Finding Cocoa",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Vancouver Aquarium"
+    },
+    {
+      "id": "#223",
+      "name": "#223 – Red Fortune Hot Chocolate",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Vancouver International Airport (YVR)"
+    },
+    {
+      "id": "#224",
+      "name": "#224 – Glampfire Sweetgrass Hot Chocolate with a HYPE Huckleberry S’more",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Vancouver International Airport (YVR)"
+    },
+    {
+      "id": "#225",
+      "name": "#225 – Elderflower Noir Cocoa",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Vancouver International Airport (YVR)"
+    },
+    {
+      "id": "#226",
+      "name": "#226 – Mocha & Morsel",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Vancouver International Airport (YVR)"
+    },
+    {
+      "id": "#227",
+      "name": "#227 – Matcha Moonlight",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Vancouver International Airport (YVR)"
+    },
+    {
+      "id": "#228",
+      "name": "#228 – Big MAC",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-01-31",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Viva Cafe and Bakery"
+    },
+    {
+      "id": "#229",
+      "name": "#229 – S’morsgasbord",
+      "availableDateStart": "2026-02-01",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Viva Cafe and Bakery"
+    },
+    {
+      "id": "#230",
+      "name": "#230 – Umaji-mura – The Yuzu Forest",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-01",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Whisk Matcha x Level V"
+    },
+    {
+      "id": "#231",
+      "name": "#231 – Hojicha Murasaki",
+      "availableDateStart": "2026-02-01",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "Whisk Matcha x Level V"
+    },
+    {
+      "id": "#232",
+      "name": "#232 – Lost Love Raspberrilicious Hot Chocolate Affogato",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "YUM SWEET SHOP"
+    },
+    {
+      "id": "#233",
+      "name": "#233 – Hot Cocoa-Lanche",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "YUM SWEET SHOP"
+    },
+    {
+      "id": "#234",
+      "name": "#234 – Cinna-Da-Bom Sticky Bun Hot Cocoa",
+      "availableDateStart": "2026-01-17",
+      "availableDateEnd": "2026-02-14",
+      "description": "",
+      "dietaryOptions": "",
+      "vendorName": "YUM SWEET SHOP"
+    }
+  ],
+  "scrapedAt": "2026-02-11T01:04:46.411Z"
+}
