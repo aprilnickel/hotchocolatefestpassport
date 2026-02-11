@@ -97,6 +97,7 @@ async function scrapeFestivalData(): Promise<FestivalData> {
 
 /**
  * Helper function to create a URL-friendly slug from a name
+ * This will be used when parsing vendor/drink names from the HTML
  */
 function slugify(text: string): string {
   return text
