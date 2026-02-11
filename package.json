@@ -12,6 +12,7 @@
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
     "db:seed": "tsx src/scripts/seed.ts",
+    "db:seed:json": "tsx src/scripts/seed-from-json.ts",
     "scrape:festival": "tsx src/scripts/scrape-festival.ts"
   },
   "dependencies": {

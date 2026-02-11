@@ -17,12 +17,17 @@ Companion web app for the Vancouver Hot Chocolate Festival. Browse drinks, maint
 - `pnpm run db:generate` — Generate Drizzle migrations
 - `pnpm run db:push` — Push schema to DB (dev)
 - `pnpm run db:migrate` — Run migrations
-- `pnpm run db:seed` — Seed vendors and drinks
+- `pnpm run db:seed` — Seed vendors and drinks (placeholder data)
+- `pnpm run db:seed:json` — Seed from `data/festival-data.json`
 - `pnpm run db:studio` — Drizzle Studio
+- `pnpm run scrape:festival` — Scrape hotchocolatefest.com to JSON
 
 ## Festival data
 
-See [docs/DATA.md](docs/DATA.md) for where drink/vendor data comes from and how to re-seed for new festival years.
+The app includes festival vendor and drink data. See [docs/DATA.md](docs/DATA.md) for details on:
+- Where drink/vendor data comes from
+- How to scrape data from hotchocolatefest.com to JSON
+- How to re-seed for new festival years
 
 ## Deployment (Vercel)
 
