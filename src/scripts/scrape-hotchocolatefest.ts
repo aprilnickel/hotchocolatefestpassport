@@ -1,5 +1,7 @@
 import "dotenv/config";
 import { randomUUID } from "crypto";
+import { mkdir, writeFile } from "fs/promises";
+import path from "path";
 
 const BASE_URL = "https://hotchocolatefest.com";
 const LIST_OF_FLAVOURS_SLUG = "list-of-flavours";
@@ -7,11 +9,29 @@ const USER_AGENT = "HotChocolateFestScraper/1.0 (+https://hotchocolatefest.com)"
 const REQUEST_DELAY_MS = 150;
 const VENDOR_CONCURRENCY = 4;
 
-const args = new Set(process.argv.slice(2));
+const argList = process.argv.slice(2);
+const args = new Set(argList);
 const APPLY = args.has("--apply");
 const REPLACE = args.has("--replace");
 const PRUNE = args.has("--prune");
 const SHOW_HELP = args.has("--help") || args.has("-h");
+const DEFAULT_OUTPUT_PATH = "data/hotchocolatefest-scrape.json";
+
+function getArgValue(flag: string): string | null {
+  const match = argList.find((arg) => arg === flag || arg.startsWith(`${flag}=`));
+  if (!match) return null;
+  if (match.startsWith(`${flag}=`)) {
+    return match.slice(flag.length + 1);
+  }
+  const flagIndex = argList.indexOf(match);
+  const nextValue = argList[flagIndex + 1];
+  if (!nextValue || nextValue.startsWith("-")) {
+    throw new Error(`Missing value for ${flag}`);
+  }
+  return nextValue;
+}
+
+const OUTPUT_PATH = getArgValue("--output") ?? DEFAULT_OUTPUT_PATH;
 
 if ((REPLACE || PRUNE) && !APPLY) {
   throw new Error("--replace/--prune requires --apply");
@@ -53,6 +73,17 @@ type ScrapedDrink = {
 };
 
 type ScrapeResult = {
+  vendors: ScrapedVendor[];
+  drinks: ScrapedDrink[];
+};
+
+type ScrapeOutput = {
+  scrapedAt: string;
+  source: {
+    site: string;
+    listOfFlavoursUrl: string;
+    vendorsApiUrl: string;
+  };
   vendors: ScrapedVendor[];
   drinks: ScrapedDrink[];
 };
@@ -659,8 +690,27 @@ async function applyToDatabase(result: ScrapeResult) {
   console.log("Import complete.");
 }
 
+async function writeOutputFile(outputPath: string, result: ScrapeResult) {
+  const resolvedPath = path.resolve(process.cwd(), outputPath);
+  await mkdir(path.dirname(resolvedPath), { recursive: true });
+
+  const payload: ScrapeOutput = {
+    scrapedAt: SCRAPE_TIMESTAMP,
+    source: {
+      site: BASE_URL,
+      listOfFlavoursUrl: `${BASE_URL}/${LIST_OF_FLAVOURS_SLUG}/`,
+      vendorsApiUrl: `${BASE_URL}/wp-json/wp/v2/vendors`,
+    },
+    vendors: result.vendors,
+    drinks: result.drinks,
+  };
+
+  await writeFile(resolvedPath, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
+  console.log(`Saved scrape output to ${resolvedPath}`);
+}
+
 function printHelp() {
-  console.log(`\nHot Chocolate Festival scraper\n\nUsage:\n  pnpm run db:scrape\n  pnpm run db:scrape -- --apply\n\nOptions:\n  --apply    Write scraped data to the database\n  --replace  Clear vendors/drinks before import (requires --apply)\n  --prune    Remove drinks not present in the scrape (requires --apply)\n  --help     Show this help message\n`);
+  console.log(`\nHot Chocolate Festival scraper\n\nUsage:\n  pnpm run db:scrape\n  pnpm run db:scrape -- --apply\n\nOptions:\n  --apply    Write scraped data to the database\n  --replace  Clear vendors/drinks before import (requires --apply)\n  --prune    Remove drinks not present in the scrape (requires --apply)\n  --output   Write JSON output to a custom file path\n  --help     Show this help message\n`);
 }
 
 async function main() {
@@ -675,6 +725,7 @@ async function main() {
   console.log(
     `Scrape complete: ${result.vendors.length} vendors, ${result.drinks.length} drinks`
   );
+  await writeOutputFile(OUTPUT_PATH, result);
 
   if (!APPLY) {
     console.log("Dry run only. Pass --apply to write to the database.");

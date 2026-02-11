@@ -26,6 +26,13 @@ By default the script runs in dry-run mode and does not write to the database.
 pnpm run db:scrape
 ```
 
+The script writes a JSON snapshot to `data/hotchocolatefest-scrape.json` by default.
+Use `--output` to change the path:
+
+```
+pnpm run db:scrape -- --output data/snapshots/fest.json
+```
+
 ### Apply to the database
 
 ```
