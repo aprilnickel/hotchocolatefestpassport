@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
+import posthog from "posthog-js";
 
 export default function DrinksError({
   error,
@@ -12,6 +13,7 @@ export default function DrinksError({
 }) {
   useEffect(() => {
     console.error(error);
+    posthog.captureException(error);
   }, [error]);
 
   return (
