@@ -28,3 +28,4 @@
 
 - If changes are made to the Caddyfile (`/etc/caddy/Caddyfile`), must reload the caddy service: `sudo systemctl reload caddy`
 - If exposing new ports, must allow through firewall: `sudo ufw allow <port>`
+- If new environment variables are added, must add them to `/srv/hotchocolatefestpassport/.env` on the server before running `docker compose up -d app`
