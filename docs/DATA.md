@@ -24,7 +24,7 @@
    - If you use the same script for the new year’s data, make sure the script is idempotent or that you’ve cleared old rows first.
 
 3. **User data**
-   - Wishlist and sipped data are per user and are not removed by re-seeding. Only `vendors` and `drinks` are replaced/updated by the seed. If a drink or vendor is removed, existing wishlist/sipped rows may reference deleted IDs; the schema uses `ON DELETE CASCADE` for drink/vendor so removing a drink removes its wishlist/sipped rows.
+   - Wishlist and journal data are per user and are not removed by re-seeding. Only `vendors` and `drinks` are replaced/updated by the seed. If a drink or vendor is removed, existing wishlist/journal rows may reference deleted IDs; the schema uses `ON DELETE CASCADE` for drink/vendor so removing a drink removes its wishlist/journal rows.
 
 ## Data as of
 

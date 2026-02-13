@@ -4,14 +4,14 @@ import { revalidatePath } from "next/cache";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import { db } from "@/db";
-import { sippedItems, drinks } from "@/db/schema";
+import { journalItems, drinks } from "@/db/schema";
 import { eq, and } from "drizzle-orm";
 import { z } from "zod";
 import { randomUUID } from "crypto";
 
 const drinkIdSchema = z.string().min(1, "Drink ID is required").max(100);
 
-export async function markSipped(drinkId: string) {
+export async function addToJournal(drinkId: string) {
   const parsed = drinkIdSchema.safeParse(drinkId);
   if (!parsed.success) {
     const msg = parsed.error.errors[0]?.message ?? "Invalid drink";
@@ -19,7 +19,7 @@ export async function markSipped(drinkId: string) {
   }
   const session = await auth.api.getSession({ headers: await headers() });
   if (!session?.user?.id) {
-    return { success: false, error: "Sign in to mark drinks as sipped" };
+    return { success: false, error: "Sign in to add drinks to your journal" };
   }
 
   const [existing] = await db
@@ -32,22 +32,22 @@ export async function markSipped(drinkId: string) {
   }
 
   await db
-    .insert(sippedItems)
+    .insert(journalItems)
     .values({
       id: randomUUID(),
       userId: session.user.id,
       drinkId: parsed.data,
     })
-    .onConflictDoNothing({ target: [sippedItems.userId, sippedItems.drinkId] });
+    .onConflictDoNothing({ target: [journalItems.userId, journalItems.drinkId] });
 
   revalidatePath("/drinks");
   revalidatePath("/drinks/[slug]", "page");
   revalidatePath("/wishlist");
-  revalidatePath("/sips");
+  revalidatePath("/journal");
   return { success: true };
 }
 
-export async function unmarkSipped(drinkId: string) {
+export async function removeFromJournal(drinkId: string) {
   const parsed = drinkIdSchema.safeParse(drinkId);
   if (!parsed.success) {
     const msg = parsed.error.errors[0]?.message ?? "Invalid drink";
@@ -55,7 +55,7 @@ export async function unmarkSipped(drinkId: string) {
   }
   const session = await auth.api.getSession({ headers: await headers() });
   if (!session?.user?.id) {
-    return { success: false, error: "Sign in to remove drinks from your sip list" };
+    return { success: false, error: "Sign in to remove drinks from your journal" };
   }
 
   const [existing] = await db
@@ -68,17 +68,17 @@ export async function unmarkSipped(drinkId: string) {
   }
 
   await db
-    .delete(sippedItems)
+    .delete(journalItems)
     .where(
       and(
-        eq(sippedItems.userId, session.user.id),
-        eq(sippedItems.drinkId, parsed.data)
+        eq(journalItems.userId, session.user.id),
+        eq(journalItems.drinkId, parsed.data)
       )
     );
 
   revalidatePath("/drinks");
   revalidatePath("/drinks/[slug]", "page");
   revalidatePath("/wishlist");
-  revalidatePath("/sips");
+  revalidatePath("/journal");
   return { success: true };
 }

@@ -35,8 +35,8 @@ export function Header() {
               <Link href="/wishlist" className={navLinkClass}>
                 My Wishlist
               </Link>
-              <Link href="/sips" className={navLinkClass}>
-                My Sips
+              <Link href="/journal" className={navLinkClass}>
+                My Journal
               </Link>
               <button
                 type="button"
@@ -115,8 +115,8 @@ export function Header() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/sips" className={mobileNavLinkClass} onClick={closeMobileNav}>
-                      My Sips
+                    <Link href="/journal" className={mobileNavLinkClass} onClick={closeMobileNav}>
+                      My Journal
                     </Link>
                   </li>
                   <li>

@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import Link from "next/link";
 import posthog from "posthog-js";
 
-export default function SipsError({
+export default function JournalError({
   error,
   reset,
 }: {
@@ -18,7 +18,7 @@ export default function SipsError({
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-12 text-center">
-      <h1 className="text-xl font-bold text-neutral-900">Couldn’t load sips</h1>
+      <h1 className="text-xl font-bold text-neutral-900">Couldn’t load journal</h1>
       <p className="mt-2 text-neutral-600">{error.message}</p>
       <div className="mt-6 flex justify-center gap-4">
         <button

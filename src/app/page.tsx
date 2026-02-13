@@ -6,7 +6,7 @@ export default function HomePage() {
       <h1 className="text-2xl font-bold">Hot Chocolate Festival Passport</h1>
       <p className="mt-2 text-neutral-600">
         Your companion for the Vancouver Hot Chocolate Festival. Browse drinks,
-        keep a wishlist, and track what you&apos;ve sipped.
+        keep a wishlist, and keep a journal of what you&apos;ve tried.
       </p>
       <div className="mt-6 flex flex-wrap gap-4">
         <Link

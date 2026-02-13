@@ -4,7 +4,7 @@ import { getDrinkBySlug } from "@/lib/queries";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import { db } from "@/db";
-import { wishlistItems, sippedItems } from "@/db/schema";
+import { wishlistItems, journalItems } from "@/db/schema";
 import { eq, and } from "drizzle-orm";
 import { DrinkActions } from "./drink-actions";
 
@@ -19,7 +19,7 @@ export default async function DrinkDetailPage({
 
   const session = await auth.api.getSession({ headers: await headers() });
   let inWishlist = false;
-  let isSipped = false;
+  let inJournal = false;
   if (session?.user?.id) {
     const [wl] = await db
       .select()
@@ -31,18 +31,18 @@ export default async function DrinkDetailPage({
         )
       )
       .limit(1);
-    const [s] = await db
+    const [j] = await db
       .select()
-      .from(sippedItems)
+      .from(journalItems)
       .where(
         and(
-          eq(sippedItems.userId, session.user.id),
-          eq(sippedItems.drinkId, drink.id)
+          eq(journalItems.userId, session.user.id),
+          eq(journalItems.drinkId, drink.id)
         )
       )
       .limit(1);
     inWishlist = !!wl;
-    isSipped = !!s;
+    inJournal = !!j;
   }
 
   return (
@@ -79,7 +79,7 @@ export default async function DrinkDetailPage({
             <DrinkActions
               drinkId={drink.id}
               inWishlist={inWishlist}
-              isSipped={isSipped}
+              inJournal={inJournal}
             />
           </div>
         )}

@@ -2,24 +2,32 @@
 
 import { useState, useTransition } from "react";
 import { toast } from "sonner";
-import { markSipped, unmarkSipped } from "@/app/actions/sipped";
+import { addToJournal, removeFromJournal } from "@/app/actions/journal";
 
-export function AddToSipListButton({ drinkId, isSipped: initialIsSipped, verbose = false }: { drinkId: string, isSipped: boolean, verbose?: boolean }) {
+export function AddToJournalButton({
+  drinkId,
+  inJournal: initialInJournal,
+  verbose = false,
+}: {
+  drinkId: string;
+  inJournal: boolean;
+  verbose?: boolean;
+}) {
   const [pending, startTransition] = useTransition();
-  const [isSipped, setIsSipped] = useState(initialIsSipped);
+  const [inJournal, setInJournal] = useState(initialInJournal);
 
-  const toggleSipped = () => {
-    const newIsSipped = !isSipped;
-    setIsSipped(newIsSipped);
+  const toggleJournal = () => {
+    const newInJournal = !inJournal;
+    setInJournal(newInJournal);
     startTransition(async () => {
-      const result = newIsSipped
-        ? await markSipped(drinkId)
-        : await unmarkSipped(drinkId);
+      const result = newInJournal
+        ? await addToJournal(drinkId)
+        : await removeFromJournal(drinkId);
       if (!result.success) {
-        setIsSipped(!newIsSipped);
+        setInJournal(!newInJournal);
         toast.error(result.error ?? "Something went wrong");
       } else {
-        toast.success(newIsSipped ? "Added to sip list" : "Removed from sip list");
+        toast.success(newInJournal ? "Added to journal" : "Removed from journal");
       }
     });
   };
@@ -28,26 +36,26 @@ export function AddToSipListButton({ drinkId, isSipped: initialIsSipped, verbose
     <button
       type="button"
       disabled={pending}
-        onClick={toggleSipped}
+      onClick={toggleJournal}
       className="min-h-[44px] min-w-[44px] rounded-lg border border-neutral-300 p-2 text-neutral-700 hover:bg-neutral-50 disabled:opacity-50 inline-flex items-center gap-2"
-      aria-label={isSipped ? "Remove from sip list" : "Add to sip list"}
+      aria-label={inJournal ? "Remove from journal" : "Add to journal"}
     >
-      {isSipped ? (
+      {inJournal ? (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M7.03125 4C7.03125 3.58579 6.69546 3.25 6.28125 3.25C5.86704 3.25 5.53125 3.58579 5.53125 4V5.75C5.53125 6.16421 5.86704 6.5 6.28125 6.5C6.69546 6.5 7.03125 6.16421 7.03125 5.75V4Z" fill="#323544"/>
           <path d="M11.5 4C11.5 3.58579 11.1642 3.25 10.75 3.25C10.3358 3.25 10 3.58579 10 4V5.75C10 6.16421 10.3358 6.5 10.75 6.5C11.1642 6.5 11.5 6.16421 11.5 5.75V4Z" fill="#323544"/>
           <path d="M15.9688 4C15.9688 3.58579 15.633 3.25 15.2188 3.25C14.8045 3.25 14.4688 3.58579 14.4688 4V5.75C14.4688 6.16421 14.8045 6.5 15.2188 6.5C15.633 6.5 15.9688 6.16421 15.9688 5.75V4Z" fill="#323544"/>
           <path d="M4 7.25C3.58579 7.25 3.25 7.58579 3.25 8V13.25C3.25 15.7034 4.42801 17.8817 6.24927 19.25H4C3.58579 19.25 3.25 19.5858 3.25 20C3.25 20.4142 3.58579 20.75 4 20.75H17.5C17.9142 20.75 18.25 20.4142 18.25 20C18.25 19.5858 17.9142 19.25 17.5 19.25H15.2507C15.9006 18.7617 16.4687 18.1703 16.9304 17.5H17C19.4853 17.5 21.5 15.4853 21.5 13V11.75C21.5 10.5074 20.4926 9.5 19.25 9.5H18.25V8C18.25 7.58579 17.9142 7.25 17.5 7.25H4ZM20 13C20 14.3913 19.0528 15.5615 17.7681 15.9008C18.0796 15.0766 18.25 14.1832 18.25 13.25V11H19.25C19.6642 11 20 11.3358 20 11.75V13Z" fill="#323544"/>
-        </svg>        
+        </svg>
       ) : (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M15.9688 4C15.9688 3.58579 15.633 3.25 15.2188 3.25C14.8045 3.25 14.4688 3.58579 14.4688 4V5.75C14.4688 6.16421 14.8045 6.5 15.2188 6.5C15.633 6.5 15.9688 6.16421 15.9688 5.75V4Z" fill="#323544"/>
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M4 7.25C3.80109 7.25 3.61032 7.32902 3.46967 7.46967C3.32902 7.61032 3.25 7.80109 3.25 8V13.25C3.25 15.7034 4.42801 17.8817 6.24927 19.25H4C3.58579 19.25 3.25 19.5858 3.25 20C3.25 20.4142 3.58579 20.75 4 20.75L17.5 20.75C17.9142 20.75 18.25 20.4142 18.25 20C18.25 19.5858 17.9142 19.25 17.5 19.25H15.2507C15.9006 18.7617 16.4687 18.1703 16.9304 17.5H17C19.4853 17.5 21.5 15.4853 21.5 13V11.75C21.5 10.5074 20.4926 9.5 19.25 9.5H18.25V8C18.25 7.58579 17.9142 7.25 17.5 7.25H4ZM16.75 13.25C16.75 16.5637 14.0637 19.25 10.75 19.25C7.43629 19.25 4.75 16.5637 4.75 13.25V8.75H16.75V13.25ZM18.25 11V13.25C18.25 14.1832 18.0796 15.0766 17.7681 15.9008C19.0528 15.5615 20 14.3913 20 13V11.75C20 11.3358 19.6642 11 19.25 11H18.25Z" fill="#323544"/>
+          <path fillRule="evenodd" clipRule="evenodd" d="M4 7.25C3.80109 7.25 3.61032 7.32902 3.46967 7.46967C3.32902 7.61032 3.25 7.80109 3.25 8V13.25C3.25 15.7034 4.42801 17.8817 6.24927 19.25H4C3.58579 19.25 3.25 19.5858 3.25 20C3.25 20.4142 3.58579 20.75 4 20.75L17.5 20.75C17.9142 20.75 18.25 20.4142 18.25 20C18.25 19.5858 17.9142 19.25 17.5 19.25H15.2507C15.9006 18.7617 16.4687 18.1703 16.9304 17.5H17C19.4853 17.5 21.5 15.4853 21.5 13V11.75C21.5 10.5074 20.4926 9.5 19.25 9.5H18.25V8C18.25 7.58579 17.9142 7.25 17.5 7.25H4ZM16.75 13.25C16.75 16.5637 14.0637 19.25 10.75 19.25C7.43629 19.25 4.75 16.5637 4.75 13.25V8.75H16.75V13.25ZM18.25 11V13.25C18.25 14.1832 18.0796 15.0766 17.7681 15.9008C19.0528 15.5615 20 14.3913 20 13V11.75C20 11.3358 19.6642 11 19.25 11H18.25Z" fill="#323544"/>
           <path d="M10.75 3.25C11.1642 3.25 11.5 3.58579 11.5 4V5.75C11.5 6.16421 11.1642 6.5 10.75 6.5C10.3358 6.5 10 6.16421 10 5.75V4C10 3.58579 10.3358 3.25 10.75 3.25Z" fill="#323544"/>
           <path d="M7.03125 4C7.03125 3.58579 6.69546 3.25 6.28125 3.25C5.86704 3.25 5.53125 3.58579 5.53125 4V5.75C5.53125 6.16421 5.86704 6.5 6.28125 6.5C6.69546 6.5 7.03125 6.16421 7.03125 5.75V4Z" fill="#323544"/>
         </svg>
       )}
-      {verbose && (isSipped ? "Remove from sip list" : "Add to sip list")}
+      {verbose && (inJournal ? "Remove from journal" : "Add to journal")}
     </button>
   );
 }

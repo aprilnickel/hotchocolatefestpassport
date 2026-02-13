@@ -1,6 +1,6 @@
 # Hot Chocolate Festival Passport
 
-Companion web app for the Vancouver Hot Chocolate Festival. Browse drinks, maintain a wishlist, and mark drinks as sipped.
+Companion web app for the Vancouver Hot Chocolate Festival. Browse drinks, maintain a wishlist, and maintain a journal of drinks you've tried.
 
 ## Setup
 

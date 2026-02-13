@@ -43,7 +43,7 @@ export async function addToWishlist(drinkId: string) {
   revalidatePath("/drinks");
   revalidatePath("/drinks/[slug]", "page");
   revalidatePath("/wishlist");
-  revalidatePath("/sips");
+  revalidatePath("/journal");
   return { success: true };
 }
 
@@ -79,6 +79,6 @@ export async function removeFromWishlist(drinkId: string) {
   revalidatePath("/drinks");
   revalidatePath("/drinks/[slug]", "page");
   revalidatePath("/wishlist");
-  revalidatePath("/sips");
+  revalidatePath("/journal");
   return { success: true };
 }
