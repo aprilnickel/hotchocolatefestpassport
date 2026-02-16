@@ -23,8 +23,8 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased">
         <Header />
-        {children}
-        <Toaster richColors closeButton position="bottom-right" />
+        <main className="pb-20 md:pb-0">{children}</main>
+        <Toaster richColors closeButton position="top-center" />
       </body>
     </html>
   );
