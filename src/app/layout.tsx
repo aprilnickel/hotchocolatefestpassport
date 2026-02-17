@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Toaster } from "sonner";
-import { Header } from "@/components/header";
+import { Navbar } from "@/components/nav/navbar";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <Header />
+        <Navbar />
         <main className="pb-20 md:pb-0">{children}</main>
         <Toaster richColors closeButton position="top-center" />
       </body>
