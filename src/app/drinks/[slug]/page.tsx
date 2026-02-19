@@ -49,30 +49,30 @@ export default async function DrinkDetailPage({
     <main className="mx-auto max-w-4xl px-4 py-6">
       <Link
         href="/drinks"
-        className="mb-4 inline-block text-sm font-medium text-neutral-600 hover:text-neutral-900"
+        className="mb-4 inline-block text-sm font-medium inline-link"
       >
         ← All drinks
       </Link>
-      <article className="rounded-lg border border-neutral-200 bg-white p-6">
-        <h1 className="text-2xl font-bold text-neutral-900">{drink.name}</h1>
+      <article className="rounded-lg border border-burgundy/50 p-6 shadow-md">
+        <h1 className="text-2xl font-bold">{drink.name}</h1>
         <p className="mt-2">
           <Link
             href={`/vendors/${drink.vendorSlug}`}
-            className="font-medium text-neutral-700 hover:underline"
+            className="font-medium hover:underline"
           >
             {drink.vendorName}
           </Link>
           {drink.neighbourhood && (
-            <span className="text-neutral-500"> · {drink.neighbourhood}</span>
+            <span className="opacity-80"> · {drink.neighbourhood}</span>
           )}
         </p>
         {drink.flavourNotes && (
-          <p className="mt-2 text-sm text-neutral-600">
-            <span className="font-medium">Flavour notes:</span> {drink.flavourNotes}
+          <p className="mt-2 text-sm">
+            <span className="font-medium">Flavour notes:</span> <span className="opacity-80">{drink.flavourNotes}</span>
           </p>
         )}
         {drink.description && (
-          <p className="mt-2 text-neutral-700">{drink.description}</p>
+          <p className="mt-2">{drink.description}</p>
         )}
         {session?.user && (
           <div className="mt-6">

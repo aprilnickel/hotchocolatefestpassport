@@ -25,7 +25,7 @@ export default async function SignInPage({
           </p>
         )}
         <SignInForm />
-        <p className="text-center text-sm text-neutral-500">
+        <p className="text-center text-sm opacity-80">
           Sign in with your Google account to save your wishlist and journal.
         </p>
       </div>

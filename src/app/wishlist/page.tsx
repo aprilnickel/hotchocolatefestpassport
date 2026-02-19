@@ -32,9 +32,9 @@ export default async function WishlistPage() {
     <main className="mx-auto max-w-4xl px-4 py-6">
       <h1 className="mb-6 text-2xl font-bold">My wishlist</h1>
       {rows.length === 0 ? (
-        <p className="text-neutral-600">
+        <p>
           Your wishlist is empty. Browse{" "}
-          <Link href="/drinks" className="font-medium text-neutral-900 underline">
+          <Link href="/drinks" className="font-medium underline">
             festival drinks
           </Link>{" "}
           and add some to try.
@@ -44,19 +44,19 @@ export default async function WishlistPage() {
           {rows.map((r) => (
             <li
               key={r.id}
-              className="flex items-center justify-between gap-4 rounded-lg border border-neutral-200 bg-white p-4"
+              className="flex items-center gap-3 rounded-lg border border-burgundy/50 p-4 shadow-md transition hover:border-burgundy/70 hover:shadow-lg"
             >
               <Link
                 href={`/drinks/${r.drinkSlug}`}
                 className="min-w-0 flex-1"
               >
-                <div className="font-medium text-neutral-900">{r.drinkName}</div>
-                <div className="text-sm text-neutral-600">
+                <div className="font-medium">{r.drinkName}</div>
+                <div className="text-sm">
                   {r.vendorName}
                   {r.neighbourhood ? ` · ${r.neighbourhood}` : ""}
                 </div>
                 {r.flavourNotes && (
-                  <div className="text-sm text-neutral-500">{r.flavourNotes}</div>
+                  <div className="text-sm opacity-80">{r.flavourNotes}</div>
                 )}
               </Link>
               <AddToWishlistButton drinkId={r.drinkId} inWishlist={true} verbose />

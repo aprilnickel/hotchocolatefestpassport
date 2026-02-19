@@ -14,18 +14,18 @@ export function DrinkCard({
   showWishlistButton: boolean;
 }) {
   return (
-    <li className="flex items-start gap-3 rounded-lg border border-neutral-200 bg-white p-4 transition hover:border-neutral-300 hover:shadow-sm">
+    <li className="flex items-start gap-3 rounded-lg border border-burgundy/50 p-4 shadow-md transition hover:border-burgundy/70 hover:shadow-lg">
       <Link
         href={`/drinks/${drink.slug}`}
         className="min-w-0 flex-1"
       >
-        <div className="font-medium text-neutral-900">{drink.name}</div>
-        <div className="mt-1 text-sm text-neutral-600">
+        <div className="font-medium">{drink.name}</div>
+        <div className="mt-1 text-sm">
           {drink.vendorName}
           {drink.neighbourhood ? ` · ${drink.neighbourhood}` : ""}
         </div>
         {drink.flavourNotes && (
-          <div className="mt-1 text-sm text-neutral-500">
+          <div className="mt-1 text-sm opacity-80">
             {drink.flavourNotes}
           </div>
         )}

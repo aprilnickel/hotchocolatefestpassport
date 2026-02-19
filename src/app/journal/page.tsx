@@ -32,17 +32,17 @@ export default async function JournalPage() {
   return (
     <main className="mx-auto max-w-4xl px-4 py-6">
       <h1 className="mb-6 text-2xl font-bold">My journal</h1>
-      <p className="mb-4 text-neutral-600">
-        Drinks you&apos;ve added to your journal.
+      <p className="mb-4">
+        Find all the drinks you&apos;ve sipped here.
       </p>
       {rows.length === 0 ? (
-        <p className="text-neutral-600">
+        <p>
           You haven&apos;t added any drinks to your journal yet. Try one from your{" "}
-          <Link href="/wishlist" className="font-medium text-neutral-900 underline">
+          <Link href="/wishlist" className="font-medium underline">
             wishlist
           </Link>{" "}
           or{" "}
-          <Link href="/drinks" className="font-medium text-neutral-900 underline">
+          <Link href="/drinks" className="font-medium underline">
             browse drinks
           </Link>{" "}
           and add them to your journal when you&apos;ve tried them.
@@ -52,22 +52,22 @@ export default async function JournalPage() {
           {rows.map((r) => (
             <li
               key={r.id}
-              className="flex items-center justify-between gap-4 rounded-lg border border-neutral-200 bg-white p-4"
+              className="flex items-center gap-3 rounded-lg border border-burgundy/50 p-4 shadow-md transition hover:border-burgundy/70 hover:shadow-lg"
             >
               <Link
                 href={`/drinks/${r.drinkSlug}`}
                 className="min-w-0 flex-1"
               >
-                <div className="font-medium text-neutral-900">{r.drinkName}</div>
-                <div className="text-sm text-neutral-600">
+                <div className="font-medium">{r.drinkName}</div>
+                <div className="text-sm">
                   {r.vendorName}
                   {r.neighbourhood ? ` · ${r.neighbourhood}` : ""}
                 </div>
                 {r.flavourNotes && (
-                  <div className="text-sm text-neutral-500">{r.flavourNotes}</div>
+                  <div className="text-sm opacity-80">{r.flavourNotes}</div>
                 )}
-                <div className="mt-1 text-xs text-neutral-400">
-                  Journal · {r.journaledAt ? new Date(r.journaledAt).toLocaleDateString() : ""}
+                <div className="mt-1 text-xs opacity-70">
+                  Sipped on · {r.journaledAt ? new Date(r.journaledAt).toLocaleDateString() : ""}
                 </div>
               </Link>
               <AddToJournalButton drinkId={r.drinkId} inJournal={true} verbose />

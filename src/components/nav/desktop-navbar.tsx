@@ -4,16 +4,16 @@ import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
 
 const navLinkClass =
-  "flex min-h-[44px] min-w-[44px] items-center rounded px-2 text-sm font-medium text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900";
+  "flex min-h-[44px] min-w-[44px] items-center rounded px-2 text-sm font-medium inline-link";
 
 export function DesktopNavbar() {
   const { data: session } = authClient.useSession();
 
   return (
     <>
-      <header className="sticky top-0 z-10 border-b border-neutral-200 bg-white">
+      <header className="sticky top-0 z-10 border-b border-burgundy/20 bg-cream">
         <div className="mx-auto flex h-14 max-w-4xl items-center justify-between px-4">
-          <Link href="/" className="font-semibold text-neutral-900">
+          <Link href="/" className="font-semibold inline-link">
             Hot Chocolate Passport
           </Link>
 

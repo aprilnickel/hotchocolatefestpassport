@@ -29,7 +29,7 @@ export function AddToWishlistButton({ drinkId, inWishlist: initialInWishlist, ve
       type="button"
       disabled={pending}
       onClick={toggleWishlist}
-      className="min-h-[44px] min-w-[44px] rounded-lg border border-neutral-300 p-2 text-neutral-700 hover:bg-neutral-50 disabled:opacity-50 inline-flex items-center gap-2"
+      className="btn-tertiary disabled:opacity-50 inline-flex items-center gap-2"
       aria-label={inWishlist ? "Remove from wishlist" : "Add to wishlist"}
     >
       {inWishlist ? (

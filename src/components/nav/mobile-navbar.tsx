@@ -11,7 +11,7 @@ import { HamburgerIcon } from "@/components/icons/hamburger-icon";
 import useActivePage from "./useActivePage";
 
 const navLinkClass =
-  "flex min-h-[44px] min-w-[44px] items-center rounded px-2 text-sm font-medium text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900";
+  "flex min-h-[44px] min-w-[44px] items-center rounded px-2 text-sm font-medium";
 const mobileNavLinkClass = `${navLinkClass} w-full justify-start`;
 const iconClass = "size-7 shrink-0";
 
@@ -26,12 +26,12 @@ export function MobileNavbar() {
     <>
       {/* Mobile bottom nav bar */}
       <nav
-        className="fixed bottom-0 left-0 right-0 z-20 flex items-center justify-around border-t border-neutral-200 bg-white py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] md:hidden"
+        className="fixed bottom-0 left-0 right-0 z-20 flex items-center justify-around border-t border-burgundy/20 bg-white py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] md:hidden"
         aria-label="Mobile navigation"
       >
         <Link
           href="/"
-          className="flex min-h-[44px] min-w-[44px] flex-col items-center justify-center text-neutral-600 hover:text-neutral-900"
+          className="flex min-h-[44px] min-w-[44px] flex-col items-center justify-center"
           aria-label="Home"
           aria-current={activePage === "home" ? "page" : undefined}
         >
@@ -39,21 +39,21 @@ export function MobileNavbar() {
         </Link>
         <Link
           href="/drinks"
-          className="flex min-h-[44px] min-w-[44px] flex-col items-center justify-center text-neutral-600 hover:text-neutral-900"
+          className="flex min-h-[44px] min-w-[44px] flex-col items-center justify-center"
           aria-label="Drinks"
         >
           <CoffeeMugIcon active={activePage === "drinks"} className={iconClass} />
         </Link>
         <Link
           href="/wishlist"
-          className="flex min-h-[44px] min-w-[44px] flex-col items-center justify-center text-neutral-600 hover:text-neutral-900"
+          className="flex min-h-[44px] min-w-[44px] flex-col items-center justify-center"
           aria-label="Wishlist"
         >
           <BookmarkIcon active={activePage === "wishlist"} className={iconClass} />
         </Link>
         <Link
           href="/journal"
-          className="flex min-h-[44px] min-w-[44px] flex-col items-center justify-center text-neutral-600 hover:text-neutral-900"
+          className="flex min-h-[44px] min-w-[44px] flex-col items-center justify-center"
           aria-label="Journal"
         >
           <JournalIcon active={activePage === "journal"} className={iconClass} />
@@ -61,7 +61,7 @@ export function MobileNavbar() {
         <button
           type="button"
           onClick={() => setMobileMenuOpen((open) => !open)}
-          className="flex min-h-[44px] min-w-[44px] flex-col items-center justify-center text-neutral-600 hover:text-neutral-900"
+          className="flex min-h-[44px] min-w-[44px] flex-col items-center justify-center"
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileMenuOpen}
         >
@@ -86,12 +86,12 @@ export function MobileNavbar() {
         }}
         aria-hidden={!mobileMenuOpen}
       >
-        <div className="mx-auto my-2 h-1 w-12 rounded-full bg-neutral-200" />
+        <div className="mx-auto my-2 h-1 w-12 rounded-full bg-burgundy/30" />
         <nav className="px-4 pb-6 pt-2">
           <ul className="flex flex-col gap-1">
             {isPending ? (
               <li>
-                <span className="flex min-h-[44px] items-center text-sm text-neutral-500">
+                <span className="flex min-h-[44px] items-center text-sm opacity-70">
                   Loading…
                 </span>
               </li>

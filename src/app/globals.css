@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --color-cream: #F9F7F0;
+    --color-dust-grey: #DFD5CE;
+    --color-burgundy: #592720;
+    --color-burgundy-dark: #471F19;
+  }
+  .btn-primary {
+    @apply min-h-[44px] min-w-[44px] rounded-lg px-4 py-3 font-medium;
+    @apply bg-burgundy text-cream hover:bg-burgundy-dark hover:text-cream;
+  }
+  .btn-secondary {
+    @apply min-h-[44px] min-w-[44px] rounded-lg px-4 py-3 font-medium;
+    @apply border border-burgundy;
+    @apply bg-cream text-burgundy hover:bg-dust-grey hover:text-burgundy;
+  }
+  .btn-tertiary {
+    @apply min-h-[44px] min-w-[44px] rounded-lg p-2 font-medium;
+    @apply border border-burgundy/30 hover:border-burgundy/50 shadow-sm hover:shadow-md transition;
+    @apply bg-cream text-burgundy/80 hover:text-burgundy/90;
+  }
+  .inline-link {
+    @apply text-burgundy hover:text-burgundy-dark;
+  }
+}
