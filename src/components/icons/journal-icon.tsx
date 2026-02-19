@@ -1,4 +1,4 @@
-export function JournalIcon({ active, className }: { active: boolean; className?: string }) {
+export function JournalIcon({ active, className, secondaryColor = "var(--color-white)" }: { active: boolean; className?: string; secondaryColor?: string }) {
   const cn = className ?? "size-6 shrink-0";
   if (active) {
     return (
@@ -11,34 +11,34 @@ export function JournalIcon({ active, className }: { active: boolean; className?
           </g>
         </g>
         <g id="layer4">
-          <g transform="translate(1.0000003,-0.7733744)" id="g3449" fill="#ffffff">
-            <g transform="matrix(0.37227619,0,0,0.37227619,8.3791667,7.2450443)" id="g3406" fill="#ffffff">
-              <g transform="translate(0,-2.8543832)" id="g3423" fill="#ffffff">
-                <path fillRule="evenodd" clipRule="evenodd" fill="#ffffff"
+          <g transform="translate(1.0000003,-0.7733744)" id="g3449" fill={secondaryColor}>
+            <g transform="matrix(0.37227619,0,0,0.37227619,8.3791667,7.2450443)" id="g3406" fill={secondaryColor}>
+              <g transform="translate(0,-2.8543832)" id="g3423" fill={secondaryColor}>
+                <path fillRule="evenodd" clipRule="evenodd" fill={secondaryColor}
                   d="m 8.04832,2.4199603 c 0.28262,0.30282 0.26626,0.77741 -0.03656,1.06003 l -4.28571,4 c -0.15212,0.14198 -0.35638,0.21438 -0.56395,0.19989 -0.20757,-0.01448 -0.3998,-0.11455 -0.53072,-0.27628 l -1.21429,-1.5 c -0.26062,-0.32194 -0.21091,-0.79421 0.11104,-1.05483 0.32194,-0.26062 0.79421,-0.21091 1.05483,0.11103 l 0.70793,0.87451 3.6974,-3.4509 c 0.30281,-0.28262 0.7774,-0.26626 1.06003,0.03655 z"
                   id="path3421" />
-                <path fillRule="evenodd" clipRule="evenodd" fill="#ffffff"
+                <path fillRule="evenodd" clipRule="evenodd" fill={secondaryColor}
                   d="m 10.670608,4.9317018 c 0,-0.3608706 0.335799,-0.6534196 0.749999,-0.6534196 l 10,0 c 0.4142,0 0.75,0.292549 0.75,0.6534196 0,0.3608793 -0.3358,0.6534196 -0.75,0.6534196 l -10,0 c -0.4142,0 -0.749999,-0.2925403 -0.749999,-0.6534196 z"
                   id="path3419" />
-                <path fillRule="evenodd" clipRule="evenodd" fill="#ffffff"
+                <path fillRule="evenodd" clipRule="evenodd" fill={secondaryColor}
                   d="m 10.670608,13.446876 c 0,-0.360871 0.335799,-0.65342 0.749999,-0.65342 l 10,0 c 0.4142,0 0.75,0.292549 0.75,0.65342 0,0.360879 -0.3358,0.653419 -0.75,0.653419 l -10,0 c -0.4142,0 -0.749999,-0.29254 -0.749999,-0.653419 z"
                   id="path3443" />
-                <path fillRule="evenodd" clipRule="evenodd" fill="#ffffff"
+                <path fillRule="evenodd" clipRule="evenodd" fill={secondaryColor}
                   d="m 10.670608,21.962048 c 0,-0.36087 0.335799,-0.653419 0.749999,-0.653419 l 10,0 c 0.4142,0 0.75,0.292549 0.75,0.653419 0,0.360879 -0.3358,0.65342 -0.75,0.65342 l -10,0 c -0.4142,0 -0.749999,-0.292541 -0.749999,-0.65342 z"
                   id="path3445" />
-                <path fillRule="evenodd" clipRule="evenodd" fill="#ffffff"
+                <path fillRule="evenodd" clipRule="evenodd" fill={secondaryColor}
                   d="m 10.670608,30.47722 c 0,-0.36087 0.335799,-0.653419 0.749999,-0.653419 l 10,0 c 0.4142,0 0.75,0.292549 0.75,0.653419 0,0.360879 -0.3358,0.65342 -0.75,0.65342 l -10,0 c -0.4142,0 -0.749999,-0.292541 -0.749999,-0.65342 z"
                   id="path3447" />
               </g>
-              <path fillRule="evenodd" clipRule="evenodd" fill="#ffffff"
+              <path fillRule="evenodd" clipRule="evenodd" fill={secondaryColor}
                 d="m 8.04832,8.0807394 c 0.28262,0.30282 0.26626,0.77744 -0.03656,1.06004 L 3.72605,13.14078 c -0.15212,0.142 -0.35638,0.2144 -0.56395,0.1999 -0.20757,-0.0145 -0.3998,-0.1146 -0.53072,-0.2763 l -1.21429,-1.5 c -0.26062,-0.3219 -0.21091,-0.7942 0.11104,-1.0548 0.32194,-0.2607 0.79421,-0.2109 1.05483,0.111 l 0.70793,0.8745 3.6974,-3.4508906 c 0.30281,-0.28262 0.7774,-0.26626 1.06003,0.03655 z"
                 id="path3417" />
-              <g fill="#ffffff" id="g3431">
-                <g fill="#ffffff" id="g3435" transform="translate(0,2.8543832)">
-                  <path fillRule="evenodd" clipRule="evenodd" fill="#ffffff"
+              <g fill={secondaryColor} id="g3431">
+                <g fill={secondaryColor} id="g3435" transform="translate(0,2.8543832)">
+                  <path fillRule="evenodd" clipRule="evenodd" fill={secondaryColor}
                     d="m 8.04832,13.741557 c 0.28262,0.3028 0.26626,0.7774 -0.03656,1.06 l -4.28571,4 c -0.15212,0.142 -0.35638,0.2144 -0.56395,0.1999 -0.20757,-0.0145 -0.3998,-0.1146 -0.53072,-0.2763 l -1.21429,-1.5 c -0.26062,-0.3219 -0.21091,-0.7942 0.11104,-1.0548 0.32194,-0.2607 0.79421,-0.2109 1.05483,0.111 l 0.70793,0.8745 3.6974,-3.4509 c 0.30281,-0.2826 0.7774,-0.2662 1.06003,0.0366 z"
                     id="path3413" />
-                  <path fillRule="evenodd" clipRule="evenodd" fill="#ffffff"
+                  <path fillRule="evenodd" clipRule="evenodd" fill={secondaryColor}
                     d="m 8.04832,22.256729 c 0.28262,0.3028 0.26626,0.7774 -0.03656,1.06 l -4.28571,4 c -0.15212,0.142 -0.35638,0.2144 -0.56395,0.1999 -0.20757,-0.0145 -0.3998,-0.1146 -0.53072,-0.2763 l -1.21429,-1.5 c -0.26062,-0.3219 -0.21091,-0.7942 0.11104,-1.0548 0.32194,-0.2607 0.79421,-0.2109 1.05483,0.111 l 0.70793,0.8745 3.6974,-3.4509 c 0.30281,-0.2826 0.7774,-0.2662 1.06003,0.0366 z"
                     id="path3439" />
                 </g>

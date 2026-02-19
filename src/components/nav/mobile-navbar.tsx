@@ -10,10 +10,11 @@ import { JournalIcon } from "@/components/icons/journal-icon";
 import { HamburgerIcon } from "@/components/icons/hamburger-icon";
 import useActivePage from "./useActivePage";
 
-const navLinkClass =
-  "flex min-h-[44px] min-w-[44px] items-center rounded px-2 text-sm font-medium";
-const mobileNavLinkClass = `${navLinkClass} w-full justify-start`;
-const iconClass = "size-7 shrink-0";
+const mobileNavLinkClass = "flex min-w-0 flex-1 flex-col items-center justify-center border-t-2 transition-colors";
+const mobileNavLinkClassActive = `${mobileNavLinkClass} -mt-3 border-white pt-3`;
+const mobileNavLinkClassInactive = `${mobileNavLinkClass} min-h-[44px] border-transparent`;
+const mobileMoreMenuLinkClass = "flex min-h-[44px] min-w-[44px] items-center rounded px-2 text-sm font-medium w-full justify-start";
+const iconClass = "size-7 shrink-0 text-white";
 
 export function MobileNavbar() {
   const { data: session, isPending } = authClient.useSession();
@@ -26,12 +27,12 @@ export function MobileNavbar() {
     <>
       {/* Mobile bottom nav bar */}
       <nav
-        className="fixed bottom-0 left-0 right-0 z-20 flex items-center justify-around border-t border-burgundy/20 bg-white py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] md:hidden"
+        className="fixed bottom-0 left-0 right-0 z-20 flex items-stretch border-t border-white/20 bg-burgundy py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] md:hidden"
         aria-label="Mobile navigation"
       >
         <Link
           href="/"
-          className="flex min-h-[44px] min-w-[44px] flex-col items-center justify-center"
+          className={activePage === "home" ? mobileNavLinkClassActive : mobileNavLinkClassInactive}
           aria-label="Home"
           aria-current={activePage === "home" ? "page" : undefined}
         >
@@ -39,29 +40,32 @@ export function MobileNavbar() {
         </Link>
         <Link
           href="/drinks"
-          className="flex min-h-[44px] min-w-[44px] flex-col items-center justify-center"
+          className={activePage === "drinks" ? mobileNavLinkClassActive : mobileNavLinkClassInactive}
           aria-label="Drinks"
+          aria-current={activePage === "drinks" ? "page" : undefined}
         >
           <CoffeeMugIcon active={activePage === "drinks"} className={iconClass} />
         </Link>
         <Link
           href="/wishlist"
-          className="flex min-h-[44px] min-w-[44px] flex-col items-center justify-center"
+          className={activePage === "wishlist" ? mobileNavLinkClassActive : mobileNavLinkClassInactive}
           aria-label="Wishlist"
+          aria-current={activePage === "wishlist" ? "page" : undefined}
         >
           <BookmarkIcon active={activePage === "wishlist"} className={iconClass} />
         </Link>
         <Link
           href="/journal"
-          className="flex min-h-[44px] min-w-[44px] flex-col items-center justify-center"
+          className={activePage === "journal" ? mobileNavLinkClassActive : mobileNavLinkClassInactive}
           aria-label="Journal"
+          aria-current={activePage === "journal" ? "page" : undefined}
         >
-          <JournalIcon active={activePage === "journal"} className={iconClass} />
+          <JournalIcon active={activePage === "journal"} className={iconClass} secondaryColor="var(--color-burgundy)" />
         </Link>
         <button
           type="button"
           onClick={() => setMobileMenuOpen((open) => !open)}
-          className="flex min-h-[44px] min-w-[44px] flex-col items-center justify-center"
+          className="flex min-w-0 flex-1 flex-col items-center justify-center"
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileMenuOpen}
         >
@@ -110,7 +114,7 @@ export function MobileNavbar() {
                         },
                       });
                     }}
-                    className={mobileNavLinkClass}
+                    className={mobileMoreMenuLinkClass}
                   >
                     Sign Out
                   </button>
@@ -118,7 +122,7 @@ export function MobileNavbar() {
               </>
             ) : (
               <li>
-                <Link href="/sign-in" className={mobileNavLinkClass} onClick={closeMobileMenu}>
+                <Link href="/sign-in" className={mobileMoreMenuLinkClass} onClick={closeMobileMenu}>
                   Sign In
                 </Link>
               </li>
