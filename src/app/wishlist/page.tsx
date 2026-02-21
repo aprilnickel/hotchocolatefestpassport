@@ -30,7 +30,7 @@ export default async function WishlistPage() {
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-6">
-      <h1 className="mb-6 text-2xl font-bold">My wishlist</h1>
+      <h1 className="mb-6 text-2xl font-bold hidden md:block">My Wishlist</h1>
       {rows.length === 0 ? (
         <p>
           Your wishlist is empty. Browse{" "}
