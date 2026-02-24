@@ -4,7 +4,7 @@ import { useState, useTransition } from "react";
 import { toast } from "sonner";
 import { addToWishlist, removeFromWishlist } from "@/app/actions/wishlist";
 
-export function AddToWishlistButton({ drinkId, inWishlist: initialInWishlist, verbose = false }: { drinkId: string, inWishlist: boolean, verbose?: boolean }) {
+export function ToggleWishlistButton({ drinkId, inWishlist: initialInWishlist, verbose = false }: { drinkId: string, inWishlist: boolean, verbose?: boolean }) {
   const [pending, startTransition] = useTransition();
   const [inWishlist, setInWishlist] = useState(initialInWishlist);
 

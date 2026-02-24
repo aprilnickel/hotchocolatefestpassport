@@ -1,7 +1,7 @@
 "use client";
 
-import { AddToWishlistButton } from "@/components/drink-actions/add-to-wishlist-button";
-import { AddToJournalButton } from "@/components/drink-actions/add-to-journal-button";
+import { ToggleWishlistButton } from "@/app/drinks/[slug]/toggle-wishlist-button";
+import { ToggleJournalButton } from "@/app/drinks/[slug]/toggle-journal-button";
 
 export function DrinkActions({
   drinkId,
@@ -14,8 +14,8 @@ export function DrinkActions({
 }) {
   return (
     <div className="flex flex-wrap gap-3">
-      <AddToWishlistButton drinkId={drinkId} inWishlist={inWishlist} verbose />
-      <AddToJournalButton drinkId={drinkId} inJournal={inJournal} verbose />
+      <ToggleWishlistButton drinkId={drinkId} inWishlist={inWishlist} verbose />
+      <ToggleJournalButton drinkId={drinkId} inJournal={inJournal} verbose />
     </div>
   );
 }

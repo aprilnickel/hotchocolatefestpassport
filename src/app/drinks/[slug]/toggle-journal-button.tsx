@@ -4,7 +4,7 @@ import { useState, useTransition } from "react";
 import { toast } from "sonner";
 import { addToJournal, removeFromJournal } from "@/app/actions/journal";
 
-export function AddToJournalButton({
+export function ToggleJournalButton({
   drinkId,
   inJournal: initialInJournal,
   verbose = false,

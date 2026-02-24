@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import type { DrinkWithVendor } from "@/lib/queries";
-import { AddToWishlistButton } from "@/components/drink-actions/add-to-wishlist-button";
+import { ToggleWishlistButton } from "@/app/drinks/[slug]/toggle-wishlist-button";
 
 export function DrinkCard({
   drink,
@@ -31,7 +31,7 @@ export function DrinkCard({
         )}
       </Link>
       {showWishlistButton && (
-        <AddToWishlistButton drinkId={drink.id} inWishlist={inWishlist} />
+        <ToggleWishlistButton drinkId={drink.id} inWishlist={inWishlist} />
       )}
     </li>
   );
