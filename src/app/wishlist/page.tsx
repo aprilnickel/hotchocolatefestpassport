@@ -5,7 +5,7 @@ import { headers } from "next/headers";
 import { db } from "@/db";
 import { wishlistItems, drinks, vendors } from "@/db/schema";
 import { eq, asc } from "drizzle-orm";
-import { AddToWishlistButton } from "@/components/drink-actions/add-to-wishlist-button";
+import { RemoveFromWishlistButton } from "@/components/drink-actions/remove-from-wishlist-button";
 
 export default async function WishlistPage() {
   const session = await auth.api.getSession({ headers: await headers() });
@@ -44,11 +44,16 @@ export default async function WishlistPage() {
           {rows.map((r) => (
             <li
               key={r.id}
-              className="flex items-center gap-3 rounded-lg border border-burgundy/50 p-4 shadow-md transition hover:border-burgundy/70 hover:shadow-lg"
+              className="relative flex items-center gap-3 rounded-lg border border-burgundy/50 p-4 shadow-md transition hover:border-burgundy/70 hover:shadow-lg"
             >
+              <RemoveFromWishlistButton
+                drinkId={r.drinkId}
+                drinkName={r.drinkName}
+                className="absolute top-2 right-2"
+              />
               <Link
                 href={`/drinks/${r.drinkSlug}`}
-                className="min-w-0 flex-1"
+                className="min-w-0 flex-1 pr-8"
               >
                 <div className="font-medium">{r.drinkName}</div>
                 <div className="text-sm">
@@ -59,7 +64,6 @@ export default async function WishlistPage() {
                   <div className="text-sm opacity-80">{r.flavourNotes}</div>
                 )}
               </Link>
-              <AddToWishlistButton drinkId={r.drinkId} inWishlist={true} verbose />
             </li>
           ))}
         </ul>

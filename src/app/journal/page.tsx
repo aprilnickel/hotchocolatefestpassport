@@ -5,7 +5,7 @@ import { headers } from "next/headers";
 import { db } from "@/db";
 import { journalItems, drinks, vendors } from "@/db/schema";
 import { eq, desc } from "drizzle-orm";
-import { AddToJournalButton } from "@/components/drink-actions/add-to-journal-button";
+import { RemoveFromJournalButton } from "@/components/drink-actions/remove-from-journal-button";
 
 export default async function JournalPage() {
   const session = await auth.api.getSession({ headers: await headers() });
@@ -52,11 +52,16 @@ export default async function JournalPage() {
           {rows.map((r) => (
             <li
               key={r.id}
-              className="flex items-center gap-3 rounded-lg border border-burgundy/50 p-4 shadow-md transition hover:border-burgundy/70 hover:shadow-lg"
+              className="relative flex items-center gap-3 rounded-lg border border-burgundy/50 p-4 shadow-md transition hover:border-burgundy/70 hover:shadow-lg"
             >
+              <RemoveFromJournalButton
+                drinkId={r.drinkId}
+                drinkName={r.drinkName}
+                className="absolute top-2 right-2"
+              />
               <Link
                 href={`/drinks/${r.drinkSlug}`}
-                className="min-w-0 flex-1"
+                className="min-w-0 flex-1 pr-8"
               >
                 <div className="font-medium">{r.drinkName}</div>
                 <div className="text-sm">
@@ -70,7 +75,6 @@ export default async function JournalPage() {
                   Sipped on · {r.journaledAt ? new Date(r.journaledAt).toLocaleDateString() : ""}
                 </div>
               </Link>
-              <AddToJournalButton drinkId={r.drinkId} inJournal={true} verbose />
             </li>
           ))}
         </ul>
