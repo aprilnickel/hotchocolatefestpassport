@@ -29,22 +29,16 @@ export function ActivePageProvider({ children }: { children: React.ReactNode }) 
   const [activePage, setActivePage] = useState<ActivePage>(pageMap.home);
 
   useEffect(() => {
-    switch (pathname) {
-      case "/":
-        setActivePage(pageMap.home);
-        break;
-      case "/drinks":
-        setActivePage(pageMap.drinks);
-        break;
-      case "/wishlist":
-        setActivePage(pageMap.wishlist);
-        break;
-      case "/journal":
-        setActivePage(pageMap.journal);
-        break;
-      default:
-        setActivePage(pageMap.notFound);
-        break;
+    if (pathname === "/") {
+      setActivePage(pageMap.home);
+    } else if (pathname.startsWith("/drinks")) {
+      setActivePage(pageMap.drinks);
+    } else if (pathname === "/wishlist") {
+      setActivePage(pageMap.wishlist);
+    } else if (pathname === "/journal") {
+      setActivePage(pageMap.journal);
+    } else {
+      setActivePage(pageMap.notFound);
     }
   }, [pathname]);
 
