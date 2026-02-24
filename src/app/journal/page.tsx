@@ -5,7 +5,7 @@ import { headers } from "next/headers";
 import { db } from "@/db";
 import { journalItems, drinks, vendors } from "@/db/schema";
 import { eq, desc } from "drizzle-orm";
-import { RemoveFromJournalButton } from "@/components/drink-actions/remove-from-journal-button";
+import { RemoveFromJournalButton } from "@/app/journal/remove-from-journal-button";
 
 export default async function JournalPage() {
   const session = await auth.api.getSession({ headers: await headers() });

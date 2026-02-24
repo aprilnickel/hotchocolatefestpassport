@@ -5,7 +5,7 @@ import { headers } from "next/headers";
 import { db } from "@/db";
 import { wishlistItems, drinks, vendors } from "@/db/schema";
 import { eq, asc } from "drizzle-orm";
-import { RemoveFromWishlistButton } from "@/components/drink-actions/remove-from-wishlist-button";
+import { RemoveFromWishlistButton } from "@/app/wishlist/remove-from-wishlist-button";
 
 export default async function WishlistPage() {
   const session = await auth.api.getSession({ headers: await headers() });
