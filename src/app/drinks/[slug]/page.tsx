@@ -4,7 +4,7 @@ import { getDrinkBySlug } from "@/lib/queries";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import { db } from "@/db";
-import { wishlistItems, journalItems } from "@/db/schema";
+import { wishlistItems, journalEntries } from "@/db/schema";
 import { eq, and } from "drizzle-orm";
 import { DrinkActions } from "./drink-actions";
 
@@ -33,11 +33,11 @@ export default async function DrinkDetailPage({
       .limit(1);
     const [j] = await db
       .select()
-      .from(journalItems)
+      .from(journalEntries)
       .where(
         and(
-          eq(journalItems.userId, session.user.id),
-          eq(journalItems.drinkId, drink.id)
+          eq(journalEntries.userId, session.user.id),
+          eq(journalEntries.drinkId, drink.id)
         )
       )
       .limit(1);

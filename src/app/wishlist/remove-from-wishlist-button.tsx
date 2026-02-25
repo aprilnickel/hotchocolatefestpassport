@@ -63,10 +63,10 @@ export function RemoveFromWishlistButton({
             className="bg-cream border border-burgundy/30 rounded-lg shadow-lg p-5 max-w-sm w-full"
             onClick={(e) => e.stopPropagation()}
           >
-            <h2 id="confirm-remove-title" className="font-medium text-espresso mb-2">
+            <h2 id="confirm-remove-title" className="font-medium mb-2">
               {drinkName ? `Remove "${drinkName}" from wishlist?` : "Remove from wishlist?"}
             </h2>
-            <p className="text-espresso/80 text-sm mb-4">
+            <p className="text-burgundy/80 text-sm mb-4">
               {drinkName
                 ? `${drinkName} will be removed from your wishlist. You can add it back anytime.`
                 : "This drink will be removed from your wishlist. You can add it back anytime."}

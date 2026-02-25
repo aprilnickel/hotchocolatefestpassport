@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import { db } from "@/db";
-import { journalItems, drinks } from "@/db/schema";
+import { journalEntries, drinks } from "@/db/schema";
 import { eq, and } from "drizzle-orm";
 import { z } from "zod";
 import { randomUUID } from "crypto";
@@ -32,13 +32,13 @@ export async function addToJournal(drinkId: string) {
   }
 
   await db
-    .insert(journalItems)
+    .insert(journalEntries)
     .values({
       id: randomUUID(),
       userId: session.user.id,
       drinkId: parsed.data,
     })
-    .onConflictDoNothing({ target: [journalItems.userId, journalItems.drinkId] });
+    .onConflictDoNothing({ target: [journalEntries.userId, journalEntries.drinkId] });
 
   revalidatePath("/drinks");
   revalidatePath("/drinks/[slug]", "page");
@@ -68,11 +68,11 @@ export async function removeFromJournal(drinkId: string) {
   }
 
   await db
-    .delete(journalItems)
+    .delete(journalEntries)
     .where(
       and(
-        eq(journalItems.userId, session.user.id),
-        eq(journalItems.drinkId, parsed.data)
+        eq(journalEntries.userId, session.user.id),
+        eq(journalEntries.drinkId, parsed.data)
       )
     );
 
@@ -80,5 +80,43 @@ export async function removeFromJournal(drinkId: string) {
   revalidatePath("/drinks/[slug]", "page");
   revalidatePath("/wishlist");
   revalidatePath("/journal");
+  return { success: true };
+}
+
+const journaledAtSchema = z
+  .string()
+  .regex(/^\d{4}-\d{2}-\d{2}$/, "Date must be YYYY-MM-DD");
+
+export async function updateJournalDate(drinkId: string, journaledAt: string) {
+  const drinkParsed = drinkIdSchema.safeParse(drinkId);
+  const dateParsed = journaledAtSchema.safeParse(journaledAt);
+  if (!drinkParsed.success) {
+    const msg = drinkParsed.error.errors[0]?.message ?? "Invalid drink";
+    return { success: false, error: msg };
+  }
+  if (!dateParsed.success) {
+    const msg = dateParsed.error.errors[0]?.message ?? "Invalid date";
+    return { success: false, error: msg };
+  }
+  const session = await auth.api.getSession({ headers: await headers() });
+  if (!session?.user?.id) {
+    return { success: false, error: "Sign in to update journal entries" };
+  }
+
+  const date = new Date(dateParsed.data + "T12:00:00.000Z");
+
+  await db
+    .update(journalEntries)
+    .set({ journaledAt: date })
+    .where(
+      and(
+        eq(journalEntries.userId, session.user.id),
+        eq(journalEntries.drinkId, drinkParsed.data)
+      )
+    );
+
+  revalidatePath("/journal");
+  revalidatePath("/drinks");
+  revalidatePath("/drinks/[slug]", "page");
   return { success: true };
 }

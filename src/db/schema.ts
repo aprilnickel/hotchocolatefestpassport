@@ -50,8 +50,8 @@ export const wishlistItems = pgTable(
   ]
 );
 
-export const journalItems = pgTable(
-  "journal_items",
+export const journalEntries = pgTable(
+  "journal_entries",
   {
     id: text("id").primaryKey(),
     userId: text("user_id").notNull(),

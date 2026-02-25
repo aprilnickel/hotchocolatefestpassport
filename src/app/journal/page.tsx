@@ -3,9 +3,21 @@ import Link from "next/link";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import { db } from "@/db";
-import { journalItems, drinks, vendors } from "@/db/schema";
+import { journalEntries, drinks, vendors } from "@/db/schema";
 import { eq, desc } from "drizzle-orm";
-import { RemoveFromJournalButton } from "@/app/journal/remove-from-journal-button";
+import DateSection from "./date-section";
+
+export type JournalEntryRow = {
+  id: string;
+  drinkId: string;
+  drinkName: string;
+  drinkSlug: string;
+  flavourNotes: string | null;
+  vendorName: string;
+  vendorSlug: string;
+  neighbourhood: string | null;
+  journaledAt: Date;
+};
 
 export default async function JournalPage() {
   const session = await auth.api.getSession({ headers: await headers() });
@@ -13,7 +25,7 @@ export default async function JournalPage() {
 
   const rows = await db
     .select({
-      id: journalItems.id,
+      id: journalEntries.id,
       drinkId: drinks.id,
       drinkName: drinks.name,
       drinkSlug: drinks.slug,
@@ -21,63 +33,48 @@ export default async function JournalPage() {
       vendorName: vendors.name,
       vendorSlug: vendors.slug,
       neighbourhood: vendors.neighbourhood,
-      journaledAt: journalItems.journaledAt,
+      journaledAt: journalEntries.journaledAt,
     })
-    .from(journalItems)
-    .innerJoin(drinks, eq(journalItems.drinkId, drinks.id))
+    .from(journalEntries)
+    .innerJoin(drinks, eq(journalEntries.drinkId, drinks.id))
     .innerJoin(vendors, eq(drinks.vendorId, vendors.id))
-    .where(eq(journalItems.userId, session.user.id))
-    .orderBy(desc(journalItems.journaledAt));
+    .where(eq(journalEntries.userId, session.user.id))
+    .orderBy(desc(journalEntries.journaledAt));
+
+  const byDate = rows.reduce<Record<string, JournalEntryRow[]>>((acc, r) => {
+    const key = r.journaledAt ? new Date(r.journaledAt).toISOString().slice(0, 10) : "unknown";
+    if (!acc[key]) acc[key] = [];
+    acc[key].push(r);
+    return acc;
+  }, {});
+  const dateKeys = Object.keys(byDate).sort((a, b) => b.localeCompare(a));
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-6">
-      <h1 className="mb-6 text-2xl font-bold hidden md:block">My Journal</h1>
-      <p className="mb-4">
+      <h1 className="mb-2 text-2xl font-bold hidden md:block">My Journal</h1>
+      <p className="mb-6">
         Find all the drinks you&apos;ve sipped here.
       </p>
       {rows.length === 0 ? (
-        <p>
-          You haven&apos;t added any drinks to your journal yet. Try one from your{" "}
-          <Link href="/wishlist" className="font-medium underline">
-            wishlist
-          </Link>{" "}
-          or{" "}
-          <Link href="/drinks" className="font-medium underline">
-            browse drinks
-          </Link>{" "}
-          and add them to your journal when you&apos;ve tried them.
-        </p>
+        <div className="rounded-lg border border-burgundy/50 bg-cream/50 p-6 text-center">
+          <p className="text-burgundy/90">
+            No entries yet. Try a drink from your{" "}
+            <Link href="/wishlist" className="font-medium underline hover:no-underline">
+              wishlist
+            </Link>{" "}
+            or{" "}
+            <Link href="/drinks" className="font-medium underline hover:no-underline">
+              browse drinks
+            </Link>{" "}
+            and add them to your journal once you&apos;ve tried them.
+          </p>
+        </div>
       ) : (
-        <ul className="space-y-3">
-          {rows.map((r) => (
-            <li
-              key={r.id}
-              className="relative flex items-center gap-3 rounded-lg border border-burgundy/50 p-4 shadow-md transition hover:border-burgundy/70 hover:shadow-lg"
-            >
-              <RemoveFromJournalButton
-                drinkId={r.drinkId}
-                drinkName={r.drinkName}
-                className="absolute top-2 right-2"
-              />
-              <Link
-                href={`/drinks/${r.drinkSlug}`}
-                className="min-w-0 flex-1 pr-8"
-              >
-                <div className="font-medium">{r.drinkName}</div>
-                <div className="text-sm">
-                  {r.vendorName}
-                  {r.neighbourhood ? ` · ${r.neighbourhood}` : ""}
-                </div>
-                {r.flavourNotes && (
-                  <div className="text-sm opacity-80">{r.flavourNotes}</div>
-                )}
-                <div className="mt-1 text-xs opacity-70">
-                  Sipped on · {r.journaledAt ? new Date(r.journaledAt).toLocaleDateString() : ""}
-                </div>
-              </Link>
-            </li>
+        <div className="space-y-8">
+          {dateKeys.map((dateKey) => (
+            <DateSection key={dateKey} dateKey={dateKey} entries={byDate[dateKey]} />
           ))}
-        </ul>
+        </div>
       )}
     </main>
   );
