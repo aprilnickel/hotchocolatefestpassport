@@ -31,7 +31,9 @@ export default function JournalEntry({
           {entry.neighbourhood ? ` · ${entry.neighbourhood}` : ""}
         </div>
         {entry.flavourNotes && (
-          <div className="text-sm opacity-80 mt-0.5">{entry.flavourNotes}</div>
+          <div className="text-sm opacity-90 mt-1">
+          Flavour notes: <span className="italic opacity-80">{entry.flavourNotes}</span>
+        </div>
         )}
       </Link>
       <JournalEntryEditor

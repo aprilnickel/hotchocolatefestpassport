@@ -68,7 +68,7 @@ export default async function DrinkDetailPage({
         </p>
         {drink.flavourNotes && (
           <p className="mt-2 text-sm">
-            <span className="font-medium">Flavour notes:</span> <span className="opacity-80">{drink.flavourNotes}</span>
+            <span className="font-medium">Flavour notes:</span> <span className="italic opacity-80">{drink.flavourNotes}</span>
           </p>
         )}
         {drink.description && (

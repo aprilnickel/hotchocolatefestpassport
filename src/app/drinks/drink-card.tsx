@@ -20,14 +20,14 @@ export function DrinkCard({
         className="min-w-0 flex-1"
       >
         <div className="font-medium">{drink.name}</div>
-        <div className="mt-1 text-sm">
+        <div className="text-sm">
           {drink.vendorName}
           {drink.neighbourhood ? ` · ${drink.neighbourhood}` : ""}
         </div>
         {drink.flavourNotes && (
-          <div className="mt-1 text-sm opacity-80">
-            {drink.flavourNotes}
-          </div>
+          <div className="text-sm opacity-90 mt-1">
+          Flavour notes: <span className="italic opacity-80">{drink.flavourNotes}</span>
+        </div>
         )}
       </Link>
       {showWishlistButton && (

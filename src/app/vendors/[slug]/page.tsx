@@ -34,7 +34,7 @@ export default async function VendorDetailPage({
             href={vendor.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 inline-block text-sm font-medium underline inline-link"
+            className="mt-2 inline-block text-sm font-medium underline hover:no-underline inline-link"
           >
             Visit website
           </a>

@@ -61,7 +61,9 @@ export default async function WishlistPage() {
                   {r.neighbourhood ? ` · ${r.neighbourhood}` : ""}
                 </div>
                 {r.flavourNotes && (
-                  <div className="text-sm opacity-80">{r.flavourNotes}</div>
+                  <div className="text-sm opacity-90 mt-1">
+                    Flavour notes: <span className="italic opacity-80">{r.flavourNotes}</span>
+                  </div>
                 )}
               </Link>
             </li>
