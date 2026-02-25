@@ -49,8 +49,10 @@ export function ActivePageProvider({ children }: { children: React.ReactNode }) 
   );
 }
 
-export function useActivePage() {
+export function useActivePage(): ActivePageContextValue {
   const ctx = useContext(ActivePageContext);
-  if (!ctx) return null;
+  if (!ctx) {
+    throw new Error("useActivePage must be used within ActivePageProvider");
+  }
   return ctx;
 }
