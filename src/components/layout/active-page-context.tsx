@@ -4,7 +4,7 @@ import { createContext, useContext, useState, useCallback, useEffect } from "rea
 import { usePathname } from "next/navigation";
 
 type ActivePage = {
-  slug: 'home' | 'drinks' | 'wishlist' | 'journal' | 'not-found';
+  slug: 'home' | 'drinks' | 'wishlist' | 'journal' | 'about' | 'not-found';
   title: string;
   headerTitle: string;
 };
@@ -14,6 +14,7 @@ const pageMap: Record<string, ActivePage> = {
   drinks: { slug: 'drinks', title: 'Drinks', headerTitle: 'Festival Drinks' },
   wishlist: { slug: 'wishlist', title: 'Wishlist', headerTitle: 'My Wishlist' },
   journal: { slug: 'journal', title: 'Journal', headerTitle: 'My Journal' },
+  about: { slug: 'about', title: 'About', headerTitle: 'About' },
   notFound: { slug: 'not-found', title: 'Not Found', headerTitle: 'Not Found' },
 };
 
@@ -37,6 +38,8 @@ export function ActivePageProvider({ children }: { children: React.ReactNode }) 
       setActivePage(pageMap.wishlist);
     } else if (pathname === "/journal") {
       setActivePage(pageMap.journal);
+    } else if (pathname === "/about") {
+      setActivePage(pageMap.about);
     } else {
       setActivePage(pageMap.notFound);
     }
