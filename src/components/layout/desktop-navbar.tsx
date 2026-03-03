@@ -4,7 +4,7 @@ import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
 
 const navLinkClass =
-  "flex min-h-[44px] min-w-[44px] items-center rounded px-2 text-sm font-medium inline-link";
+  "flex min-h-[44px] min-w-[44px] items-center justify-center rounded px-2 text-sm font-medium text-burgundy hover:bg-burgundy/10";
 
 export function DesktopNavbar() {
   const { data: session } = authClient.useSession();

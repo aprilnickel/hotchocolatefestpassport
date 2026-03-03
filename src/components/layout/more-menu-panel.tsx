@@ -2,14 +2,16 @@
 
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
+import { AboutIcon } from "@/components/icons/about-icon";
+import { LightbulbIcon } from "@/components/icons/lightbulb-icon";
+import { BugIcon } from "@/components/icons/bug-icon";
+import { SignInIcon } from "@/components/icons/sign-in-icon";
+import { SignOutIcon } from "@/components/icons/sign-out-icon";
 import { useMoreMenu } from "./more-menu-context";
-
-const moreMenuLinkClass =
-  "flex min-h-[44px] min-w-[44px] items-center rounded px-2 text-sm font-medium w-full justify-start text-cream";
 
 export function MoreMenuPanel() {
   const menu = useMoreMenu();
-  const { data: session, isPending } = authClient.useSession();
+  const { data: session } = authClient.useSession();
 
   if (!menu) return null;
 
@@ -41,7 +43,7 @@ export function MoreMenuPanel() {
           <button
             type="button"
             onClick={close}
-            className="flex size-10 items-center justify-center rounded-full text-cream hover:bg-burgundy-dark"
+            className="flex size-10 items-center justify-center rounded text-cream hover:bg-cream hover:text-burgundy"
             aria-label="Close menu"
           >
             <span className="text-2xl leading-none" aria-hidden>×</span>
@@ -51,27 +53,24 @@ export function MoreMenuPanel() {
           <nav>
             <ul className="flex flex-col gap-1">
               <li>
-                <Link href="/about" className={moreMenuLinkClass} onClick={close}>
+                <Link href="/about" className="more-menu-btn" onClick={close}>
+                  <AboutIcon />
                   About
                 </Link>
               </li>
               <li>
-                <button className={`${moreMenuLinkClass} posthog-feedback-btn-feature-request`}>
+                <button type="button" className="more-menu-btn posthog-feedback-btn-feature-request">
+                  <LightbulbIcon />
                   Request a feature
                 </button>
               </li>
               <li>
-                <button className={`${moreMenuLinkClass} posthog-feedback-btn-bug-report`}>
+                <button type="button" className="more-menu-btn posthog-feedback-btn-bug-report">
+                  <BugIcon />
                   Report a bug
                 </button>
               </li>
-              {isPending ? (
-                <li>
-                  <span className="flex min-h-[44px] items-center text-sm opacity-70">
-                    Loading…
-                  </span>
-                </li>
-              ) : session ? (
+              {session ? (
                 <li>
                   <button
                     type="button"
@@ -85,14 +84,16 @@ export function MoreMenuPanel() {
                         },
                       });
                     }}
-                    className={moreMenuLinkClass}
+                    className="more-menu-btn"
                   >
+                    <SignOutIcon />
                     Sign Out
                   </button>
                 </li>
               ) : (
                 <li>
-                  <Link href="/sign-in" className={moreMenuLinkClass} onClick={close}>
+                  <Link href="/sign-in" className="more-menu-btn" onClick={close}>
+                    <SignInIcon />
                     Sign In
                   </Link>
                 </li>
@@ -100,14 +101,16 @@ export function MoreMenuPanel() {
             </ul>
           </nav>
           <footer className="mt-auto pt-6 text-center text-sm text-cream/80">
-            Made with{" "}
-            <span className="inline-flex align-middle" role="img" aria-label="love">
-              <svg className="size-4 inline-block" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-              </svg>
-            </span>
-            {" "}by{" "}
-            <a href="https://aprildawne.com/" target="_blank" rel="noopener noreferrer" className="hover:underline">aprildawne.com</a>
+            <a href="https://aprildawne.com/" target="_blank" rel="noopener noreferrer" className="flex min-h-[44px] min-w-[44px] size-10 items-center rounded gap-2 px-4 w-full justify-center hover:bg-cream hover:text-burgundy">
+              Made with{" "}
+              <span className="inline-flex align-middle" role="img" aria-label="love">
+                <svg className="size-4 inline-block" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>
+              </span>
+              {" "}by{" "}
+              <span className="hover:underline">aprildawne.com</span>
+            </a>
           </footer>
         </div>
       </div>
