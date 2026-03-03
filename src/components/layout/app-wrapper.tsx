@@ -12,7 +12,7 @@ export function AppWrapper({ children }: { children: React.ReactNode }) {
 
   return (
     <div
-      className="min-h-screen w-full transition-transform duration-300 ease-out md:transition-none"
+      className="min-h-screen w-full transition-transform duration-300 ease-out md:!translate-x-0"
       style={{ transform: open ? "translateX(-100%)" : "translateX(0)" }}
     >
       {children}
