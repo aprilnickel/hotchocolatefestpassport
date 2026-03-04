@@ -104,8 +104,8 @@ export function MoreMenuPanel() {
             <a href="https://aprildawne.com/" target="_blank" rel="noopener noreferrer" className="flex min-h-[44px] min-w-[44px] size-10 items-center rounded gap-2 px-4 w-full justify-center hover:bg-cream hover:text-burgundy">
               Made with{" "}
               <span className="inline-flex align-middle" role="img" aria-label="love">
-                <svg className="size-4 inline-block" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                <svg className="size-4 inline-block" viewBox="0 0 64 64" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="currentColor" d="M32 57.6c-.8 0-1.6-.3-2.2-.8c-2.3-2-4.6-3.9-6.6-5.6c-5.8-4.9-10.9-9.2-14.4-13.4C4.8 33 3 28.6 3 23.7c0-4.7 1.6-9.1 4.6-12.3s7.1-5 11.6-5c3.3 0 6.4 1.1 9.1 3.1c1.1.8 2 1.8 2.9 2.9c.4.5 1.1.5 1.5 0c.9-1.1 1.9-2 2.9-2.9c2.7-2.1 5.8-3.1 9.1-3.1c4.5 0 8.6 1.8 11.6 5s4.6 7.6 4.6 12.3c0 4.9-1.8 9.3-5.8 14c-3.5 4.2-8.6 8.5-14.4 13.4c-2 1.7-4.3 3.6-6.6 5.6c-.5.6-1.3.9-2.1.9" />
                 </svg>
               </span>
               {" "}by{" "}
