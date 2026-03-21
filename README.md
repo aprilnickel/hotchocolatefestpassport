@@ -1,14 +1,49 @@
-# Hot Chocolate Festival Passport
+# ☕ Hot Chocolate Festival Passport
 
 Companion web app for the Vancouver Hot Chocolate Festival. Browse drinks, maintain a wishlist, and maintain a journal of drinks you've tried.
+
+## 🌱 Upcoming Features
+
+- sign in with Apple
+- support for multiple "sip fest" events (multi-tenant)
+- search & filter drinks
+- add a note to your journal entry
+- and more!
+
+## 🧾 License
+
+This project is licensed under the **GNU Affero General Public License v3.0 (AGPLv3)**.
+
+In short:
+
+- You are free to use, modify, and run this project
+- If you modify the code and make it available to users (including via a hosted service), you must also make your source code available under the same license
+- Any derivative work must also be licensed under AGPLv3
+
+For full details, see the [./LICENSE](LICENSE) file.
+
+## 🔁 Contributions & Forks
+
+If you:
+
+- fork this project
+- run your own instance
+- or build new features
+
+You are encouraged (but not required) to:
+
+- contribute improvements back
+- share what you’ve built
+- open a PR or start a discussion
+
+If you’re running a public instance, AGPL requires that your source code be made available to your users.
 
 ## Setup
 
 1. Copy `.env.example` to `.env` and set `DATABASE_URL` and auth variables.
 2. Run `pnpm install`.
-3. Run `git init` if starting from scratch.
-4. Run `pnpm run db:push` (or `db:migrate`) then `pnpm run db:seed`.
-5. Run `pnpm run dev`.
+3. Run `pnpm run db:push` (or `db:migrate`) then `pnpm run db:seed`.
+4. Run `pnpm run dev`.
 
 ## Scripts
 
