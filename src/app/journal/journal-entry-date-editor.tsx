@@ -4,8 +4,6 @@ import { useMemo, useState } from "react";
 import { Popover, PopoverTrigger, PopoverContent } from "@radix-ui/react-popover";
 import { DayPicker } from "react-day-picker";
 
-import "react-day-picker/dist/style.css";
-
 function parseInitialDate(d: Date | string | null): Date | undefined {
   if (!d) return undefined;
   return typeof d === "string" ? new Date(d) : d;
@@ -44,7 +42,7 @@ export function JournalEntryDateEditor({
         <PopoverTrigger asChild>
           <button
             type="button"
-            className={`inline-flex items-center gap-2 rounded border border-burgundy/30 bg-cream px-3 py-1.5 text-sm text-burgundy/80 hover:border-burgundy/60 hover:text-burgundy focus:outline-none focus:ring-2 focus:ring-burgundy/30 disabled:opacity-50 ${className}`}
+            className={`inline-flex items-center gap-2 rounded-sm border border-burgundy/30 bg-cream px-3 py-1.5 text-sm text-burgundy/80 hover:border-burgundy/60 hover:text-burgundy focus:outline-hidden focus:ring-2 focus:ring-burgundy/30 disabled:opacity-50 ${className}`}
           >
             <span className="shrink-0 text-burgundy/70" aria-hidden>
               <svg

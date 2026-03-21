@@ -146,7 +146,7 @@ export function JournalEntryEditButton({
     <button
       type="button"
       onClick={onClick}
-      className={`rounded p-1.5 text-burgundy/70 hover:bg-burgundy/10 hover:text-burgundy focus:outline-none focus:ring-2 focus:ring-burgundy/30 disabled:opacity-50 ${className}`}
+      className={`rounded-sm p-1.5 text-burgundy/70 hover:bg-burgundy/10 hover:text-burgundy focus:outline-hidden focus:ring-2 focus:ring-burgundy/30 disabled:opacity-50 ${className}`}
       aria-label="Edit entry"
     >
       <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

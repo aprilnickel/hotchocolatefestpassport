@@ -1,8 +1,18 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@import "react-day-picker/dist/style.css";
+
+@theme {
+  --color-cream: #f9f7f0;
+  --color-dust-grey: #dfd5ce;
+  --color-burgundy: #592720;
+  --color-burgundy-dark: #471f19;
+}
 
 @layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
   :root {
     --color-cream: #F9F7F0;
     --color-dust-grey: #DFD5CE;
@@ -20,50 +30,50 @@
   }
   .btn-tertiary {
     @apply min-h-[44px] min-w-[44px] rounded-lg p-2 font-medium;
-    @apply border border-burgundy/30 hover:border-burgundy/50 shadow-sm hover:shadow-md transition;
+    @apply border border-burgundy/30 hover:border-burgundy/50 shadow-xs hover:shadow-md transition;
     @apply bg-cream text-burgundy/80 hover:text-burgundy/90;
   }
   .inline-link {
     @apply text-burgundy hover:text-burgundy-dark;
   }
   .more-menu-btn {
-    @apply flex min-h-[44px] min-w-[44px] size-10 items-center gap-3 rounded px-4 text-sm font-medium w-full justify-start text-cream;
+    @apply flex min-h-[44px] min-w-[44px] size-10 items-center gap-3 rounded-sm px-4 text-sm font-medium w-full justify-start text-cream;
     @apply text-cream hover:bg-cream hover:text-burgundy;
   }
 }
 
-@layer components {
-  .journal-date-picker {
-    .rdp-root {
-      --rdp-accent-color: var(--color-burgundy);
-      --rdp-nav-height: 2rem;
-      --rdp-day-height: 32px;
-      --rdp-day-width: 32px;
-      --rdp-day_button-height: 30px;
-      --rdp-day_button-width: 30px;
-      --rdp-selected-border: none;
-      --rdp-day_button-border-radius: 0.25rem;
-    }
+.journal-date-picker {
+  .rdp-root {
+    --rdp-accent-color: var(--color-burgundy);
+    --rdp-nav-height: 2rem;
+    --rdp-day-height: 32px;
+    --rdp-day-width: 32px;
+    --rdp-day_button-height: 30px;
+    --rdp-day_button-width: 30px;
+    --rdp-selected-border: none;
+    --rdp-day_button-border-radius: 0.25rem;
+  }
 
-    .rdp-month_caption, .rdp-selected {
-      font-size: inherit;
-    }
+  .rdp-month_caption,
+  .rdp-selected {
+    font-size: inherit;
+  }
 
-    .rdp-selected  .rdp-day_button {
-      @apply bg-burgundy/80 text-cream;
-    }
+  .rdp-selected .rdp-day_button {
+    @apply bg-burgundy/80 text-cream;
+  }
 
-    .rdp-day_button {
-      @apply hover:bg-burgundy/10 hover:text-burgundy;
-    }
+  .rdp-day_button {
+    @apply hover:bg-burgundy/10 hover:text-burgundy;
+  }
 
-    .rdp-button_next, .rdp-button_previous {
-      @apply hover:bg-burgundy/10 hover:text-burgundy;
-      border-radius: var(--rdp-day_button-border-radius);
-    }
+  .rdp-button_next,
+  .rdp-button_previous {
+    @apply hover:bg-burgundy/10 hover:text-burgundy;
+    border-radius: var(--rdp-day_button-border-radius);
+  }
 
-    .rdp-chevron {
-      @apply size-4;
-    }
+  .rdp-chevron {
+    @apply size-4;
   }
 }

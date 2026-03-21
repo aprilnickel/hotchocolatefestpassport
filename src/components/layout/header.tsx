@@ -24,7 +24,7 @@ export function Header() {
           <button
             type="button"
             onClick={toggleMoreMenu}
-            className="flex size-10 shrink-0 items-center justify-center rounded text-burgundy hover:bg-burgundy/10"
+            className="flex size-10 shrink-0 items-center justify-center rounded-sm text-burgundy hover:bg-burgundy/10"
             aria-label={moreMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={moreMenuOpen}
           >

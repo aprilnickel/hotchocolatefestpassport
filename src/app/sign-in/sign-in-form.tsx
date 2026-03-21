@@ -23,7 +23,7 @@ export function SignInForm() {
         type="button"
         onClick={handleGoogleSignIn}
         disabled={loading}
-        className="flex w-full min-h-[44px] items-center justify-center gap-3 rounded-lg border border-burgundy/30 bg-white px-4 py-3 font-medium text-neutral-800 shadow-sm transition hover:bg-dust-grey hover:border-burgundy/50 disabled:opacity-50"
+        className="flex w-full min-h-[44px] items-center justify-center gap-3 rounded-lg border border-burgundy/30 bg-white px-4 py-3 font-medium text-neutral-800 shadow-xs transition hover:bg-dust-grey hover:border-burgundy/50 disabled:opacity-50"
       >
         <svg className="h-5 w-5" viewBox="0 0 24 24" aria-hidden>
           <path

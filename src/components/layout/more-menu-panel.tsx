@@ -22,13 +22,13 @@ export function MoreMenuPanel() {
     <>
       {/* Backdrop: desktop only, closes menu when clicking outside sidebar */}
       <div
-        className="fixed inset-0 z-30 bg-black/30 opacity-0 transition-opacity duration-300 ease-out pointer-events-none data-[open]:opacity-100 data-[open]:pointer-events-auto hidden md:block"
+        className="fixed inset-0 z-30 bg-black/30 opacity-0 transition-opacity duration-300 ease-out pointer-events-none data-open:opacity-100 data-open:pointer-events-auto hidden md:block"
         data-open={open || undefined}
         onClick={close}
         aria-hidden={!open}
       />
       <div
-        className="fixed inset-0 z-40 flex flex-col bg-burgundy shadow-lg transition-transform duration-300 ease-out pointer-events-none data-[open]:pointer-events-auto md:inset-y-0 md:right-0 md:left-auto md:w-80 md:max-w-[85vw]"
+        className="fixed inset-0 z-40 flex flex-col bg-burgundy shadow-lg transition-transform duration-300 ease-out pointer-events-none data-open:pointer-events-auto md:inset-y-0 md:right-0 md:left-auto md:w-80 md:max-w-[85vw]"
         data-open={open || undefined}
         style={{
           transform: open ? "translateX(0)" : "translateX(100%)",
@@ -43,7 +43,7 @@ export function MoreMenuPanel() {
           <button
             type="button"
             onClick={close}
-            className="flex size-10 items-center justify-center rounded text-cream hover:bg-cream hover:text-burgundy"
+            className="flex size-10 items-center justify-center rounded-sm text-cream hover:bg-cream hover:text-burgundy"
             aria-label="Close menu"
           >
             <span className="text-2xl leading-none" aria-hidden>×</span>
@@ -101,7 +101,7 @@ export function MoreMenuPanel() {
             </ul>
           </nav>
           <footer className="mt-auto pt-6 text-center text-sm text-cream/80">
-            <a href="https://aprildawne.com/" target="_blank" rel="noopener noreferrer" className="flex min-h-[44px] min-w-[44px] size-10 items-center rounded gap-2 px-4 w-full justify-center hover:bg-cream hover:text-burgundy">
+            <a href="https://aprildawne.com/" target="_blank" rel="noopener noreferrer" className="flex min-h-[44px] min-w-[44px] size-10 items-center rounded-sm gap-2 px-4 w-full justify-center hover:bg-cream hover:text-burgundy">
               Made with{" "}
               <span className="inline-flex align-middle" role="img" aria-label="love">
                 <svg className="size-4 inline-block" viewBox="0 0 64 64" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
