@@ -24,7 +24,7 @@ export default async function HomePage() {
           </Link>
         </section>
       )}
-      <h1 className="text-2xl font-bold">Hot Chocolate Festival Passport</h1>
+      <h1 className="text-2xl font-bold">Sip Fest Passport</h1>
       <p className="mt-2">
         Your companion for the Vancouver Hot Chocolate Festival. Browse drinks,
         keep a wishlist, and keep a journal of what you&apos;ve sipped.

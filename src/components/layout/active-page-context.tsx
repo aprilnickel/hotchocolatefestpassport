@@ -10,7 +10,7 @@ type ActivePage = {
 };
 
 const pageMap: Record<string, ActivePage> = {
-  home: { slug: 'home', title: 'Home', headerTitle: 'Hot Chocolate Festival Passport' },
+  home: { slug: 'home', title: 'Home', headerTitle: 'Sip Fest Passport' },
   drinks: { slug: 'drinks', title: 'Drinks', headerTitle: 'Festival Drinks' },
   wishlist: { slug: 'wishlist', title: 'Wishlist', headerTitle: 'My Wishlist' },
   journal: { slug: 'journal', title: 'Journal', headerTitle: 'My Journal' },

@@ -15,7 +15,7 @@ const workSans = Work_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Hot Chocolate Festival Passport",
+  title: "Sip Fest Passport",
   description: "Your companion for the Vancouver Hot Chocolate Festival",
 };
 

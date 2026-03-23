@@ -17,7 +17,7 @@ export default async function SignInPage({
     <main className="flex min-h-screen flex-col items-center justify-center p-6">
       <div className="w-full max-w-sm space-y-6">
         <h1 className="text-center text-2xl font-bold">
-          Sign in to Hot Chocolate Festival Passport
+          Sign in to Sip Fest Passport
         </h1>
         {error && (
           <p className="rounded-lg bg-red-50 p-3 text-center text-sm text-red-700">

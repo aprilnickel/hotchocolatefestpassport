@@ -1,4 +1,4 @@
-# ☕ Hot Chocolate Festival Passport
+# ☕ Sip Fest Passport
 
 Companion web app for the Vancouver Hot Chocolate Festival. Browse drinks, maintain a wishlist, and maintain a journal of drinks you've tried.
 

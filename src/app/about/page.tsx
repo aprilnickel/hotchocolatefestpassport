@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "About | Hot Chocolate Festival Passport",
+  title: "About | Sip Fest Passport",
   description: "About the app, the Vancouver Hot Chocolate Festival, and the app creator.",
 };
 
@@ -40,7 +40,7 @@ export default function AboutPage() {
         <section className="mb-8">
           <h2 className="mb-2 text-lg font-semibold text-burgundy">About this app</h2>
           <p className="text-burgundy/90">
-            Hot Chocolate Festival Passport is a companion web app for the Vancouver Hot Chocolate
+            Sip Fest Passport is a companion web app for the Vancouver Hot Chocolate
             Festival. Use it to browse this year&apos;s drinks, save favourites to your wishlist, and
             keep a journal of the drinks you&apos;ve tried—so you never forget a great sip.
           </p>
