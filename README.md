@@ -2,6 +2,8 @@
 
 Companion web app for the Vancouver Hot Chocolate Festival. Browse drinks, maintain a wishlist, and maintain a journal of drinks you've tried.
 
+As a long-time enjoyer of Vancouver's Hot Chocolate Festival,
+
 ## 🌱 Upcoming Features
 
 - sign in with Apple
@@ -58,6 +60,27 @@ If you’re running a public instance, AGPL requires that your source code be ma
 ## Festival data
 
 See [docs/DATA.md](docs/DATA.md) for where drink/vendor data comes from and how to re-seed for new festival years.
+
+### Scrape latest festival vendor/drink data
+
+Use the scraper to pull live data from [hotchocolatefest.com](https://hotchocolatefest.com/) and write a JSON file containing `vendors` and `drinks` arrays.
+
+1. Install dependencies:
+   - `pnpm install`
+2. Run scraper (default output path):
+   - `pnpm run data:scrape`
+3. Optional custom output path:
+   - `pnpm run data:scrape -- --output data/hotchocolatefest.json`
+
+Default output file:
+
+- `data/hotchocolatefest-vendors-and-drinks.json`
+
+Notes:
+
+- Neighbourhood is sourced from the Vendor Directory taxonomy/classes.
+- Dietary options and service flags (`open_late`, `takeout_only`) come from the Vendor Directory.
+- Drink date ranges are parsed from each vendor page's "Available ..." line.
 
 ## Deployment (Vercel)
 
