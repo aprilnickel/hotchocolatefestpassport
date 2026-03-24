@@ -31,6 +31,7 @@ type Vendor = {
   dietaryOptions: DietaryOption[];
   openLate: boolean;
   takeoutOnly: boolean;
+  limitedSeating: boolean;
   socialLinks: string[];
   locations: VendorLocation[];
 };
@@ -54,9 +55,10 @@ type DirectoryVendorMeta = {
   url: string;
   name: string;
   neighbourhoods: string[];
-  dietary: DietaryOption[];
+  dietaryOptions: DietaryOption[];
   openLate: boolean;
   takeoutOnly: boolean;
+  limitedSeating: boolean;
 };
 
 function normalizeWhitespace(value: string): string {
@@ -163,7 +165,7 @@ function parseDirectoryVendors(html: string): DirectoryVendorMeta[] {
       vendorParentElement.find("img[alt]").map((_i, el) => $(el).attr("alt") ?? "").get().join(" "),
     );
     const dietaryFromAlt = mapDietaryFromText(altText);
-    const dietary = Array.from(new Set([...dietaryFromClasses, ...dietaryFromAlt]));
+    const dietaryOptions = Array.from(new Set([...dietaryFromClasses, ...dietaryFromAlt]));
 
     const openLate =
       classNames.some((c) => c.includes("available-services-open-late")) ||
@@ -171,14 +173,18 @@ function parseDirectoryVendors(html: string): DirectoryVendorMeta[] {
     const takeoutOnly =
       classNames.some((c) => c.includes("available-services-takeout-only")) ||
       altText.toLowerCase().includes("takeout only");
+    const limitedSeating =
+      classNames.some((c) => c.includes("available-services-limited-cafe-seating")) ||
+      altText.toLowerCase().includes("limited cafe seating");
 
     vendors.push({
       url: absoluteUrl,
       name: vendorName,
       neighbourhoods,
-      dietary,
+      dietaryOptions,
       openLate,
       takeoutOnly,
+      limitedSeating,
     });
     seen.add(absoluteUrl);
   });
@@ -309,7 +315,7 @@ function parseDrinks(
     }
 
     const dateRange = parseDateRange(availableLine);
-    const dietary = mapDietaryFromText(paragraphHtml.join(" "));
+    const dietaryOptions = mapDietaryFromText(paragraphHtml.join(" "));
 
     drinks.push({
       id,
@@ -317,7 +323,7 @@ function parseDrinks(
       availableStart: dateRange.start,
       availableEnd: dateRange.end,
       description: paragraphHtml.join(""),
-      dietaryOptions: dietary,
+      dietaryOptions,
       vendor: vendorName,
     });
   }
@@ -416,9 +422,10 @@ async function scrapeVendor(
   const vendor: Vendor = {
     name,
     description,
-    dietaryOptions: meta.dietary,
+    dietaryOptions: meta.dietaryOptions,
     openLate: meta.openLate,
     takeoutOnly: meta.takeoutOnly,
+    limitedSeating: meta.limitedSeating,
     socialLinks,
     locations,
   };
