@@ -338,14 +338,54 @@ function parseLocationBlock(
   const $ = cheerio.load(`<div>${blockHtml}</div>`);
   const title = normalizeWhitespace($("h3").first().text());
 
-  const allText = normalizeWhitespace($("div").text().replace(/Directions$/i, ""));
-  const addressMatch = allText.match(/Location:\s*(.+?)(?=Hours:|Tel:|Email:|$)/i);
-  const hoursMatch = allText.match(/Hours:\s*(.+?)(?=Tel:|Email:|$)/i);
-  const phoneMatch = allText.match(/Tel:\s*([^\s].+?)(?=Email:|$)/i);
-  const emailMatch = allText.match(
+  const root = $("div").first();
+  const detailsParagraph = root
+    .find("p")
+    .filter((_i, el) => /Location:/i.test($(el).text()))
+    .first();
+  const detailsText = (() => {
+    if (detailsParagraph.length) {
+      return normalizeWhitespace(detailsParagraph.text());
+    }
+    const clone = root.clone();
+    clone.find("a").each((_i, el) => {
+      if (normalizeWhitespace($(el).text()) === "Directions") {
+        $(el).remove();
+      }
+    });
+    return normalizeWhitespace(clone.text());
+  })();
+
+  // Phone lines may use "Tel:", "Telephone:", or "Daily Telephone:" (longest label first in alternations).
+  const phoneLabel = "(?:Daily Telephone|Telephone|Tel)";
+
+  const addressMatch = detailsText.match(
+    new RegExp(
+      `Location:\\s*(.+?)(?=Hours:|${phoneLabel}:|Email:|$)`,
+      "i",
+    ),
+  );
+  const hoursMatch = detailsText.match(
+    new RegExp(`Hours:\\s*(.+?)(?=${phoneLabel}:|Email:|$)`, "i"),
+  );
+  const phoneMatch = detailsText.match(
+    new RegExp(`${phoneLabel}:\\s*([^\\s].+?)(?=Email:|$)`, "i"),
+  );
+
+  const emailParagraph = root
+    .find("p")
+    .filter((_i, el) => /Email:/i.test($(el).text()))
+    .first();
+  const emailSourceText = emailParagraph.length
+    ? normalizeWhitespace(emailParagraph.text())
+    : detailsText;
+  const emailMatch = emailSourceText.match(
     /([A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,})/i,
   );
-  const mapsLink = $("a[href*='google'], a[href*='g.page'], a[href*='maps']")
+
+  const mapsLink = root
+    .find("a")
+    .filter((_i, el) => normalizeWhitespace($(el).text()) === "Directions")
     .first()
     .attr("href");
 
