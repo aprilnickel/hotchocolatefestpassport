@@ -63,7 +63,7 @@ function normalizeWhitespace(value: string): string {
   return value.replace(/\s+/g, " ").trim();
 }
 
-function titleCaseSlug(slug: string): string {
+function neighbourhoodTitleCaseSlug(slug: string): string {
   const known: Record<string, string> = {
     "downtown-vancouver": "Downtown Vancouver",
     "mount-pleasant-east-vancouver": "Mount Pleasant/East Vancouver",
@@ -130,15 +130,15 @@ function parseDirectoryVendors(html: string): DirectoryVendorMeta[] {
     const vendorName = normalizeWhitespace($(anchor).find("h4").first().text());
     if (!vendorName) return;
 
-    const loopItem =
+    const vendorParentElement =
       $(anchor).closest("[data-elementor-type='loop-item']") ||
       $(anchor).closest(".e-loop-item");
-    const classNames = (loopItem.attr("class") ?? "").split(/\s+/);
+    const classNames = (vendorParentElement.attr("class") ?? "").split(/\s+/);
 
     const neighbourhoods = classNames
       .filter((cls) => cls.startsWith("neighbourhood-"))
       .map((cls) => cls.replace("neighbourhood-", ""))
-      .map(titleCaseSlug);
+      .map(neighbourhoodTitleCaseSlug);
 
     const dietaryFromClasses: DietaryOption[] = [];
     if (
@@ -160,7 +160,7 @@ function parseDirectoryVendors(html: string): DirectoryVendorMeta[] {
     }
 
     const altText = normalizeWhitespace(
-      loopItem.find("img[alt]").map((_i, el) => $(el).attr("alt") ?? "").get().join(" "),
+      vendorParentElement.find("img[alt]").map((_i, el) => $(el).attr("alt") ?? "").get().join(" "),
     );
     const dietaryFromAlt = mapDietaryFromText(altText);
     const dietary = Array.from(new Set([...dietaryFromClasses, ...dietaryFromAlt]));
