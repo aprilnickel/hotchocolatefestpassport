@@ -11,6 +11,29 @@ import * as cheerio from "cheerio";
 
 const BASE_URL = "https://hotchocolatefest.com";
 const DIRECTORY_URL = `${BASE_URL}/vendor-directory/`;
+const VIRTUAL_MAP_URL = `${BASE_URL}/virtual-map/`;
+
+/** Nominatim `address` object when `addressdetails=1` (keys vary by result). */
+export type NominatimAddressDetails = Record<string, string>;
+
+/**
+ * Rows from the Google My Maps KML (virtual map iframe).
+ * `resolvedAddressDetails` is filled via Nominatim reverse geocode (`addressdetails=1`).
+ */
+type VirtualMapPlacemark = {
+  neighbourhood: string;
+  placemarkName: string;
+  lng: number;
+  lat: number;
+  resolvedAddressDetails: NominatimAddressDetails | null;
+};
+
+type ReverseGeocodeCacheFile = {
+  mid: string;
+  updatedAt: string;
+  /** Key: "lat,lng"; value: Nominatim `address` object */
+  addresses: Record<string, NominatimAddressDetails>;
+};
 
 const DIETARY_VALUES = ["vegan", "gluten-free", "dairy-free"] as const;
 type DietaryOption = (typeof DIETARY_VALUES)[number];
@@ -114,6 +137,371 @@ async function fetchHtml(url: string): Promise<string> {
     throw new Error(`Failed to fetch ${url}: HTTP ${res.status}`);
   }
   return res.text();
+}
+
+/** Google My Maps id from the embed iframe on the virtual map page. */
+function extractMapMidFromVirtualMapHtml(html: string): string {
+  const m =
+    html.match(/maps\/d\/u\/\d\/embed\?[^"']*mid=([^&"']+)/i) ??
+    html.match(/[?&]mid=([a-zA-Z0-9_-]+)/);
+  if (!m?.[1]) {
+    throw new Error("Could not find Google My Maps mid in virtual-map page HTML");
+  }
+  return m[1];
+}
+
+async function fetchVirtualMapKmlAndMid(): Promise<{ kml: string; mid: string }> {
+  const pageHtml = await fetchHtml(VIRTUAL_MAP_URL);
+  const mid = extractMapMidFromVirtualMapHtml(pageHtml);
+  const kmlUrl = `https://www.google.com/maps/d/kml?mid=${encodeURIComponent(mid)}&forcekml=1`;
+  const res = await fetch(kmlUrl, {
+    headers: {
+      "User-Agent": "hotchocolatefestpassport-data-scraper/1.0",
+      Accept: "application/vnd.google-earth.kml+xml, application/xml, text/xml, */*",
+    },
+  });
+  if (!res.ok) {
+    throw new Error(`Failed to fetch map KML: HTTP ${res.status}`);
+  }
+  const kml = await res.text();
+  return { kml, mid };
+}
+
+function coordCacheKey(lat: number, lng: number): string {
+  return `${lat.toFixed(6)},${lng.toFixed(6)}`;
+}
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/** Nominatim requires a valid User-Agent identifying the app (see usage policy). */
+const NOMINATIM_USER_AGENT =
+  "hotchocolatefestpassport-scraper/1.0 (festival data; +https://hotchocolatefest.com/)";
+
+function normalizeNominatimAddress(
+  raw: Record<string, unknown> | undefined,
+): NominatimAddressDetails {
+  if (!raw || typeof raw !== "object") return {};
+  const out: NominatimAddressDetails = {};
+  for (const [k, v] of Object.entries(raw)) {
+    if (v == null) continue;
+    const s = typeof v === "string" ? v : String(v);
+    if (s.trim()) out[k] = s.trim();
+  }
+  return out;
+}
+
+async function reverseGeocodeNominatim(
+  lat: number,
+  lng: number,
+): Promise<NominatimAddressDetails> {
+  const url = new URL("https://nominatim.openstreetmap.org/reverse");
+  url.searchParams.set("lat", String(lat));
+  url.searchParams.set("lon", String(lng));
+  url.searchParams.set("format", "json");
+  url.searchParams.set("addressdetails", "1");
+
+  const res = await fetch(url.toString(), {
+    headers: {
+      "User-Agent": NOMINATIM_USER_AGENT,
+      Accept: "application/json",
+    },
+  });
+  if (!res.ok) {
+    throw new Error(`Nominatim reverse failed: HTTP ${res.status}`);
+  }
+  const data = (await res.json()) as { address?: Record<string, unknown> };
+  return normalizeNominatimAddress(data.address);
+}
+
+const REVERSE_GEOCODE_CACHE_PATH = path.join(
+  process.cwd(),
+  "data",
+  "virtual-map-reverse-geocode-cache.json",
+);
+
+async function enrichPlacemarksWithReverseAddresses(
+  placemarks: VirtualMapPlacemark[],
+  mapMid: string,
+): Promise<void> {
+  let cache: ReverseGeocodeCacheFile = {
+    mid: mapMid,
+    updatedAt: new Date().toISOString(),
+    addresses: {},
+  };
+  try {
+    const raw = await fs.readFile(REVERSE_GEOCODE_CACHE_PATH, "utf8");
+    const parsed = JSON.parse(raw) as Partial<ReverseGeocodeCacheFile>;
+    if (parsed.mid === mapMid && parsed.addresses) {
+      cache = parsed as ReverseGeocodeCacheFile;
+    }
+  } catch {
+    /* no cache */
+  }
+
+  const needFetch: VirtualMapPlacemark[] = [];
+  for (const p of placemarks) {
+    const key = coordCacheKey(p.lat, p.lng);
+    const hit = cache.addresses[key];
+    if (hit && Object.keys(hit).length > 0) {
+      p.resolvedAddressDetails = hit;
+    } else {
+      needFetch.push(p);
+    }
+  }
+
+  process.stdout.write(
+    `  -> Reverse geocoding ${needFetch.length} coordinates (${placemarks.length - needFetch.length} cached); Nominatim max ~1 req/s…\n`,
+  );
+
+  for (let i = 0; i < needFetch.length; i++) {
+    const p = needFetch[i];
+    const key = coordCacheKey(p.lat, p.lng);
+    try {
+      const addr = await reverseGeocodeNominatim(p.lat, p.lng);
+      p.resolvedAddressDetails =
+        Object.keys(addr).length > 0 ? addr : null;
+      if (p.resolvedAddressDetails) {
+        cache.addresses[key] = p.resolvedAddressDetails;
+      }
+      cache.updatedAt = new Date().toISOString();
+    } catch {
+      p.resolvedAddressDetails = null;
+    }
+    await fs.writeFile(
+      REVERSE_GEOCODE_CACHE_PATH,
+      `${JSON.stringify(cache, null, 2)}\n`,
+      "utf8",
+    );
+    if (i < needFetch.length - 1) {
+      await sleep(1100); // adhere to Nominatim usage policy of 1 req/s (https://operations.osmfoundation.org/policies/nominatim/)
+    }
+  }
+
+  for (const p of placemarks) {
+    if (
+      !p.resolvedAddressDetails ||
+      Object.keys(p.resolvedAddressDetails).length === 0
+    ) {
+      const key = coordCacheKey(p.lat, p.lng);
+      const hit = cache.addresses[key];
+      if (hit && Object.keys(hit).length > 0) {
+        p.resolvedAddressDetails = hit;
+      }
+    }
+  }
+}
+
+/** Omit POI / country noise when reading Nominatim `address` fields. */
+const NOMINATIM_ADDRESS_MATCH_SKIP = new Set([
+  "amenity",
+  "shop",
+  "tourism",
+  "country",
+  "country_code",
+  "ISO3166-2-lvl4",
+  "state",
+  "county",
+]);
+
+const NOMINATIM_ADDRESS_MATCH_ORDER = [
+  "house_number",
+  "road",
+  "suburb",
+  "neighbourhood",
+  "quarter",
+  "city",
+  "town",
+  "village",
+  "postcode",
+] as const;
+
+/** Build one comparable string from Nominatim `address` fields (not `display_name`). */
+function nominatimAddressToMatchLine(details: NominatimAddressDetails): string {
+  const used = new Set<string>();
+  const parts: string[] = [];
+  for (const k of NOMINATIM_ADDRESS_MATCH_ORDER) {
+    const v = details[k];
+    if (v != null && String(v).trim()) {
+      parts.push(String(v).trim());
+      used.add(k);
+    }
+  }
+  for (const [k, v] of Object.entries(details)) {
+    if (used.has(k) || NOMINATIM_ADDRESS_MATCH_SKIP.has(k)) continue;
+    if (v != null && String(v).trim()) {
+      parts.push(String(v).trim());
+    }
+  }
+  return parts.join(", ");
+}
+
+/** Match vendor `Location:` line to Nominatim structured `address`. */
+function addressMatchScoreFromDetails(
+  vendorAddress: string,
+  details: NominatimAddressDetails | null,
+): number {
+  if (!details || Object.keys(details).length === 0) return 0;
+
+  const hn = details.house_number?.trim().toLowerCase();
+  const vn = primaryStreetNumber(vendorAddress);
+  if (hn && vn && hn !== vn) return 0;
+
+  const line = nominatimAddressToMatchLine(details);
+  if (!line) return 0;
+  return addressMatchScore(vendorAddress, line);
+}
+
+/** Normalize for token overlap / containment checks between vendor and geocoded lines. */
+function normalizeAddressForMatch(s: string): string {
+  return s
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/\p{M}/gu, "")
+    .replace(/[''′]/g, "'")
+    .replace(/\s*&\s*/g, " and ")
+    .replace(/[^\w\s']/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+const ADDRESS_TOKEN_STOP = new Set([
+  "the",
+  "at",
+  "and",
+  "or",
+  "of",
+  "in",
+  "a",
+  "an",
+  "to",
+]);
+
+function addressMatchTokens(s: string): Set<string> {
+  const n = normalizeAddressForMatch(s);
+  return new Set(
+    n
+      .split(/\s+/)
+      .filter((t) => t.length > 1 && !ADDRESS_TOKEN_STOP.has(t)),
+  );
+}
+
+/** First plausible civic number in the string (used to reject wrong placemarks). */
+function primaryStreetNumber(s: string): string | undefined {
+  const m = s.match(/\b(\d{1,5}[a-z]?)\b/i);
+  return m ? m[1].toLowerCase() : undefined;
+}
+
+/**
+ * Score how well a festival site address line matches a normalized address string
+ * (e.g. built from Nominatim `address` fields).
+ */
+function addressMatchScore(vendorAddress: string, geocodedAddress: string): number {
+  if (!vendorAddress || !geocodedAddress) return 0;
+
+  const vNorm = normalizeAddressForMatch(vendorAddress);
+  const gNorm = normalizeAddressForMatch(geocodedAddress);
+  if (vNorm.length >= 8 && (gNorm.includes(vNorm) || vNorm.includes(gNorm))) {
+    return 1;
+  }
+
+  const vn = primaryStreetNumber(vendorAddress);
+  const gn = primaryStreetNumber(geocodedAddress);
+  if (vn && gn && vn !== gn) {
+    return 0;
+  }
+
+  const vTokens = addressMatchTokens(vendorAddress);
+  const gTokens = addressMatchTokens(geocodedAddress);
+  if (vTokens.size === 0 || gTokens.size === 0) return 0;
+
+  let inter = 0;
+  for (const t of vTokens) {
+    if (gTokens.has(t)) inter += 1;
+  }
+  const union = vTokens.size + gTokens.size - inter;
+  return union > 0 ? inter / union : 0;
+}
+
+/**
+ * Pick neighbourhood from the placemark whose reverse-geocoded address best matches the vendor line.
+ */
+function resolveNeighbourhoodFromVirtualMap(
+  vendorAddress: string,
+  placemarks: VirtualMapPlacemark[],
+  directoryFallback: string,
+): string {
+  const v = vendorAddress.trim();
+  const fallback = directoryFallback.split(",")[0].trim();
+  if (!v) {
+    return fallback;
+  }
+
+  let best: { neighbourhood: string; score: number } | null = null;
+  for (const p of placemarks) {
+    const score = addressMatchScoreFromDetails(v, p.resolvedAddressDetails);
+    if (score <= 0) continue;
+    if (!best || score > best.score) {
+      best = { neighbourhood: p.neighbourhood, score };
+    }
+  }
+
+  const MIN_SCORE = 0.2;
+  if (best && best.score >= MIN_SCORE) {
+    return best.neighbourhood;
+  }
+
+  return fallback;
+}
+
+/**
+ * Parse KML from Google My Maps (linked from the virtual map iframe).
+ * Folder names match sidebar neighbourhood labels, e.g. "Westside / Kerrisdale".
+ * Point coordinates are KML order: longitude, latitude (optional altitude).
+ */
+function parseKmlPlacemarks(kml: string): VirtualMapPlacemark[] {
+  const $ = cheerio.load(kml, { xml: { xmlMode: true } });
+  const rows: VirtualMapPlacemark[] = [];
+
+  $("Folder").each((_i, folderEl) => {
+    const $folder = $(folderEl);
+    const neighbourhood = normalizeWhitespace(
+      $folder.children("name").first().text(),
+    );
+    if (!neighbourhood || neighbourhood === "Hot Chocolate Fest 2026") {
+      return;
+    }
+
+    $folder.children("Placemark").each((_j, pmEl) => {
+      const $pm = $(pmEl);
+      const placemarkName = normalizeWhitespace($pm.children("name").first().text());
+      if (!placemarkName) {
+        return;
+      }
+
+      const coordText = normalizeWhitespace($pm.find("coordinates").first().text());
+      const parts = coordText
+        .split(/[,\s]+/)
+        .map((x) => parseFloat(x))
+        .filter((n) => !Number.isNaN(n));
+      if (parts.length < 2) {
+        return;
+      }
+      const lng = parts[0];
+      const lat = parts[1];
+
+      rows.push({
+        neighbourhood,
+        placemarkName,
+        lng,
+        lat,
+        resolvedAddressDetails: null,
+      });
+    });
+  });
+
+  return rows;
 }
 
 function parseDirectoryVendors(html: string): DirectoryVendorMeta[] {
@@ -333,7 +721,8 @@ function parseDrinks(
 
 function parseLocationBlock(
   blockHtml: string,
-  neighbourhood: string,
+  placemarks: VirtualMapPlacemark[],
+  directoryFallbackNeighbourhood: string,
 ): VendorLocation {
   const $ = cheerio.load(`<div>${blockHtml}</div>`);
   const title = normalizeWhitespace($("h3").first().text());
@@ -389,9 +778,16 @@ function parseLocationBlock(
     .first()
     .attr("href");
 
+  const address = addressMatch ? normalizeWhitespace(addressMatch[1]) : "";
+  const neighbourhood = resolveNeighbourhoodFromVirtualMap(
+    address,
+    placemarks,
+    directoryFallbackNeighbourhood,
+  );
+
   return {
     name: title,
-    address: addressMatch ? normalizeWhitespace(addressMatch[1]) : "",
+    address,
     neighbourhood,
     hours: hoursMatch ? normalizeWhitespace(hoursMatch[1]) : "",
     phoneNumber: phoneMatch ? normalizeWhitespace(phoneMatch[1]) : "",
@@ -403,14 +799,20 @@ function parseLocationBlock(
 function parseLocations(
   $: cheerio.CheerioAPI,
   neighbourhoods: string[],
+  placemarks: VirtualMapPlacemark[],
 ): VendorLocation[] {
+  const directoryFallbackNeighbourhood = neighbourhoods.join(", ");
   const sectionHtml = getSectionWidgetHtml($, "Location and Hours");
   if (!sectionHtml) {
     return [
       {
         name: "",
         address: "",
-        neighbourhood: neighbourhoods.join(", "),
+        neighbourhood: resolveNeighbourhoodFromVirtualMap(
+          "",
+          placemarks,
+          directoryFallbackNeighbourhood,
+        ),
         hours: "",
         phoneNumber: "",
         email: "",
@@ -432,8 +834,9 @@ function parseLocations(
   }
   if (chunk) chunks.push(chunk);
 
-  const fallbackNeighbourhood = neighbourhoods.join(", ");
-  return chunks.map((block) => parseLocationBlock(block, fallbackNeighbourhood));
+  return chunks.map((block) =>
+    parseLocationBlock(block, placemarks, directoryFallbackNeighbourhood),
+  );
 }
 
 function parseVendorDescription($: cheerio.CheerioAPI): string {
@@ -446,6 +849,7 @@ function parseVendorDescription($: cheerio.CheerioAPI): string {
 
 async function scrapeVendor(
   meta: DirectoryVendorMeta,
+  placemarks: VirtualMapPlacemark[],
 ): Promise<{ vendor: Vendor; drinks: Drink[] }> {
   const html = await fetchHtml(meta.url);
   const $ = cheerio.load(html);
@@ -456,7 +860,7 @@ async function scrapeVendor(
 
   const description = parseVendorDescription($);
   const socialLinks = extractSocialLinks($, "About Vendor");
-  const locations = parseLocations($, meta.neighbourhoods);
+  const locations = parseLocations($, meta.neighbourhoods, placemarks);
   const drinks = parseDrinks($, name);
 
   const vendor: Vendor = {
@@ -474,6 +878,14 @@ async function scrapeVendor(
 }
 
 async function scrapeAll(): Promise<OutputSchema> {
+  process.stdout.write("Loading virtual map (KML) for neighbourhood lookup...\n");
+  const { kml, mid } = await fetchVirtualMapKmlAndMid();
+  const placemarks = parseKmlPlacemarks(kml);
+  process.stdout.write(
+    `  -> ${placemarks.length} map placemarks in ${new Set(placemarks.map((p) => p.neighbourhood)).size} neighbourhoods\n`,
+  );
+  await enrichPlacemarksWithReverseAddresses(placemarks, mid);
+
   const directoryHtml = await fetchHtml(DIRECTORY_URL);
   const directoryVendors = parseDirectoryVendors(directoryHtml);
   const vendors: Vendor[] = [];
@@ -485,7 +897,7 @@ async function scrapeAll(): Promise<OutputSchema> {
       `[${i + 1}/${directoryVendors.length}] Scraping ${meta.name}...\n`,
     );
     try {
-      const result = await scrapeVendor(meta);
+      const result = await scrapeVendor(meta, placemarks);
       vendors.push(result.vendor);
       drinks.push(...result.drinks);
     } catch (err) {

@@ -78,7 +78,7 @@ Default output file:
 
 Notes:
 
-- Neighbourhood is sourced from the Vendor Directory taxonomy/classes.
+- **Neighbourhood** (per location, a single value) comes from the official [Virtual Map](https://hotchocolatefest.com/virtual-map/) Google My Maps **KML** (same pins as the embedded map). For each placemark, coordinates are **reverse geocoded** with [OpenStreetMap Nominatim](https://nominatim.org/) to an address string; that string is **matched** to the vendor page’s `Location:` line (token overlap + street number check). Results are cached in `data/virtual-map-reverse-geocode-cache.json` (keyed by map id + coordinates) so re-runs do not re-hit Nominatim for every point. Respect Nominatim’s usage policy (the script waits ~1s between uncached requests). If no address match clears the threshold, the scraper falls back to the first area from the vendor directory listing.
 - Dietary options and service flags (`openLate`, `takeoutOnly`) come from the Vendor Directory.
 - Drink date ranges are parsed from each vendor page's "Available ..." line.
 
