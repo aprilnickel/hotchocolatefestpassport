@@ -79,7 +79,7 @@ Default output file:
 Notes:
 
 - Neighbourhood is sourced from the Vendor Directory taxonomy/classes.
-- Dietary options and service flags (`open_late`, `takeout_only`) come from the Vendor Directory.
+- Dietary options and service flags (`openLate`, `takeoutOnly`) come from the Vendor Directory.
 - Drink date ranges are parsed from each vendor page's "Available ..." line.
 
 ## Deployment (Vercel)

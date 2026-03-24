@@ -20,28 +20,28 @@ type VendorLocation = {
   address: string;
   neighbourhood: string;
   hours: string;
-  phone_number: string;
+  phoneNumber: string;
   email: string;
-  google_maps_link: string;
+  googleMapsLink: string;
 };
 
 type Vendor = {
   name: string;
   description: string;
-  dietary_options: DietaryOption[];
-  open_late: boolean;
-  takeout_only: boolean;
-  social_links: string[];
+  dietaryOptions: DietaryOption[];
+  openLate: boolean;
+  takeoutOnly: boolean;
+  socialLinks: string[];
   locations: VendorLocation[];
 };
 
 type Drink = {
   id: string;
   name: string;
-  available_start: string;
-  available_end: string;
+  availableStart: string;
+  availableEnd: string;
   description: string;
-  dietary_options: DietaryOption[];
+  dietaryOptions: DietaryOption[];
   vendor: string;
 };
 
@@ -218,9 +218,9 @@ function extractSocialLinks(
   const hrefs: string[] = [];
   let sibling = buttonWidget.next();
   while (sibling.length && !sibling.is(".elementor-widget-button")) {
-    sibling
-      .find("a[href]")
-      .each((_i, el) => hrefs.push(new URL($(el).attr("href") ?? "", BASE_URL).toString()));
+    sibling.find("a[href]").each((_i, el) => {
+      hrefs.push(new URL($(el).attr("href") ?? "", BASE_URL).toString());
+    });
     sibling = sibling.next();
   }
 
@@ -314,10 +314,10 @@ function parseDrinks(
     drinks.push({
       id,
       name,
-      available_start: dateRange.start,
-      available_end: dateRange.end,
+      availableStart: dateRange.start,
+      availableEnd: dateRange.end,
       description: paragraphHtml.join(""),
-      dietary_options: dietary,
+      dietaryOptions: dietary,
       vendor: vendorName,
     });
   }
@@ -348,9 +348,9 @@ function parseLocationBlock(
     address: addressMatch ? normalizeWhitespace(addressMatch[1]) : "",
     neighbourhood,
     hours: hoursMatch ? normalizeWhitespace(hoursMatch[1]) : "",
-    phone_number: phoneMatch ? normalizeWhitespace(phoneMatch[1]) : "",
+    phoneNumber: phoneMatch ? normalizeWhitespace(phoneMatch[1]) : "",
     email: emailMatch ? emailMatch[1] : "",
-    google_maps_link: mapsLink ? new URL(mapsLink, BASE_URL).toString() : "",
+    googleMapsLink: mapsLink ? new URL(mapsLink, BASE_URL).toString() : "",
   };
 }
 
@@ -366,9 +366,9 @@ function parseLocations(
         address: "",
         neighbourhood: neighbourhoods.join(", "),
         hours: "",
-        phone_number: "",
+        phoneNumber: "",
         email: "",
-        google_maps_link: "",
+        googleMapsLink: "",
       },
     ];
   }
@@ -409,17 +409,17 @@ async function scrapeVendor(
     meta.name;
 
   const description = parseVendorDescription($);
-  const social_links = extractSocialLinks($, "About Vendor");
+  const socialLinks = extractSocialLinks($, "About Vendor");
   const locations = parseLocations($, meta.neighbourhoods);
   const drinks = parseDrinks($, name);
 
   const vendor: Vendor = {
     name,
     description,
-    dietary_options: meta.dietary,
-    open_late: meta.openLate,
-    takeout_only: meta.takeoutOnly,
-    social_links,
+    dietaryOptions: meta.dietary,
+    openLate: meta.openLate,
+    takeoutOnly: meta.takeoutOnly,
+    socialLinks,
     locations,
   };
 
