@@ -47,9 +47,18 @@ export function uniqueSlug(baseSlug: string, fallbackSlug: string, used: Set<str
  * getArgValue("--file") // "data/hotchocolatefest-vendors-and-drinks-scraped-20260324.json"
  */
 export function getArgValue(flag: string): string | undefined {
-  const idx = process.argv.indexOf(flag);
-  if (idx === -1) return undefined;
-  return process.argv[idx + 1];
+  const argList = process.argv.slice(2);
+  const match = argList.find((arg) => arg === flag || arg.startsWith(`${flag}=`));
+  if (!match) return undefined;
+  if (match.startsWith(`${flag}=`)) {
+    return match.slice(flag.length + 1);
+  }
+  const flagIndex = argList.indexOf(match);
+  const nextValue = argList[flagIndex + 1];
+  if (!nextValue || nextValue.startsWith("-")) {
+    throw new Error(`Missing value for ${flag}`);
+  }
+  return nextValue;
 }
 
 /**
