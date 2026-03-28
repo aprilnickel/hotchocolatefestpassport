@@ -137,12 +137,16 @@ async function seed() {
     if (!vendorId) throw new Error(`Vendor not found: ${d.vendorSlug}`);
     return {
       id: randomUUID(),
+      externalId: null,
       vendorId,
       name: d.name,
       flavourNotes: d.flavourNotes,
       description: d.description,
       slug: d.slug,
       sortOrder: d.sortOrder,
+      availableStart: null,
+      availableEnd: null,
+      dietaryOptions: null,
     };
   });
 

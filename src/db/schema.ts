@@ -7,6 +7,7 @@ import {
   jsonb,
   pgEnum,
   boolean,
+  date,
 } from "drizzle-orm/pg-core";
 
 export * from "./auth-schema";
@@ -56,11 +57,15 @@ export const drinks = pgTable("drinks", {
   vendorId: text("vendor_id")
     .notNull()
     .references(() => vendors.id, { onDelete: "cascade" }),
+  externalId: text("external_id"),
   name: text("name").notNull(),
   flavourNotes: text("flavour_notes"),
   description: text("description"),
   slug: text("slug").notNull(),
   sortOrder: integer("sort_order").default(0).notNull(),
+  availableStart: date("available_start", { mode: "string" }),
+  availableEnd: date("available_end", { mode: "string" }),
+  dietaryOptions: dietaryOptionEnum("dietary_options").array(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
