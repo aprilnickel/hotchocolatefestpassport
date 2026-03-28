@@ -1,0 +1,48 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1738281600000,
+      "tag": "0000_initial",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1738281700000,
+      "tag": "0001_rename_tasted_to_sipped",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1738281800000,
+      "tag": "0002_rename_sipped_to_journal",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1738281900000,
+      "tag": "0003_rename_journal_items_to_journal_entries",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1742841600000,
+      "tag": "0004_vendor_locations",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1742841700000,
+      "tag": "0005_vendors_urls_locations",
+      "breakpoints": true
+    }
+  ]
+}

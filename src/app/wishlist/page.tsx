@@ -2,36 +2,19 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
-import { db } from "@/db";
-import { wishlistItems, drinks, vendors } from "@/db/schema";
-import { eq, asc } from "drizzle-orm";
 import { RemoveFromWishlistButton } from "@/app/wishlist/remove-from-wishlist-button";
+import { getWishlistItemsByUser } from "@/lib/queries";
 
 export default async function WishlistPage() {
   const session = await auth.api.getSession({ headers: await headers() });
   if (!session?.user?.id) redirect("/sign-in");
 
-  const rows = await db
-    .select({
-      id: wishlistItems.id,
-      drinkId: drinks.id,
-      drinkName: drinks.name,
-      drinkSlug: drinks.slug,
-      flavourNotes: drinks.flavourNotes,
-      vendorName: vendors.name,
-      vendorSlug: vendors.slug,
-      neighbourhood: vendors.neighbourhood,
-    })
-    .from(wishlistItems)
-    .innerJoin(drinks, eq(wishlistItems.drinkId, drinks.id))
-    .innerJoin(vendors, eq(drinks.vendorId, vendors.id))
-    .where(eq(wishlistItems.userId, session.user.id))
-    .orderBy(asc(drinks.name));
+  const items = await getWishlistItemsByUser(session.user.id);
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-6">
       <h1 className="mb-6 text-2xl font-bold hidden md:block">My Wishlist</h1>
-      {rows.length === 0 ? (
+      {items?.length === 0 ? (
         <p>
           Your wishlist is empty. Browse{" "}
           <Link href="/drinks" className="font-medium underline">
@@ -41,28 +24,28 @@ export default async function WishlistPage() {
         </p>
       ) : (
         <ul className="space-y-3">
-          {rows.map((r) => (
+          {items?.map((item) => (
             <li
-              key={r.id}
+              key={item.id}
               className="relative flex items-center gap-3 rounded-lg border border-burgundy/50 p-4 shadow-md transition hover:border-burgundy/70 hover:shadow-lg"
             >
               <RemoveFromWishlistButton
-                drinkId={r.drinkId}
-                drinkName={r.drinkName}
+                drinkId={item.drinkId}
+                drinkName={item.drinkName}
                 className="absolute top-2 right-2"
               />
               <Link
-                href={`/drinks/${r.drinkSlug}`}
+                href={`/drinks/${item.drinkSlug}`}
                 className="min-w-0 flex-1 pr-8"
               >
-                <div className="font-medium">{r.drinkName}</div>
+                <div className="font-medium">{item.drinkName}</div>
                 <div className="text-sm">
-                  {r.vendorName}
-                  {r.neighbourhood ? ` · ${r.neighbourhood}` : ""}
+                  {item.vendorName}
+                  {item.vendorNeighbourhoods.length > 0 ? ` · ${item.vendorNeighbourhoods.join(", ")}` : ""}
                 </div>
-                {r.flavourNotes && (
+                {item.flavourNotes && (
                   <div className="text-sm opacity-90 mt-1">
-                    Flavour notes: <span className="italic opacity-80">{r.flavourNotes}</span>
+                    Flavour notes: <span className="italic opacity-80">{item.flavourNotes}</span>
                   </div>
                 )}
               </Link>

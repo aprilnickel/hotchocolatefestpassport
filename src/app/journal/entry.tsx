@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { JournalEntryEditor, JournalEntryEditButton } from "@/app/journal/journal-entry-editor";
-import { JournalEntryRow } from "./page";
+import { type JournalEntryRow } from "@/lib/queries";
 
 export default function JournalEntry({
   entry,
@@ -28,7 +28,7 @@ export default function JournalEntry({
         <div className="font-medium">{entry.drinkName}</div>
         <div className="text-sm">
           {entry.vendorName}
-          {entry.neighbourhood ? ` · ${entry.neighbourhood}` : ""}
+          {entry.vendorNeighbourhoods.length > 0 ? ` · ${entry.vendorNeighbourhoods.join(", ")}` : ""}
         </div>
         {entry.flavourNotes && (
           <div className="text-sm opacity-90 mt-1">

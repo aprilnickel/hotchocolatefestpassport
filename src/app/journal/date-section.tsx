@@ -1,4 +1,4 @@
-import { JournalEntryRow } from "./page";
+import { type JournalEntryRow } from "@/lib/queries";
 import JournalEntry from "./entry";
 
 function formatSectionDate(dateStr: string): string {

@@ -22,7 +22,7 @@ export function DrinkCard({
         <div className="font-medium">{drink.name}</div>
         <div className="text-sm">
           {drink.vendorName}
-          {drink.neighbourhood ? ` · ${drink.neighbourhood}` : ""}
+          {drink.vendorNeighbourhoods.length > 0 ? ` · ${drink.vendorNeighbourhoods.join(", ")}` : ""}
         </div>
         {drink.flavourNotes && (
           <div className="text-sm opacity-90 mt-1">
