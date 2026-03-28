@@ -627,7 +627,9 @@ function extractSocialLinks(
       host.includes("tiktok.com") ||
       host === "x.com" ||
       host.endsWith(".x.com") ||
-      host.includes("twitter.com");
+      host.includes("twitter.com") ||
+      host.includes("youtube.com") ||
+      host.includes("youtu.be");
     const isUtilityDomain =
       host.includes("google.") ||
       host === "g.page" ||

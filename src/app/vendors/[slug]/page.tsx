@@ -11,6 +11,7 @@ import { FacebookIcon } from "@/components/icons/facebook-icon";
 import { InstagramIcon } from "@/components/icons/instagram-icon";
 import { TikTokIcon } from "@/components/icons/tiktok-icon";
 import { XIcon } from "@/components/icons/x-icon";
+import { YoutubeIcon } from "@/components/icons/youtube-icon";
 
 const vendorUrlIconMap = {
   facebook: {
@@ -28,6 +29,10 @@ const vendorUrlIconMap = {
   twitter: {
     label: "Twitter / X",
     icon: XIcon,
+  },
+  youtube: {
+    label: "YouTube",
+    icon: YoutubeIcon,
   },
 };
 

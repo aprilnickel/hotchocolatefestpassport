@@ -43,6 +43,13 @@
       "when": 1742841700000,
       "tag": "0005_vendors_urls_locations",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1742841800000,
+      "tag": "0006_vendor_url_type_youtube",
+      "breakpoints": true
     }
   ]
 }

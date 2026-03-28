@@ -25,6 +25,7 @@ export const vendorUrlTypeEnum = pgEnum("vendor_url_type", [
   "instagram",
   "tiktok",
   "twitter",
+  "youtube",
 ]);
 
 export const vendors = pgTable("vendors", {
