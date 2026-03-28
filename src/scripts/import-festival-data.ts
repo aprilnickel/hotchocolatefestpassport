@@ -14,6 +14,7 @@ import * as fs from "fs/promises";
 import { randomUUID } from "crypto";
 import { db } from "@/db";
 import { drinks, vendorLocations, vendorUrls, vendors } from "@/db/schema";
+import { slugify, uniqueSlug, getArgValue, htmlToPlainText } from "@/lib/utils";
 
 type DietaryOption = "vegan" | "gluten-free" | "dairy-free";
 
@@ -60,41 +61,6 @@ type FestivalDataFile = {
   vendors: JsonVendor[];
   drinks: JsonDrink[];
 };
-
-function getArgValue(flag: string): string | undefined {
-  const idx = process.argv.indexOf(flag);
-  if (idx === -1) return undefined;
-  return process.argv[idx + 1];
-}
-
-function slugify(input: string): string {
-  return input
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/\p{M}/gu, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "");
-}
-
-function uniqueSlug(baseSlug: string, fallbackSlug: string, used: Set<string>): string {
-  let slug = baseSlug || fallbackSlug;
-  let n = 0;
-  while (used.has(slug)) {
-    n += 1;
-    slug = `${baseSlug}-${n}`;
-  }
-  used.add(slug);
-  return slug;
-}
-
-/** Strip HTML tags for plain-text fields (drink detail renders description as text). */
-function htmlToPlainText(html: string): string {
-  return html
-    .replace(/<[^>]+>/g, " ")
-    .replace(/&nbsp;/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
 
 function parseFestivalDate(dateString: string): string | null {
   const date = dateString?.trim();

@@ -8,6 +8,7 @@
 import * as fs from "fs/promises";
 import * as path from "path";
 import * as cheerio from "cheerio";
+import { getArgValue } from "@/lib/utils";
 
 const BASE_URL = "https://hotchocolatefest.com";
 const DIRECTORY_URL = `${BASE_URL}/vendor-directory/`;
@@ -108,12 +109,6 @@ function neighbourhoodTitleCaseSlug(slug: string): string {
     .filter(Boolean)
     .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
     .join(" ");
-}
-
-function getArgValue(flag: string): string | undefined {
-  const idx = process.argv.indexOf(flag);
-  if (idx === -1) return undefined;
-  return process.argv[idx + 1];
 }
 
 function mapDietaryFromText(input: string): DietaryOption[] {
