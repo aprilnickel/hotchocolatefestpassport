@@ -2,6 +2,8 @@
 
 Companion web app for the Vancouver Hot Chocolate Festival. Browse drinks, maintain a wishlist, and maintain a journal of drinks you've tried.
 
+As a long-time enjoyer of Vancouver's Hot Chocolate Festival,
+
 ## 🌱 Upcoming Features
 
 - sign in with Apple
@@ -58,6 +60,27 @@ If you’re running a public instance, AGPL requires that your source code be ma
 ## Festival data
 
 See [docs/DATA.md](docs/DATA.md) for where drink/vendor data comes from and how to re-seed for new festival years.
+
+### Scrape latest festival vendor/drink data
+
+Use the scraper to pull live data from [hotchocolatefest.com](https://hotchocolatefest.com/) and write a JSON file containing `vendors` and `drinks` arrays.
+
+1. Install dependencies:
+   - `pnpm install`
+2. Run scraper (default output path):
+   - `pnpm run data:scrape`
+3. Optional custom output path:
+   - `pnpm run data:scrape -- --output data/hotchocolatefest.json`
+
+Default output file:
+
+- `data/hotchocolatefest-vendors-and-drinks.json`
+
+Notes:
+
+- **Neighbourhood** (per location, a single value) comes from the official [Virtual Map](https://hotchocolatefest.com/virtual-map/) Google My Maps **KML** (same pins as the embedded map). For each placemark, coordinates are **reverse geocoded** with [OpenStreetMap Nominatim](https://nominatim.org/) to an address string; that string is **matched** to the vendor page’s `Location:` line (token overlap + street number check). Results are cached in `data/virtual-map-reverse-geocode-cache.json` (keyed by map id + coordinates) so re-runs do not re-hit Nominatim for every point. Respect Nominatim’s usage policy (the script waits ~1s between uncached requests). If no address match clears the threshold, the scraper falls back to the first area from the vendor directory listing.
+- Dietary options and service flags (`openLate`, `takeoutOnly`) come from the Vendor Directory.
+- Drink date ranges are parsed from each vendor page's "Available ..." line.
 
 ## Deployment (Vercel)
 

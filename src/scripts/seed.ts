@@ -5,7 +5,7 @@
  */
 import "dotenv/config";
 import { db } from "@/db";
-import { drinks, vendors } from "@/db/schema";
+import { drinks, vendorLocations, vendorUrls, vendors } from "@/db/schema";
 import { randomUUID } from "crypto";
 
 const placeholderVendors = [
@@ -15,8 +15,7 @@ const placeholderVendors = [
     slug: "bel-cafe",
     neighbourhood: "Downtown Vancouver",
     address: "801 West Georgia Street, Vancouver",
-    url: "https://belcafe.com",
-    metadata: null,
+    websiteUrl: "https://belcafe.com",
   },
   {
     id: randomUUID(),
@@ -24,8 +23,7 @@ const placeholderVendors = [
     slug: "thierry-chocolates",
     neighbourhood: "Downtown Vancouver",
     address: "1059 Alberni Street, Vancouver",
-    url: "https://thierrychocolates.com",
-    metadata: null,
+    websiteUrl: "https://thierrychocolates.com",
   },
   {
     id: randomUUID(),
@@ -33,8 +31,7 @@ const placeholderVendors = [
     slug: "boketto-dessert-cafe",
     neighbourhood: "Mount Pleasant / East Vancouver",
     address: "3471 West Sawmill Crescent, Vancouver",
-    url: "https://bokettoteabar.com",
-    metadata: null,
+    websiteUrl: "https://bokettoteabar.com",
   },
 ];
 
@@ -101,7 +98,36 @@ async function seed() {
   }
 
   console.log("Seeding vendors...");
-  await db.insert(vendors).values(placeholderVendors);
+  for (const v of placeholderVendors) {
+    await db.insert(vendors).values({
+      id: v.id,
+      name: v.name,
+      slug: v.slug,
+      description: null,
+      dietaryOptions: null,
+      openLate: false,
+      takeoutOnly: false,
+      limitedSeating: false,
+      metadata: null,
+    });
+    await db.insert(vendorLocations).values({
+      id: randomUUID(),
+      vendorId: v.id,
+      name: v.name,
+      address: v.address,
+      neighbourhood: v.neighbourhood,
+      hours: null,
+      phoneNumber: null,
+      email: null,
+      googleMapsLink: null,
+    });
+    await db.insert(vendorUrls).values({
+      id: randomUUID(),
+      vendorId: v.id,
+      url: v.websiteUrl,
+      type: "website",
+    });
+  }
 
   const vendorList = await db.select().from(vendors);
   const slugToId = Object.fromEntries(vendorList.map((v) => [v.slug, v.id]));
@@ -111,12 +137,16 @@ async function seed() {
     if (!vendorId) throw new Error(`Vendor not found: ${d.vendorSlug}`);
     return {
       id: randomUUID(),
+      externalId: null,
       vendorId,
       name: d.name,
       flavourNotes: d.flavourNotes,
       description: d.description,
       slug: d.slug,
       sortOrder: d.sortOrder,
+      availableStart: null,
+      availableEnd: null,
+      dietaryOptions: null,
     };
   });
 

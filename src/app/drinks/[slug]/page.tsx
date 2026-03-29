@@ -62,8 +62,8 @@ export default async function DrinkDetailPage({
           >
             {drink.vendorName}
           </Link>
-          {drink.neighbourhood && (
-            <span className="opacity-80"> · {drink.neighbourhood}</span>
+          {drink.vendorNeighbourhoods.length > 0 && (
+            <span className="opacity-80"> · {drink.vendorNeighbourhoods.join(", ")}</span>
           )}
         </p>
         {drink.flavourNotes && (

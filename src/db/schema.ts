@@ -5,20 +5,50 @@ import {
   integer,
   uniqueIndex,
   jsonb,
+  pgEnum,
+  boolean,
+  date,
 } from "drizzle-orm/pg-core";
 
 export * from "./auth-schema";
 
 // User data comes from Better Auth (user table). We reference user.id as text in wishlist/journal.
 
+export const dietaryOptionEnum = pgEnum("dietary_option", [
+  "gluten-free",
+  "dairy-free",
+  "vegan",
+]);
+
+export const vendorUrlTypeEnum = pgEnum("vendor_url_type", [
+  "website",
+  "facebook",
+  "instagram",
+  "tiktok",
+  "twitter",
+  "youtube",
+]);
+
 export const vendors = pgTable("vendors", {
   id: text("id").primaryKey(),
   name: text("name").notNull(),
   slug: text("slug").notNull().unique(),
-  neighbourhood: text("neighbourhood"),
-  address: text("address"),
-  url: text("url"),
+  description: text("description"),
+  dietaryOptions: dietaryOptionEnum("dietary_options").array(),
+  openLate: boolean("open_late").default(false).notNull(),
+  takeoutOnly: boolean("takeout_only").default(false).notNull(),
+  limitedSeating: boolean("limited_seating").default(false).notNull(),
   metadata: jsonb("metadata"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+export const vendorUrls = pgTable("vendor_urls", {
+  id: text("id").primaryKey(),
+  vendorId: text("vendor_id")
+    .notNull()
+    .references(() => vendors.id, { onDelete: "cascade" }),
+  url: text("url").notNull(),
+  type: vendorUrlTypeEnum("type"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
@@ -27,11 +57,30 @@ export const drinks = pgTable("drinks", {
   vendorId: text("vendor_id")
     .notNull()
     .references(() => vendors.id, { onDelete: "cascade" }),
+  externalId: text("external_id"),
   name: text("name").notNull(),
   flavourNotes: text("flavour_notes"),
   description: text("description"),
   slug: text("slug").notNull(),
   sortOrder: integer("sort_order").default(0).notNull(),
+  availableStart: date("available_start", { mode: "string" }),
+  availableEnd: date("available_end", { mode: "string" }),
+  dietaryOptions: dietaryOptionEnum("dietary_options").array(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+export const vendorLocations = pgTable("vendor_locations", {
+  id: text("id").primaryKey(),
+  vendorId: text("vendor_id")
+    .notNull()
+    .references(() => vendors.id, { onDelete: "cascade" }),
+  name: text("name").notNull(),
+  address: text("address"),
+  neighbourhood: text("neighbourhood"),
+  hours: text("hours"),
+  phoneNumber: text("phone_number"),
+  email: text("email"),
+  googleMapsLink: text("google_maps_link"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
