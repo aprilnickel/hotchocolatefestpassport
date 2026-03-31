@@ -72,7 +72,10 @@ export default async function DrinkDetailPage({
           </p>
         )}
         {drink.description && (
-          <p className="mt-2">{drink.description}</p>
+          <div
+            className="mt-2 [&_p+p]:mt-2"
+            dangerouslySetInnerHTML={{ __html: drink.description }}
+          />
         )}
         {session?.user && (
           <div className="mt-6">

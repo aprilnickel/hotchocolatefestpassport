@@ -207,7 +207,6 @@ async function main() {
     const drinkNameSlugified = slugify(drink.name);
     const baseSlug = drink.id ? `${drink.id}-${drinkNameSlugified}` : drinkNameSlugified;
     const slug = uniqueSlug(baseSlug, "drink", drinkSlugUsed);
-    const description = htmlToPlainText(drink.description).trim() || null;
     
     drinkRows.push({
       id: randomUUID(),
@@ -215,7 +214,7 @@ async function main() {
       vendorId,
       name: drink.name,
       flavourNotes: null,
-      description,
+      description: drink.description,
       slug,
       availableStart: parseFestivalDate(drink.availableStart),
       availableEnd: parseFestivalDate(drink.availableEnd),
