@@ -31,14 +31,17 @@ export default async function WishlistPage() {
             >
               <RemoveFromWishlistButton
                 drinkId={item.drinkId}
-                drinkName={item.drinkName}
+                drinkName={`${item.drinkExternalId ? `#${item.drinkExternalId} — ` : ""}${item.drinkName}`}
                 className="absolute top-2 right-2"
               />
               <Link
                 href={`/drinks/${item.drinkSlug}`}
                 className="min-w-0 flex-1 pr-8"
               >
-                <div className="font-medium">{item.drinkName}</div>
+                <div className="font-medium">
+                  <span className="opacity-80 font-normal">{item.drinkExternalId ? `#${item.drinkExternalId} — ` : ""}</span>
+                  {item.drinkName}
+                </div>
                 <div className="text-sm">
                   {item.vendorName}
                   {item.vendorNeighbourhoods.length > 0 ? ` · ${item.vendorNeighbourhoods.join(", ")}` : ""}

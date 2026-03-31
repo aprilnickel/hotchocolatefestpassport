@@ -54,7 +54,10 @@ export default async function DrinkDetailPage({
         ← All drinks
       </Link>
       <article className="rounded-lg border border-burgundy/50 p-6 shadow-md">
-        <h1 className="text-2xl font-bold">{drink.name}</h1>
+        <h1 className="text-2xl">
+          <span className="opacity-80 font-normal">{drink.externalId ? `#${drink.externalId} — ` : ""}</span>
+          <span className="font-bold">{drink.name}</span>
+        </h1>
         <p className="mt-2">
           <Link
             href={`/vendors/${drink.vendorSlug}`}

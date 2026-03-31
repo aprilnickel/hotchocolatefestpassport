@@ -25,7 +25,10 @@ export default function JournalEntry({
         href={`/drinks/${entry.drinkSlug}`}
         className="min-w-0 flex-1"
       >
-        <div className="font-medium">{entry.drinkName}</div>
+        <div className="font-medium">
+          <span className="opacity-80 font-normal">{entry.drinkExternalId ? `#${entry.drinkExternalId} — ` : ""}</span>
+          {entry.drinkName}
+        </div>
         <div className="text-sm">
           {entry.vendorName}
           {entry.vendorNeighbourhoods.length > 0 ? ` · ${entry.vendorNeighbourhoods.join(", ")}` : ""}
@@ -38,7 +41,7 @@ export default function JournalEntry({
       </Link>
       <JournalEntryEditor
         drinkId={entry.drinkId}
-        drinkName={entry.drinkName}
+        drinkName={`${entry.drinkExternalId ? `#${entry.drinkExternalId} — ` : ""}${entry.drinkName}`}
         journaledAt={entry.journaledAt}
         editMode={editMode}
         onEditModeChange={setEditMode}

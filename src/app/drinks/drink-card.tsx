@@ -19,7 +19,10 @@ export function DrinkCard({
         href={`/drinks/${drink.slug}`}
         className="min-w-0 flex-1"
       >
-        <div className="font-medium">{drink.name}</div>
+        <div className="font-medium">
+          <span className="opacity-80 font-normal">{drink.externalId ? `#${drink.externalId} — ` : ""}</span>
+          {drink.name}
+        </div>
         <div className="text-sm">
           {drink.vendorName}
           {drink.vendorNeighbourhoods.length > 0 ? ` · ${drink.vendorNeighbourhoods.join(", ")}` : ""}

@@ -11,6 +11,7 @@ import {
 
 export type DrinkWithVendor = {
   id: string;
+  externalId: string | null;
   name: string;
   flavourNotes: string | null;
   description: string | null;
@@ -36,6 +37,7 @@ export type WishlistItemRow = {
 export type JournalEntryRow = {
   id: string;
   drinkId: string;
+  drinkExternalId: string | null;
   drinkName: string;
   drinkSlug: string;
   flavourNotes: string | null;
@@ -77,6 +79,7 @@ export async function getDrinksWithVendors(): Promise<DrinkWithVendor[]> {
   const rows = await db
     .select({
       id: drinks.id,
+      externalId: drinks.externalId,
       name: drinks.name,
       flavourNotes: drinks.flavourNotes,
       description: drinks.description,
@@ -88,7 +91,7 @@ export async function getDrinksWithVendors(): Promise<DrinkWithVendor[]> {
     })
     .from(drinks)
     .innerJoin(vendors, eq(drinks.vendorId, vendors.id))
-    .orderBy(asc(drinks.sortOrder), asc(drinks.name));
+    .orderBy(asc(drinks.externalId), asc(drinks.name));
 
   const vendorIds = [...new Set(rows.map((r) => r.vendorId))];
   const neighbourhoodsByVendor = await getNeighbourhoodsByVendorIds(vendorIds);
@@ -103,6 +106,7 @@ export async function getDrinkBySlug(slug: string) {
   const rows = await db
     .select({
       id: drinks.id,
+      externalId: drinks.externalId,
       name: drinks.name,
       flavourNotes: drinks.flavourNotes,
       description: drinks.description,
@@ -186,6 +190,7 @@ export async function getWishlistItemsByUser(userId: string) {
     .select({
       id: wishlistItems.id,
       drinkId: drinks.id,
+      drinkExternalId: drinks.externalId,
       drinkName: drinks.name,
       drinkSlug: drinks.slug,
       flavourNotes: drinks.flavourNotes,
@@ -213,6 +218,7 @@ export async function getJournalEntriesByUser(userId: string) {
     .select({
       id: journalEntries.id,
       drinkId: drinks.id,
+      drinkExternalId: drinks.externalId,
       drinkName: drinks.name,
       drinkSlug: drinks.slug,
       flavourNotes: drinks.flavourNotes,

@@ -168,6 +168,7 @@ export default async function VendorDetailPage({
                 href={`/drinks/${d.slug}`}
                 className="hover:underline inline-link"
               >
+                <span className="opacity-80 font-normal">{d.externalId ? `#${d.externalId} — ` : ""}</span>
                 {d.name}
                 {d.flavourNotes ? ` — ${d.flavourNotes}` : ""}
               </Link>
