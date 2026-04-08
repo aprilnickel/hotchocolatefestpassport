@@ -106,10 +106,10 @@ export default async function VendorDetailPage({
   return (
     <main className="mx-auto max-w-4xl px-4 py-6">
       <Link
-        href="/drinks"
+        href="/vendors"
         className="mb-4 inline-block text-sm font-medium inline-link"
       >
-        ← All drinks
+        ← All vendors
       </Link>
       <article className="rounded-lg border border-burgundy/50 p-6 shadow-md">
         <h1 className="text-2xl font-bold">{vendor.name}</h1>

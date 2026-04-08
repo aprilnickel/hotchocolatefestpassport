@@ -1,3 +1,4 @@
+import { relations } from "drizzle-orm";
 import {
   pgTable,
   text,
@@ -42,6 +43,12 @@ export const vendors = pgTable("vendors", {
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
+export const vendorsRelations = relations(vendors, ({ many }) => ({
+	vendorUrls: many(vendorUrls),
+	vendorLocations: many(vendorLocations),
+	drinks: many(drinks),
+}));
+
 export const vendorUrls = pgTable("vendor_urls", {
   id: text("id").primaryKey(),
   vendorId: text("vendor_id")
@@ -51,6 +58,28 @@ export const vendorUrls = pgTable("vendor_urls", {
   type: vendorUrlTypeEnum("type"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
+
+export const vendorLocations = pgTable("vendor_locations", {
+  id: text("id").primaryKey(),
+  vendorId: text("vendor_id")
+    .notNull()
+    .references(() => vendors.id, { onDelete: "cascade" }),
+  name: text("name").notNull(),
+  address: text("address"),
+  neighbourhood: text("neighbourhood"),
+  hours: text("hours"),
+  phoneNumber: text("phone_number"),
+  email: text("email"),
+  googleMapsLink: text("google_maps_link"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+export const vendorLocationsRelations = relations(vendorLocations, ({ one }) => ({
+	vendor: one(vendors, {
+		fields: [vendorLocations.vendorId],
+		references: [vendors.id],
+	}),
+}));
 
 export const drinks = pgTable("drinks", {
   id: text("id").primaryKey(),
@@ -69,20 +98,12 @@ export const drinks = pgTable("drinks", {
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
-export const vendorLocations = pgTable("vendor_locations", {
-  id: text("id").primaryKey(),
-  vendorId: text("vendor_id")
-    .notNull()
-    .references(() => vendors.id, { onDelete: "cascade" }),
-  name: text("name").notNull(),
-  address: text("address"),
-  neighbourhood: text("neighbourhood"),
-  hours: text("hours"),
-  phoneNumber: text("phone_number"),
-  email: text("email"),
-  googleMapsLink: text("google_maps_link"),
-  createdAt: timestamp("created_at").defaultNow().notNull(),
-});
+export const drinksRelations = relations(drinks, ({ one }) => ({
+	vendor: one(vendors, {
+		fields: [drinks.vendorId],
+		references: [vendors.id],
+	}),
+}));
 
 export const wishlistItems = pgTable(
   "wishlist_items",

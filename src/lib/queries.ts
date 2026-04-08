@@ -8,6 +8,16 @@ import {
   vendorUrls,
   journalEntries,
 } from "@/db/schema";
+import { cache } from "react";
+
+export type Drink = {
+  id: string;
+  slug: string;
+  externalId: string | null;
+  name: string;
+  flavourNotes: string | null;
+  description: string | null;
+};
 
 export type DrinkWithVendor = {
   id: string;
@@ -45,6 +55,14 @@ export type JournalEntryRow = {
   vendorSlug: string;
   vendorNeighbourhoods: string[];
   journaledAt: Date;
+};
+
+export type Vendor = {
+  id: string;
+  slug: string;
+  name: string;
+  neighbourhoods: string[];
+  drinks: Drink[];
 };
 
 async function getVendorLocationsByVendorIds(vendorIds: string[]) {
@@ -142,14 +160,59 @@ export async function getDrinkBySlug(slug: string) {
   };
 }
 
-export async function getVendorBySlug(slug: string) {
-  const row = await db
-    .select()
-    .from(vendors)
-    .where(eq(vendors.slug, slug))
-    .limit(1);
+export const getVendorBySlug = cache(async (slug: string) => {
+  const row = await db.query.vendors.findFirst({
+    where: eq(vendors.slug, slug),
+  });
 
-  return row[0] ?? null;
+  return row ?? null;
+});
+
+export async function getAllVendors() {
+  const rows = await db.query.vendors.findMany({
+    columns: {
+      id: true,
+      name: true,
+      slug: true,
+    },
+    with: {
+      drinks: {
+        columns: {
+          id: true,
+          slug: true,
+          externalId: true,
+          name: true,
+          flavourNotes: true,
+          description: true,
+        },
+      },
+      vendorLocations: {
+        columns: {
+          neighbourhood: true,
+        },
+      },
+    },
+  });
+
+  return rows
+    .map((vendor) => ({
+      id: vendor.id,
+      name: vendor.name,
+      slug: vendor.slug,
+      neighbourhoods: [
+        ...new Set(
+          vendor.vendorLocations
+            .map((location) => location.neighbourhood?.trim())
+            .filter((neighbourhood): neighbourhood is string => Boolean(neighbourhood))
+        ),
+      ],
+      drinks: [...vendor.drinks].sort((a, b) =>
+        a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: "base" })
+      ),
+    }))
+    .sort((a, b) =>
+      a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: "base" })
+    );
 }
 
 export async function getVendorLocations(vendorId: string) {

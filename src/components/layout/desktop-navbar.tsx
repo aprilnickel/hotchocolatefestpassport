@@ -15,6 +15,9 @@ export function DesktopNavbar() {
       <Link href="/drinks" className={navLinkClass}>
         Drinks
       </Link>
+      <Link href="/vendors" className={navLinkClass}>
+        Vendors
+      </Link>
       <Link href="/wishlist" className={navLinkClass}>
         My Wishlist
       </Link>
