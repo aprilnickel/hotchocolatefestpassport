@@ -4,6 +4,7 @@ import { headers } from "next/headers";
 import { CoffeeMugIcon } from "@/components/icons/coffee-mug-icon";
 import { BookmarkIcon } from "@/components/icons/bookmark-icon";
 import { JournalIcon } from "@/components/icons/journal-icon";
+import { StorefrontIcon } from "@/components/icons/storefront-icon";
 
 const cardClass =
   "flex flex-col items-center gap-3 rounded-xl border border-burgundy/30 p-6 shadow-md transition hover:border-burgundy/50 hover:shadow-lg";
@@ -29,34 +30,20 @@ export default async function HomePage() {
         Your companion for the Vancouver Hot Chocolate Festival. Browse drinks,
         keep a wishlist, and keep a journal of what you&apos;ve sipped.
       </p>
-      <ul className="mt-8 grid gap-4 sm:grid-cols-3">
-        <li>
-          <Link
-            href="/drinks"
-            className={cardClass}
-          >
-            <CoffeeMugIcon active={false} className="size-10 text-burgundy" />
-            <span className="font-medium">Browse Drinks</span>
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/wishlist"
-            className={cardClass}
-          >
-            <BookmarkIcon active={false} className="size-10 text-burgundy" />
-            <span className="font-medium">Wishlist</span>
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/journal"
-            className={cardClass}
-          >
-            <JournalIcon active={false} className="size-10 text-burgundy" />
-            <span className="font-medium">Journal</span>
-          </Link>
-        </li>
+      <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+        {[
+          { href: "/drinks", Icon: CoffeeMugIcon, label: "Browse Drinks" },
+          { href: "/vendors", Icon: StorefrontIcon, label: "Browse Vendors" },
+          { href: "/wishlist", Icon: BookmarkIcon, label: "Wishlist" },
+          { href: "/journal", Icon: JournalIcon, label: "Journal" },
+        ].map(({ href, Icon, label }) => (
+          <li key={href}>
+            <Link href={href} className={cardClass}>
+              <Icon active={false} className="size-10 text-burgundy" />
+              <span className="font-medium">{label}</span>
+            </Link>
+          </li>
+        ))}
       </ul>
     </main>
   );
