@@ -8,10 +8,12 @@ import { AppWrapper } from "@/components/layout/app-wrapper";
 import { Work_Sans } from 'next/font/google';
 import "./globals.css";
 import { ActivePageProvider } from "@/components/layout/active-page-context";
+import { cn } from "@/lib/utils";
 
 const workSans = Work_Sans({
   subsets: ['latin'],
   display: 'swap',
+  variable:'--font-sans',
 })
 
 export const metadata: Metadata = {
@@ -31,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={cn("font-sans", workSans.variable)}>
       <body className={`antialiased bg-cream text-burgundy ${workSans.className}`}>
         <ActivePageProvider>
           <MoreMenuProvider>

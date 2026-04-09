@@ -1,6 +1,9 @@
-/**
- * Utility functions for string manipulation
- */
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
 
 /**
  * Create a URL-friendly slug from a text string
