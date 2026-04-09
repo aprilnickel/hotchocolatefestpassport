@@ -5,6 +5,11 @@ import { headers } from "next/headers";
 import { RemoveFromWishlistButton } from "@/app/wishlist/remove-from-wishlist-button";
 import { getWishlistItemsByUser } from "@/lib/queries";
 
+export const metadata = {
+  title: "Wishlist | Sip Fest Passport",
+  description: "Find all the drinks you want to try here.",
+};
+
 export default async function WishlistPage() {
   const session = await auth.api.getSession({ headers: await headers() });
   if (!session?.user?.id) redirect("/sign-in");

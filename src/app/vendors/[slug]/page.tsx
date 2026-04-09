@@ -12,6 +12,25 @@ import { InstagramIcon } from "@/components/icons/instagram-icon";
 import { TikTokIcon } from "@/components/icons/tiktok-icon";
 import { XIcon } from "@/components/icons/x-icon";
 import { YoutubeIcon } from "@/components/icons/youtube-icon";
+import { Metadata } from "next";
+
+type Props = {
+  params: Promise<{ slug: string }>
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
+export async function generateMetadata(
+  { params }: Props
+): Promise<Metadata> {
+  const slug = (await params).slug
+  const vendor = await getVendorBySlug(slug);
+  if (!vendor) notFound();
+ 
+  return {
+    title: `${vendor.name} | Sip Fest Passport`,
+    description: `Learn more about what drinks ${vendor.name} is offering at the Vancouver Hot Chocolate Festival.`,
+  }
+}
 
 const vendorUrlIconMap = {
   facebook: {

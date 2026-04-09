@@ -7,6 +7,25 @@ import { db } from "@/db";
 import { wishlistItems, journalEntries } from "@/db/schema";
 import { eq, and } from "drizzle-orm";
 import { DrinkActions } from "./drink-actions";
+import { Metadata } from "next";
+
+type Props = {
+  params: Promise<{ slug: string }>
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
+export async function generateMetadata(
+  { params }: Props
+): Promise<Metadata> {
+  const slug = (await params).slug
+  const drink = await getDrinkBySlug(slug);
+  if (!drink) notFound();
+ 
+  return {
+    title: `${drink.name} | Sip Fest Passport`,
+    description: drink.description,
+  }
+}
 
 export default async function DrinkDetailPage({
   params,

@@ -7,6 +7,11 @@ import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import { DrinkCard } from "./drink-card";
 
+export const metadata = {
+  title: "Drinks | Sip Fest Passport",
+  description: "Browse all drinks offered at the Vancouver Hot Chocolate Festival.",
+};
+
 export default async function DrinksPage() {
   const [drinks, session] = await Promise.all([
     getDrinksWithVendors(),

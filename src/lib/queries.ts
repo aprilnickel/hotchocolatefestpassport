@@ -119,45 +119,29 @@ export async function getDrinksWithVendors(): Promise<DrinkWithVendor[]> {
   return rows as DrinkWithVendor[];
 }
 
-export async function getDrinkBySlug(slug: string) {
-  const rows = await db
-    .select({
-      id: drinks.id,
-      externalId: drinks.externalId,
-      name: drinks.name,
-      flavourNotes: drinks.flavourNotes,
-      description: drinks.description,
-      slug: drinks.slug,
-      vendorId: drinks.vendorId,
-      vendorName: vendors.name,
-      vendorSlug: vendors.slug,
-    })
-    .from(drinks)
-    .innerJoin(vendors, eq(drinks.vendorId, vendors.id))
-    .where(eq(drinks.slug, slug))
-    .limit(1);
+export const getDrinkBySlug = cache(async (slug: string) => {
+  const row = await db.query.drinks.findFirst({
+    where: eq(drinks.slug, slug),
+    with: {
+      vendor: {
+        columns: {
+          id: true,
+          name: true,
+          slug: true,
+        },
+        with: {
+          vendorLocations: {
+            columns: {
+              neighbourhood: true,
+            },
+          },
+        },
+      },
+    },
+  });
 
-  const drinkRow = rows[0] ?? null;
-  if (!drinkRow) return null;
-
-  const vendorId = drinkRow.vendorId;
-  const neighbourhoodsByVendor = new Map<string, string[]>();
-
-  const locRows = await getVendorLocationsByVendorIds([vendorId]);
-
-  for (const loc of locRows) {
-    const n = loc.neighbourhood?.trim();
-    if (!n) continue;
-    const list = neighbourhoodsByVendor.get(loc.vendorId);
-    if (list) list.push(n);
-    else neighbourhoodsByVendor.set(loc.vendorId, [n]);
-  }
-
-  return {
-    ...drinkRow,
-    vendorNeighbourhoods: neighbourhoodsByVendor.get(vendorId) ?? [],
-  };
-}
+  return row ?? null;
+});
 
 export const getVendorBySlug = cache(async (slug: string) => {
   const row = await db.query.vendors.findFirst({

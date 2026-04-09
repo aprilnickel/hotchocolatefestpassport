@@ -5,6 +5,11 @@ import { headers } from "next/headers";
 import DateSection from "./date-section";
 import { getJournalEntriesByUser, type JournalEntryRow } from "@/lib/queries";
 
+export const metadata = {
+  title: "Journal | Sip Fest Passport",
+  description: "Find all the drinks you've sipped here.",
+};
+
 export default async function JournalPage() {
   const session = await auth.api.getSession({ headers: await headers() });
   if (!session?.user?.id) redirect("/sign-in");
