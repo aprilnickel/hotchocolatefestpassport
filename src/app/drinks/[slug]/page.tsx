@@ -60,13 +60,13 @@ export default async function DrinkDetailPage({
         </h1>
         <p className="mt-2">
           <Link
-            href={`/vendors/${drink.vendorSlug}`}
+            href={`/vendors/${drink.vendor.slug}`}
             className="font-medium hover:underline"
           >
-            {drink.vendorName}
+            {drink.vendor.name}
           </Link>
-          {drink.vendorNeighbourhoods.length > 0 && (
-            <span className="opacity-80"> · {drink.vendorNeighbourhoods.join(", ")}</span>
+          {drink.vendor.vendorLocations.length > 0 && (
+            <span className="opacity-80"> · {drink.vendor.vendorLocations.map((location) => location.neighbourhood).join(", ")}</span>
           )}
         </p>
         {drink.flavourNotes && (

@@ -24,8 +24,8 @@ export function DrinkCard({
           {drink.name}
         </div>
         <div className="text-sm">
-          {drink.vendorName}
-          {drink.vendorNeighbourhoods.length > 0 ? ` · ${drink.vendorNeighbourhoods.join(", ")}` : ""}
+          {drink.vendor.name}
+          {drink.vendor.vendorLocations.length > 0 ? ` · ${drink.vendor.vendorLocations.map((location) => location.neighbourhood).join(", ")}` : ""}
         </div>
         {drink.flavourNotes && (
           <div className="text-sm opacity-90 mt-1">

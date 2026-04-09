@@ -19,18 +19,10 @@ export type Drink = {
   description: string | null;
 };
 
-export type DrinkWithVendor = {
-  id: string;
-  externalId: string | null;
-  name: string;
-  flavourNotes: string | null;
-  description: string | null;
-  slug: string;
-  sortOrder: number;
-  vendorId: string;
-  vendorName: string;
-  vendorSlug: string;
-  vendorNeighbourhoods: string[];
+export type DrinkWithVendor = typeof drinks.$inferSelect & {
+  vendor: typeof vendors.$inferSelect & {
+    vendorLocations: typeof vendorLocations.$inferSelect[];
+  };
 };
 
 export type WishlistItemRow = {
@@ -94,30 +86,37 @@ async function getNeighbourhoodsByVendorIds(vendorIds: string[]): Promise<Map<st
 }
 
 export async function getDrinksWithVendors(): Promise<DrinkWithVendor[]> {
-  const rows = await db
-    .select({
-      id: drinks.id,
-      externalId: drinks.externalId,
-      name: drinks.name,
-      flavourNotes: drinks.flavourNotes,
-      description: drinks.description,
-      slug: drinks.slug,
-      sortOrder: drinks.sortOrder,
-      vendorId: drinks.vendorId,
-      vendorName: vendors.name,
-      vendorSlug: vendors.slug,
-    })
-    .from(drinks)
-    .innerJoin(vendors, eq(drinks.vendorId, vendors.id))
-    .orderBy(asc(drinks.externalId), asc(drinks.name));
+  const rows = await db.query.drinks.findMany({
+    columns: {
+      id: true,
+      externalId: true,
+      name: true,
+      flavourNotes: true,
+      description: true,
+      slug: true,
+      sortOrder: true,
+      vendorId: true,
+    },
+    with: {
+      vendor: {
+        columns: {
+          id: true,
+          name: true,
+          slug: true,
+        },
+        with: {
+          vendorLocations: {
+            columns: {
+              neighbourhood: true,
+            },
+          },
+        },
+      },
+    },
+    orderBy: [asc(drinks.externalId), asc(drinks.name)],
+  });
 
-  const vendorIds = [...new Set(rows.map((r) => r.vendorId))];
-  const neighbourhoodsByVendor = await getNeighbourhoodsByVendorIds(vendorIds);
-
-  return rows.map((r) => ({
-    ...r,
-    vendorNeighbourhoods: neighbourhoodsByVendor.get(r.vendorId) ?? [],
-  }));
+  return rows as DrinkWithVendor[];
 }
 
 export async function getDrinkBySlug(slug: string) {
