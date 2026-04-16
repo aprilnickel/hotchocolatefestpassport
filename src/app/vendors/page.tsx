@@ -15,7 +15,7 @@ export default async function VendorsPage() {
       {vendorList.length === 0 ? (
         <p>There are no vendors yet. Check back later for updates.</p>
       ) : (
-        <ul className="space-y-3">
+        <ul className="space-y-3 list-none">
           {vendorList.map((vendor: Vendor) => (
             <VendorCard
               key={vendor.id}
