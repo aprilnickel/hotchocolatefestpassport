@@ -151,7 +151,7 @@ export const getVendorBySlug = cache(async (slug: string) => {
   return row ?? null;
 });
 
-export async function getAllVendors() {
+export async function getAllVendors(): Promise<Vendor[]> {
   const rows = await db.query.vendors.findMany({
     columns: {
       id: true,
@@ -189,7 +189,7 @@ export async function getAllVendors() {
             .filter((neighbourhood): neighbourhood is string => Boolean(neighbourhood))
         ),
       ],
-      drinks: [...vendor.drinks].sort((a, b) =>
+      drinks: [...(vendor.drinks as Drink[])].sort((a, b) =>
         a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: "base" })
       ),
     }))

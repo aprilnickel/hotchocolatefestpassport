@@ -1,4 +1,4 @@
-import { getAllVendors, Vendor } from "@/lib/queries";
+import { getAllVendors } from "@/lib/queries";
 import { VendorCard } from "./vendor-card";
 
 export const metadata = {
@@ -16,7 +16,7 @@ export default async function VendorsPage() {
         <p>There are no vendors yet. Check back later for updates.</p>
       ) : (
         <ul className="space-y-3 list-none">
-          {vendorList.map((vendor: Vendor) => (
+          {vendorList.map((vendor) => (
             <VendorCard
               key={vendor.id}
               vendor={vendor}
