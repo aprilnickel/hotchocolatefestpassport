@@ -1,11 +1,10 @@
 import {
   getDrinksWithVendors,
   getWishlistDrinkIds,
-  type DrinkWithVendor,
 } from "@/lib/queries";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
-import { DrinkCard } from "./drink-card";
+import { DrinksList } from "./drinks-list";
 
 export const metadata = {
   title: "Drinks | Sip Fest Passport",
@@ -20,6 +19,7 @@ export default async function DrinksPage() {
   const wishlistIds = session?.user?.id
     ? await getWishlistDrinkIds(session.user.id)
     : null;
+  const wishlistDrinkIds = wishlistIds ? [...wishlistIds] : [];
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-6">
@@ -29,16 +29,11 @@ export default async function DrinksPage() {
           There are no drinks yet. Check back later for updates.
         </p>
       ) : (
-        <ul className="space-y-3">
-          {drinks.map((d: DrinkWithVendor) => (
-            <DrinkCard
-              key={d.id}
-              drink={d}
-              inWishlist={wishlistIds?.has(d.id) ?? false}
-              showWishlistButton={!!session?.user}
-            />
-          ))}
-        </ul>
+        <DrinksList
+          drinks={drinks}
+          wishlistDrinkIds={wishlistDrinkIds}
+          showWishlistButton={!!session?.user}
+        />
       )}
     </main>
   );
