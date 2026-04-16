@@ -5,6 +5,7 @@ export const metadata = {
   title: "Vendors | Sip Fest Passport",
   description: "Browse all Vancouver Hot Chocolate Festival vendors.",
 };
+export const dynamic = "force-dynamic";
 
 export default async function VendorsPage() {
   const vendorList = await getAllVendors();
