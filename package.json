@@ -26,7 +26,7 @@
     "drizzle-orm": "^0.45.2",
     "lucide-react": "^1.7.0",
     "next": "^15.5.15",
-    "postgres": "^3.4.0",
+    "postgres": "^3.4.9",
     "posthog-js": "^1.363.4",
     "posthog-node": "^5.29.1",
     "radix-ui": "^1.4.3",
