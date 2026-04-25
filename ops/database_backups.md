@@ -1,5 +1,7 @@
 # Backing Up the Database
 
+## Manual Backups
+
 1. Choose where you want to save the database dumps on your server.
 
    ```
@@ -22,6 +24,52 @@
    ```
 
    Note: You can find your existing DB connection info in the DATABASE_URL ENV variable, which is in the format: `"postgresql://[username]:[password]@[host]:[port]/[dbname]"`, or by logging into your Supabase Dashboard.
+
+## Automatic Backups
+
+Follow this guide for cron setup & useful info: https://cronitor.io/guides/cron-jobs
+
+1. Install & enable cron.
+
+   ```
+   sudo apt update && sudo apt install cron
+   sudo systemctl enable cron
+   ```
+
+   Verify cron is running with: `ps aux | grep cron`
+
+2. Copy the `ops/backups.sh` script file to `/var/hotchocolatefestpassport/backups.sh` on the server. Don't forget to give the script execute permissions: `chmod +x /var/hotchocolatefestpassport/backups.sh`
+
+3. Start cron. Run `crontab -e`, select an editor, and add the following line to your crontab:
+
+   ```
+   0 12 * * * set -a; . /srv/hotchocolatefestpassport/.env; set +a; PARENT_DIR=/var/hotchocolatefestpassport /var/hotchocolatefestpassport/backups.sh
+   ```
+
+### Cron
+
+This runs the cron every day at 12PM UTC (5AM Pacific).
+The script puts backup files into the following directory structure: /var/hotchocolatefestpassport/backups/[year]/[month]/
+
+#### Debugging Cron
+
+https://www.baeldung.com/linux/cron-job-testing-debugging
+
+1. Uncomment debug lines in backups.sh
+
+2. Append `> /tmp/cron-debug.log 2>&1` to the end of the crontab entry. ie:
+
+   ```
+   0 12 * * * set -a; . /srv/hotchocolatefestpassport/.env; set +a; PARENT_DIR=/var/hotchocolatefestpassport /var/hotchocolatefestpassport/backups.sh > /tmp/cron-hcfpassport-db-backup-debug.log 2>&1
+   ```
+
+### Monitoring
+
+1. To enable monitoring, set up a free account at [healthchecks.io](https://healthchecks.io/).
+
+2. Setup a check matching the cron above.
+
+3. Add your ping URL to your .env (DB_BACKUP_HEALTHCHECK_URL)
 
 # Restoring the Database
 
